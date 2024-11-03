@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,239 @@
 
   <link rel="stylesheet" href="./dist/output.css">
 </head>
-<body class="font-cairo">
-  <h1 class="font-black text-red-700">اهلا بكم في عالم الأدغال</h1>
+
+<body
+  class="font-cairo bg-backgroundEffect bg-center bg-cover w-full min-h-screen flex flex-col items-center justify-center">
+
+  <div class="wrapper">
+
+    <!-- Login Head -->
+    <div class="flex items-center gap-8 text-3xl font-bold">
+      <button id="client-btn" class="p-4 text-textGreen border-b-[3px] border-textGreen cursor-pointer">
+        <h2>عميل</h2>
+      </button>
+      <button id="freelancer-btn" class="text-[#707070] cursor-pointer p-4">
+        <h2>مقدم خدمة</h2>
+      </button>
+    </div>
+
+    <!-- Data Section -->
+    <div class="flex items-center justify-between gap-20">
+
+      <!-- Form Section -->
+      <div class="flex-1">
+
+        <form id="client-form" method="post">
+          <div class="space-y-12">
+            <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 2xl:grid-cols-3">
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="text" name="username"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="إسم المستخدم">
+              </div>
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="email" name="email"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="البريد الإلكتروني">
+              </div>
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="text" name="phone"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="رقم الجوال">
+              </div>
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="text" name="country"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="الدولة">
+              </div>
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="text" name="city"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="المدينة">
+              </div>
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="password" name="password"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="كلمة المرور">
+              </div>
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="password" name="password"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="تأكيد كلمة المرور">
+              </div>
+
+            </div>
+          </div>
+
+          <div class="mt-6 flex flex-col items-center justify-center">
+            <button type="submit"
+              class="rounded-md bg-mainGreen w-[200px] h-12 text-2xl font-bold text-white shadow-sm hover:bg-textGreen">تسجيل</button>
+          </div>
+        </form>
+
+        <form id="freelancer-form" class="hidden" method="post">
+          <div class="space-y-12">
+            <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 2xl:grid-cols-3">
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="text" name="username"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="إسم المستخدم">
+              </div>
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="email" name="email"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="البريد الإلكتروني">
+              </div>
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="text" name="phone"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="رقم الجوال">
+              </div>
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="text" name="country"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="الدولة">
+              </div>
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="text" name="city"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="المدينة">
+              </div>
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="text" name="commercial-record"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="السجل التجاري">
+              </div>
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="password" name="password"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="كلمة المرور">
+              </div>
+
+              <div class="flex rounded-lg shadow-sm border border-textGreen sm:max-w-md">
+                <input type="password" name="password"
+                  class="block flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none"
+                  placeholder="تأكيد كلمة المرور">
+              </div>
+
+              <div class="flex relative rounded-lg shadow-sm border border-textGreen sm:max-w-md cursor-pointer">
+                <input type="file" name="files" id="file-input" onchange="displayFileName()"
+                  class="block opacity-0 absolute z-10 w-full h-full flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none cursor-pointer">
+                <label for="file-input" class="flex items-center gap-2 py-2 px-4 cursor-pointer">
+                  <img class="h-8 cursor-pointer" src="./src/assets/icons/cloud-icon.svg" alt="cloud">
+                  <span id="file-placeholder" class="text-textGray text-lg font-medium cursor-pointer">ارفع الملفات من هنا</span>
+                </label>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="mt-6 flex flex-col items-center justify-center">
+            <button type="submit"
+              class="rounded-md bg-mainGreen w-[200px] h-12 text-2xl font-bold text-white shadow-sm hover:bg-textGreen">تسجيل</button>
+          </div>
+        </form>
+
+        <div class="my-8">
+          <p class="text-textGray text-xl text-center">أو</p>
+
+          <div class="mt-10 grid gap-x-6 gap-y-8 grid-cols-1 sm:grid-cols-2">
+
+            <div>
+              <div class="flex rounded-lg shadow-sm border ">
+                <button type="submit"
+                  class="flex items-center justify-center gap-4 w-full rounded-md bg-white px-3 py-3 text-base sm:text-lg lg:text-lg font-boldshadow-sm">
+                  <img class="w-6 h-6" src="./src/assets/icons/google-icon.svg" alt="google">
+                  <span class="text-textGray font-bold">تسجيل الدخول باستخدام جوجل </span>
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex rounded-lg shadow-sm border">
+                <button type="submit"
+                  class="flex items-center justify-center gap-4 w-full rounded-md bg-[#1877F2] px-3 py-3 text-base sm:text-lg lg:text-lg font-bold shadow-sm">
+                  <img class="w-6 h-6" src="./src/assets/icons/facebook-icon.svg" alt="facebook">
+                  <span class="text-white font-bold">تسجيل الدخول باستخدام فيسبوك </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="my-8">
+          <p class="text-textGray text-lg text-center font-medium">
+            هل تمتلك حساب ؟
+            <a href="./login.html" class="text-[#0000ff] underline">تسجيل الدخول</a>
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Vector Section -->
+      <div class="w-[30%] hidden lg:block">
+        <img class="w-full" src="./src/assets/images/Tablet login-amico.svg" alt="tablet">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // User Toggle
+    const clientBtn = document.getElementById('client-btn')
+    const freelancerBtn = document.getElementById('freelancer-btn')
+    const clientForm = document.getElementById('client-form')
+    const freelancerForm = document.getElementById('freelancer-form')
+
+    const userToggle = (isClient) => {
+      if (isClient) {
+        clientBtn.style.color = '#00BE64';
+        clientBtn.style.borderBottom = '3px solid #00BE64';
+        freelancerBtn.style.color = '#707070';
+        freelancerBtn.style.borderBottom = 'none';
+
+        clientForm.style.display = 'block'
+        freelancerForm.style.display = 'none'
+      } else {
+        freelancerBtn.style.color = '#00BE64';
+        freelancerBtn.style.borderBottom = '3px solid #00BE64';
+        clientBtn.style.color = '#707070';
+        clientBtn.style.borderBottom = 'none';
+
+        freelancerForm.style.display = 'block'
+        clientForm.style.display = 'none'
+      }
+    }
+
+    clientBtn.addEventListener('click', () => userToggle(true))
+    freelancerBtn.addEventListener('click', () => userToggle(false))
+
+    // Input file
+    function displayFileName() {
+      const input = document.getElementById('file-input');
+      const placeholder = document.getElementById('file-placeholder');
+
+      if (input.files.length > 0) {
+        placeholder.textContent = input.files[0].name;
+      } else {
+        placeholder.textContent = 'ارفع الملفات من هنا';
+      }
+
+    }
+  </script>
 </body>
+
 </html>

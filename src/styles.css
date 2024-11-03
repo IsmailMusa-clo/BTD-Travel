@@ -2,58 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .wrapper {
+    width: 90%;
+    margin: auto;
+  }
+  
+  @media (max-width: 991px) {
+    .wrapper {
+      width: 100%;
+      padding: 0 1rem;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .wrapper {
+      padding: 0 0.5rem;
+    }
+  }
+}
+
 @font-face {
   font-family: "Cairo";
   font-style: normal;
   font-weight: 900;
-  src: url('./assets/fonts/Cairo-Black.ttf') format('truetype');
+  src: url('../src/assets/fonts/Cairo-Black.ttf') format('truetype');
 }
 
 @font-face {
   font-family: "Cairo";
   font-style: normal;
   font-weight: 800;
-  src: url('./assets/fonts/Cairo-ExtraBold.ttf') format('truetype');
+  src: url('../src/assets/fonts/Cairo-ExtraBold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: "Cairo";
   font-style: normal;
   font-weight: 700;
-  src: url('./assets/fonts/Cairo-Bold.ttf') format('truetype');
+  src: url('../src/assets/fonts/Cairo-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: "Cairo";
   font-style: normal;
   font-weight: 600;
-  src: url('./assets/fonts/Cairo-SemiBold.ttf') format('truetype');
+  src: url('../src/assets/fonts/Cairo-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: "Cairo";
   font-style: normal;
   font-weight: 500;
-  src: url('./assets/fonts/Cairo-Medium.ttf') format('truetype');
+  src: url('../src/assets/fonts/Cairo-Medium.ttf') format('truetype');
 }
 
 @font-face {
   font-family: "Cairo";
   font-style: normal;
   font-weight: 400;
-  src: url('./assets/fonts/Cairo-Regular.ttf') format('truetype');
+  src: url('../src/assets/fonts/Cairo-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: "Cairo";
   font-style: normal;
   font-weight: 300;
-  src: url('./assets/fonts/Cairo-Light.ttf') format('truetype');
+  src: url('../src/assets/fonts/Cairo-Light.ttf') format('truetype');
 }
 
 @font-face {
   font-family: "Cairo";
   font-style: normal;
   font-weight: 200;
-  src: url('./assets/fonts/Cairo-ExtraLight.ttf') format('truetype');
+  src: url('../src/assets/fonts/Cairo-ExtraLight.ttf') format('truetype');
 }
