@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTD Travel - Messages</title>
+
+  <link rel="stylesheet" href="./dist/output.css">
+
+  <script>
+    // Profile Menu Toggle
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuButton = document.querySelector("[aria-label='Global'] button");
+      const mobileMenu = document.querySelector("[role='dialog']");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const closeButton = mobileMenu.querySelector("button");
+      closeButton.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+
+    // User Profile Toggle Menu
+    function toggleProfileDropdown() {
+      const dropdown = document.getElementById("dropdownMenu");
+      dropdown.classList.toggle("hidden");
+    }
+
+    window.addEventListener("click", function (e) {
+      const dropdown = document.getElementById("dropdownMenu");
+      if (!e.target.closest("#dropdownMenu") && !e.target.closest("button")) {
+        dropdown.classList.add("hidden");
+      }
+    });
+
+    // Messages DropMenu
+    function toggleChatDropdown() {
+      const MessagesDropdownMenu = document.getElementById('messages-dropdown-menu');
+      MessagesDropdownMenu.classList.toggle("hidden");
+    }
+
+    window.addEventListener('click', (e) => {
+      const MessagesDropdownMenu = document.getElementById('messages-dropdown-menu');
+      if (!e.target.closest("#messages-dropdown-menu") && !e.target.closest("#email-icon")) {
+        MessagesDropdownMenu.classList.add("hidden");
+      }
+    });
+
+    // Notifications DropMenu
+    function toggleNotificationsDropdown() {
+      const notificationsDropdownMenu = document.getElementById('notifications-dropdown-menu');
+      notificationsDropdownMenu.classList.toggle("hidden");
+    }
+
+    window.addEventListener('click', (e) => {
+      const notificationsDropdownMenu = document.getElementById('notifications-dropdown-menu');
+      if (!e.target.closest("#notifications-dropdown-menu") && !e.target.closest("#notification-icon")) {
+        notificationsDropdownMenu.classList.add("hidden");
+      }
+    });
+
+    // FAQs Function
+    function toggleFAQ(faqId) {
+      const content = document.getElementById(`${faqId}-content`);
+      const icon = document.getElementById(`${faqId}-icon`);
+
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        content.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-lightGray">
+
+  <!-- Header Section -->
+  <header class="bg-white w-full">
+    <div class="wrapper">
+      <!-- Navbar Section -->
+      <nav class="flex items-center justify-between py-4" aria-label="Global">
+        <div class="flex ml-10">
+          <a href="#" class="-m-1.5">
+            <img class="w-[100px] min-w-[60px] h-auto" src="./src/assets/images/logo.png" alt="Logo">
+          </a>
+        </div>
+
+        <div class="flex lg:hidden order-4 ml-2">
+          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <img class="h-8 w-8" src="./src/assets/icons/mobile-menu.svg" alt="menu">
+          </button>
+        </div>
+
+        <div class="hidden lg:flex lg:gap-x-2 lg:flex-1">
+          <a href="./home.html" class="font-normal text-textGreen py-3 px-2 rounded-md hover:bg-lightGray">الرئيسية</a>
+          <a href="./orders.html" class="font-normal text-textGreen py-3 px-2 rounded-md hover:bg-lightGray">الطلبات</a>
+          <a href="./offers.html" class="font-normal text-textGreen py-3 px-2 rounded-md hover:bg-lightGray">العروض</a>
+          <a href="./pricing.html" class="font-normal text-textGreen py-3 px-2 rounded-md hover:bg-lightGray">محفظتي</a>
+        </div>
+
+        <div class="flex flex-1 justify-between gap-1 sm:gap-6">
+          <div class="flex gap-6 items-center">
+            <div class="relative">
+              <img id="email-icon" onclick="toggleChatDropdown()" class="w-7 min-w-7 cursor-pointer"
+                src="./src/assets/icons/email.svg" alt="email">
+
+              <!-- Chat Messages DropMenu -->
+              <div id="messages-dropdown-menu"
+                class="hidden absolute right-0 z-10 mt-5 w-screen max-w-[200px] sm:max-w-[450px] translate-x-[42px] px-4">
+                <div
+                  class="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 right-[40px]">
+                </div>
+
+                <div
+                  class="w-screen max-w-md flex-auto overflow-hidden rounded-lg bg-white border border-textGreen text-sm/6 shadow-lg ring-1 ring-gray-900/5">
+                  <div>
+
+                    <!-- Message Item -->
+                    <div
+                      class="group relative flex gap-x-6 px-4 py-2 hover:bg-gray-50 cursor-pointer border-b border-textGray">
+                      <div class="mt-1 h-16 w-16 rounded-full border-2 border-textGreen overflow-hidden">
+                        <img src="./src/assets/images/Avatar.png" alt="User Profile"
+                          class="w-full h-full object-fill" />
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-gray-900">أحمد</h3>
+                        <p class="text-[#707070] font-medium">لا تنسى اجتماع اليوم</p>
+                        <p class="flex items-center gap-1">
+                          <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                          <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Message Item -->
+                    <div
+                      class="group relative flex gap-x-6 px-4 py-2 hover:bg-gray-50 cursor-pointer border-b border-textGray">
+                      <div class="mt-1 h-16 w-16 rounded-full border-2 border-textGreen overflow-hidden">
+                        <img src="./src/assets/images/Avatar.png" alt="User Profile"
+                          class="w-full h-full object-fill" />
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-gray-900">أحمد</h3>
+                        <p class="text-[#707070] font-medium">لا تنسى اجتماع اليوم</p>
+                        <p class="flex items-center gap-1">
+                          <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                          <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Message Item -->
+                    <div
+                      class="group relative flex gap-x-6 px-4 py-2 hover:bg-gray-50 cursor-pointer border-b border-textGray">
+                      <div class="mt-1 h-16 w-16 rounded-full border-2 border-textGreen overflow-hidden">
+                        <img src="./src/assets/images/Avatar.png" alt="User Profile"
+                          class="w-full h-full object-fill" />
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-gray-900">أحمد</h3>
+                        <p class="text-[#707070] font-medium">لا تنسى اجتماع اليوم</p>
+                        <p class="flex items-center gap-1">
+                          <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                          <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Message Item -->
+                    <div
+                      class="group relative flex gap-x-6 px-4 py-2 hover:bg-gray-50 cursor-pointer border-b border-textGray">
+                      <div class="mt-1 h-16 w-16 rounded-full border-2 border-textGreen overflow-hidden">
+                        <img src="./src/assets/images/Avatar.png" alt="User Profile"
+                          class="w-full h-full object-fill" />
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-gray-900">أحمد</h3>
+                        <p class="text-[#707070] font-medium">لا تنسى اجتماع اليوم</p>
+                        <p class="flex items-center gap-1">
+                          <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                          <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Message Item -->
+                    <div
+                      class="group relative flex gap-x-6 px-4 py-2 hover:bg-gray-50 cursor-pointer border-b border-textGreen">
+                      <div class="mt-1 h-16 w-16 rounded-full border-2 border-textGreen overflow-hidden">
+                        <img src="./src/assets/images/Avatar.png" alt="User Profile"
+                          class="w-full h-full object-fill" />
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-gray-900">أحمد</h3>
+                        <p class="text-[#707070] font-medium">لا تنسى اجتماع اليوم</p>
+                        <p class="flex items-center gap-1">
+                          <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                          <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+                        </p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="font-bold text-center text-white bg-textGreen text-lg py-3 cursor-pointer">
+                    عرض جميع الرسائل
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="relative">
+              <img id="notification-icon" onclick="toggleNotificationsDropdown()" class="w-6 min-w-6 cursor-pointer"
+                src="./src/assets/icons/notification.svg" alt="notification">
+
+              <!-- Notifications DropMenu -->
+              <div id="notifications-dropdown-menu"
+                class="hidden absolute right-0 z-10 mt-5 w-screen max-w-[450px] translate-x-[42px] px-4">
+                <div
+                  class="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 right-[40px]">
+                </div>
+
+                <div
+                  class="w-screen max-w-md flex-auto overflow-hidden rounded-lg bg-white border border-textGreen text-sm/6 shadow-lg ring-1 ring-gray-900/5">
+                  <div>
+
+                    <!-- Notification Item -->
+                    <div
+                      class="group relative flex gap-x-6 px-4 py-2 hover:bg-gray-50 cursor-pointer border-b border-textGray">
+                      <div class="mt-1 h-16 w-16 rounded-full border-2 border-textGreen overflow-hidden">
+                        <img src="./src/assets/images/Avatar.png" alt="User Profile"
+                          class="w-full h-full object-fill" />
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-gray-900">أحمد</h3>
+                        <p class="text-[#707070] font-medium">قام
+                          <span class="text-mainGreen font-bold text-base">أحمد </span>
+                          بالرد على تعليقك
+                        </p>
+                        <p class="flex items-center gap-1">
+                          <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                          <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Notification Item -->
+                    <div
+                      class="group relative flex gap-x-6 px-4 py-2 hover:bg-gray-50 cursor-pointer border-b border-textGray">
+                      <div class="mt-1 h-16 w-16 rounded-full border-2 border-textGreen overflow-hidden">
+                        <img src="./src/assets/images/Avatar.png" alt="User Profile"
+                          class="w-full h-full object-fill" />
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-gray-900">أحمد</h3>
+                        <p class="text-[#707070] font-medium">قام
+                          <span class="text-mainGreen font-bold text-base">أحمد </span>
+                          بالرد على تعليقك
+                        </p>
+                        <p class="flex items-center gap-1">
+                          <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                          <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Notification Item -->
+                    <div
+                      class="group relative flex gap-x-6 px-4 py-2 hover:bg-gray-50 cursor-pointer border-b border-textGray">
+                      <div class="mt-1 h-16 w-16 rounded-full border-2 border-textGreen overflow-hidden">
+                        <img src="./src/assets/images/Avatar.png" alt="User Profile"
+                          class="w-full h-full object-fill" />
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-gray-900">أحمد</h3>
+                        <p class="text-[#707070] font-medium">قام
+                          <span class="text-mainGreen font-bold text-base">أحمد </span>
+                          بالرد على تعليقك
+                        </p>
+                        <p class="flex items-center gap-1">
+                          <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                          <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Notification Item -->
+                    <div
+                      class="group relative flex gap-x-6 px-4 py-2 hover:bg-gray-50 cursor-pointer border-b border-textGray">
+                      <div class="mt-1 h-16 w-16 rounded-full border-2 border-textGreen overflow-hidden">
+                        <img src="./src/assets/images/Avatar.png" alt="User Profile"
+                          class="w-full h-full object-fill" />
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-gray-900">أحمد</h3>
+                        <p class="text-[#707070] font-medium">قام
+                          <span class="text-mainGreen font-bold text-base">أحمد </span>
+                          بالرد على تعليقك
+                        </p>
+                        <p class="flex items-center gap-1">
+                          <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                          <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Notification Item -->
+                    <div
+                      class="group relative flex gap-x-6 px-4 py-2 hover:bg-gray-50 cursor-pointer border-b border-textGreen">
+                      <div class="mt-1 h-16 w-16 rounded-full border-2 border-textGreen overflow-hidden">
+                        <img src="./src/assets/images/Avatar.png" alt="User Profile"
+                          class="w-full h-full object-fill" />
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-gray-900">أحمد</h3>
+                        <p class="text-[#707070] font-medium">قام
+                          <span class="text-mainGreen font-bold text-base">أحمد </span>
+                          بالرد على تعليقك
+                        </p>
+                        <p class="flex items-center gap-1">
+                          <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                          <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+                        </p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="font-bold text-center text-white bg-textGreen text-lg py-3 cursor-pointer">
+                    عرض جميع الإشعارات
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex rounded-lg border-0 md:border border-textGreen sm:max-w-md pl-4">
+              <input type="text" name="search" cursor-pointer
+                class="w-[85%] hidden md:block flex-1 border-0 bg-transparent py-2 px-4 text-textGray placeholder:text-textGreen placeholder:font-semibold text-lg font-medium outline-none"
+                placeholder="البحث">
+              <img class="w-6 min-w-6" src="./src/assets/icons/search.svg" alt="search">
+            </div>
+          </div>
+
+          <div class="relative">
+            <!-- Profile Picture (Button to open dropdown) -->
+            <button onclick="toggleProfileDropdown()" class="flex items-center gap-1 focus:outline-none">
+              <img src="./src/assets/images/Avatar.png" alt="User Profile"
+                class="w-10 h-10 rounded-full border-2 border-white" />
+
+              <h3 class="font-semibold">محمد أحمد</h3>
+
+              <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M5.23 7.21a1 1 0 011.41.02L10 10.61l3.36-3.38a1 1 0 011.41-.02 1 1 0 01-.02 1.41L10.7 12.39a1 1 0 01-1.4 0L5.23 8.62a1 1 0 01-.02-1.41z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div id="dropdownMenu"
+              class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg overflow-hidden text-gray-800 hidden">
+              <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 border-b border-lightGray">
+                <svg class="w-5 h-5 ml-2 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 12c2.209 0 4-1.791 4-4s-1.791-4-4-4-4 1.791-4 4 1.791 4 4 4zm0 2c-2.672 0-8 1.337-8 4v2h16v-2c0-2.663-5.328-4-8-4z" />
+                </svg>
+                الملف الشخصي
+              </a>
+              <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 border-b border-lightGray">
+                <svg class="w-5 h-5 ml-2 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M19.14 12.936a7.962 7.962 0 00-.098-1.364l2.064-1.558a.452.452 0 00.11-.563l-1.952-3.377a.449.449 0 00-.544-.194l-2.432.98a7.906 7.906 0 00-1.174-.682l-.366-2.553A.448.448 0 0014.3 3h-3.9a.448.448 0 00-.444.387l-.366 2.553c-.4.16-.783.366-1.174.682l-2.432-.98a.449.449 0 00-.544.194L2.994 9.451a.452.452 0 00.11.563l2.064 1.558c-.064.442-.098.89-.098 1.364s.034.922.098 1.364l-2.064 1.558a.452.452 0 00-.11.563l1.952 3.377c.106.183.337.253.544.194l2.432-.98c.39.315.774.522 1.174.682l.366 2.553a.448.448 0 00.444.387h3.9a.448.448 0 00.444-.387l.366-2.553c.4-.16.783-.366 1.174-.682l2.432.98c.207.059.438-.011.544-.194l1.952-3.377a.452.452 0 00-.11-.563l-2.064-1.558zM12 15c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3z" />
+                </svg>
+                الإعدادات
+              </a>
+              <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 border-b border-lightGray">
+                <svg class="w-5 h-5 ml-2 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M21 6H7C5.9 6 5 6.9 5 8v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM7 16V8h14v8H7zm-5-6v2h2V8h1v8H4v2h14v-2H5v-2h2V8H5v4H2z" />
+                </svg>
+                محفظتي
+              </a>
+              <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 border-b border-lightGray">
+                <svg class="w-5 h-5 ml-2 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M16 13v-2H7V9l-5 4 5 4v-3h9zm1-9h-8v2h8v14h-8v2h8c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z" />
+                </svg>
+                تسجيل الخروج
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Section -->
+      <div class="lg:hidden hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-50"></div>
+        <div
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="./home.html" class="-m-1.5 p-1.5">
+              <img class="w-16 h-auto" src="./src/assets/images/logo.png" alt="logo">
+            </a>
+            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="./home.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">الرئيسية</a>
+                <a href="./orders.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">الطلبات</a>
+                <a href="./offers.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">العروض</a>
+                <a href="./walet.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">محفظتي</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="wrapper my-20">
+
+    <section class="mb-14">
+      <div class="text-3xl font-semibold mb-8">
+        <h1 class="text-gray-800">الرئيسية</h1>
+        <h1 class="text-textGreen">شروط وأحكام</h1>
+      </div>
+      <div>
+        <div class="mb-6">
+          <h3 class="text-gray-800 font-semibold text-lg">اتفاقية استخدام الموقع الالكتروني</h3>
+          <p class="text-gray-500">يوافق المستخدم على شروط وأحكام الاتفاقية عند استخدام الموقع الالكتروني (منصة
+            "الباحثون العرب")، وفي حالة عدم
+            الرضا عنه أو عن المحتويات يمكنه التوقف عن استخدامه. وتشمل هذه الشروط و الأحكام ما يلي:
+          </p>
+        </div>
+        <div class="mb-6">
+          <h4 class="text-gray-700 font-medium">أولاً: الدخول إلى الموقع </h4>
+          <p class="text-gray-500">
+            يكون المستخدم هو المسؤول بشكل تام في وضع كافة التحضيرات اللازمة لدخول الموقع، وتحتفظ منصة "الباحثون العرب"
+            بجميع الحقوق في حجب أو تعديل الموقع وعن جميع الخدمات والمحتويات التي تقدمها من خلاله، وذلك بتقدير مطلق منها
+            ومن دون الحاجة إلى تنبيه المستخدم. لا تتحمل المنصة لأي سبب من الأسباب عدم توفر الموقع في أي وقت وأي مدة.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-gray-700 font-medium">ثانياً: حقوق الملكية الفكرية </h4>
+          <p class="text-gray-500">
+            إن محتويات وخصائص عمل ومميزات المنصة كاملة (تتضمن على سبيل الذكر وليس الحصر كل المعلومات والخدمات والنصوص
+            والصور والتصميم وغيرها) هي ملك للمنصة وفريق عملها ومزودي خدماتها، ومحمية دولياً من قبل قوانين الملكية
+            الفكرية والنشر. تسمح هذه الاتفاقية للمستخدم استخدام الموقع لأمور غير تجارية فقط، ولن تمنح المنصة أي حقوق
+            تتعلق بالموقع أو محتواه للمستخدم، وتحتفظ ادارة المنصة بكامل حقوق ملكيتها للموقع.
+          </p>
+          <p class="text-gray-500">
+            يتوجب على المستخدم عدم إعادة إنتاج أو توزيع أو تعديل أو إنشاء أعمال من محتويات الموقع، وعدم عرضه علانية أو
+            تحميل أو نقل أو تخزين أي مواد من محتوياته.
+          </p>
+          <p class="text-gray-500">
+            يتوجب على المستخدم عدم العبث أو حذف العلامات التجارية أو علامات الملكية أو أي دلائل عن الملكية الفكرية من
+            نسخ المواد المأخوذة من الموقع.
+          </p>
+          <p class="text-gray-500">
+            يتوجب على المستخدم عدم الدخول إلى الموقع واستخدامه أو استخدام أي جزء منه أو من محتوياته وخدماته في أغراض
+            تجارية.
+          </p>
+          <p class="text-gray-500">
+            يتوجب على المستخدم عدم استخدام اسم المنصة وشعارها وكل ما يتعلق بها من أسماء وشعارات ومنتجات وخدمات وتصميم،
+            فهي ملك للمنصة أو للشركات التابعة لها أو الجهات المرخصة لها.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-gray-700 font-medium">ثالثاً: التزامات المستخدم وإقراراته</h4>
+          <p class="text-gray-500">يحق للمستخدم استخدام الموقع لأسباب شرعية وضمن حدود هذه الاتفاقية. </p>
+          <p class="text-gray-500">يتعهد المستخدم بعدم استخدام الموقع بطرق تنتهك القوانين المحلية والخارجية. </p>
+          <p class="text-gray-500">يتعهد المستخدم بعدم إرسال أو استقبال وتحميل ورفع واستخدام أي مواد لا تتوافق مع معايير
+            المحتوى الموضحة بالأسفل. </p>
+          <p class="text-gray-500">يتعهد المستخدم بعدم انتحال أو محاولة انتحال اسم المنصة أو الأشخاص العاملين فيها أو
+            مستخدمي الموقع أو أي شخصية كانت أو جهة. </p>
+          <p class="text-gray-500">يتعهد المستخدم بعدم القيام بأي أمر له أن يعطل أو يضر أو يمس بالموقع، وعدم التدخل في
+            استخدام الآخرين له. </p>
+          <p class="text-gray-500">يتعهد المستخدم بعدم استخدام أي تكنولوجيا وأجهزة إلكترونية أو وسائل أخرى للوصول
+            والدخول إلى الموقع من أجل أسباب غير شرعية أو تنتهك بنود هذه الاتفاقية. </p>
+          <p class="text-gray-500">يتعهد المستخدم بعدم إدخال او محاولة ادخال فيروسات أو غيرها من المواد الخبيثة أو
+            الضارة من الناحية التكنولوجية إلى الموقع. </p>
+          <p class="text-gray-500">يتعهد المستخدم بعدم مشاركة أي علامة تجارية أو روابط خارجية داخل الموقع من دون إذن خطي
+            مسبق، يمنح من قبل ممثل معتمد من المنصة. </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-gray-700 font-medium">رابعاً: معايير المحتوى </h4>
+          <p class="text-[#707070]">معايير المحتوى التالية تنطبق على جميع منشورات ومساهمات المستخدمين واستخدامات الخدمات
+            التفاعلية التي يقدمها الموقع. يتوجب على منشورات ومساهمات المستخدمين أن تكون مطابقة لكافة معايير القوانين
+            المحلية والدولية. دون تحديد ما سبق، يتوجب على منشورات ومساهمات المستخدم ما يلي:
+          </p><br>
+          <p class="text-gray-500">أن لا تحتوي على أي مواد تشهيرية أو غير لائقة أو مسيئة أو مهينة أو مزعجة أو عنيفة أو
+            غير مرغوب فيها. </p>
+          <p class="text-gray-500">أن لا تروج لمواد جنسية أو إباحية أو عنيفة، أو تقوم بالتمييز على أساس العرق أو الجنس
+            أو الدين أو الإعاقات أو التوجهات الجنسية أو الأعمار. </p>
+          <p class="text-gray-500">أن لا تنتهك حقوق أي براءة اختراع أو علامة تجارية أو أسرار تجارية أو حقوق نشر وملكية
+            فكرية لأي طرف آخر. </p>
+          <p class="text-gray-500">أن لا تنتهك الحقوق القانونية للآخرين (بما في ذلك حقوق الدعاية والخصوصية)، وأن لا
+            تحتوي على أي مواد تؤدي إلى مساءلة مدنية أو جنائية بموجب القوانين المعمول بها. </p>
+          <p class="text-gray-500">أن لا تروج لأي نشاط غير قانوني أو مساعدة في أعمال غير قانونية. </p>
+          <p class="text-gray-500">أن لا تتسبب في إزعاج أو إثارة قلق أو إحراج لأي مستخدم أو شخص آخر. </p>
+          <p class="text-gray-500">أن لا ينتحل المستخدم من خلالها هوية أي شخص آخر، أو الانتماء لجماعات ومنظمات أخرى.
+          </p>
+          <p class="text-gray-500">أن لا تشمل أنشطة تجارية أو عمليات بيع وشراء. </p>
+          <p class="text-gray-500">أن لا تكون بهدف الخداع أو إعطاء الانطباع أن الشركة أقرتها. </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-gray-700 font-medium">خامساً: المراقبة والأمن، وإنهاء الخدمة </h4>
+          <p class="text-gray-500">لدى ادارة المنصة الحق بإتخاذ الإجراءات القانونية اللازمة، بما في ذلك، الإحالة إلى
+            القانون في حالة أي استخدام غير مشروع للموقع. </p>
+          <p class="text-gray-500">لدى ادارة المنصة الحق بحذف أو رفض أي مساهمة أو منشور من قبل المستخدم بغض النظر عن
+            الأسباب. </p>
+          <p class="text-gray-500">لدى ادارة المنصة الحق باتخاذ الإجراءات اللازمة التي تجدها مناسبة وضرورية ضمن نطاق
+            احترام منشورات أو مساهمات المستخدم. </p>
+          <p class="text-gray-500">لدى ادارة المنصة الحق بالإفصاح عن هوية ومعلومات المستخدم بناءً على تقديرها لأي طرف
+            آخر يزعم بأن منشورات المستخدم تنتهك حقوق تلك الأطراف، بما في ذلك حقوقهم الفكرية أو خصوصياتهم. </p>
+          <p class="text-gray-500">لدى ادارة المنصة الحق باتخاذ الإجراءات القانونية اللازمة، بما في ذلك، الإحالة إلى
+            القانون في حالة أي استخدام غير مشروع للموقع. </p>
+          <p class="text-gray-500">لدى ادارة المنصة الحق بإنهاء أو إيقاف عضوية المستخدم وإمكانية دخوله للموقع أو أي جزء
+            منه.دون تحديد ما سبق،
+          </p>
+          <p class="text-gray-500"> تحتفظ ادارة المنصة بحق التعاون الكامل مع الجهات القانونية والأمنية في الكشف عن هوية
+            أو المعلومات المتعلقة بأي شخص قام بنشر مواد ومساهمات على الموقع.لا تتعهد المنصة بمراجعة المواد قبل نشرها على
+            الموقع، ولا تضمن سرعة إزالة المواد التي تم الاعتراض عليها بعد نشرها، ولذلك لا تتحمل ادارة المنصة مسؤولية أي
+            فعل أو امتناع يتعلق بعمليات النقل والاتصالات أو المحتوى المقدم من أي شخص أو طرف ثالث. لا تلزم المنصة ولا
+            تخضع للمساءلة تجاه أي شخص عن تنفيذ الأنشطة المبينة في هذا القسم أو عدم تنفيذها. </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-gray-700 font-medium">سادساً: انتهاك حقوق النشر: </h4>
+          <p class="text-[#707070]">تأخذ ادارة المنصة مزاعم انتهاك حقوق الطبع والنشر على محمل الجد، وستقوم ادارة المنصة
+            بالرد على إشعارات انتهاك حق المزعوم عند الحاجة. إذا كان المستخدم يعتقد بأن أي مادة منشورة على الموقع أو من
+            قبله يمكن الوصول إليها تنتهك حقوق النشر الخاصة به، يمكنه طلب إزالتها من الموقع عن طريق تقديم إشعار خطي
+            إلىinfo@arab-scholars.com</p>
+          <p class="text-[#707070]">يجب على الإشعار الخطي أن يحتوي على : </p>
+          <p class="text-gray-500">التوقيع الفعلي أو الإلكتروني للمستخدم. </p>
+          <p class="text-gray-500">تحديد المادة التي يعتقد المستخدم بأنه تم انتهاك حقوق نشرها أو التعدي عليها، وأن يقوم
+            بتوفير قائمة في حالة تعدد المواد التي تم انتهاكها. </p>
+          <p class="text-gray-500">أن يعرف المستخدم المواد التي تم انتهاكها بشكل دقيق لكي يسمح لادارة المنصة بتحديد تلك
+            المواد بشكل جيد وسريع. </p>
+          <p class="text-gray-500">تزويد ادارة المنصة بالمعلومات الكافية التي تمكنها من التواصل مع المستخدم (بما في ذلك
+            الاسم والعنوان البريدي ورقم الهاتف والبريد الإلكتروني إن وجد). </p>
+          <p class="text-gray-500">بيان يؤكد أن الشخص الذي قام باستخدام المواد المحمية بحقوق النشر ليس مخولاً باستخدامها
+            من قبل المؤلف أو وكيله أو القانون. </p>
+          <p class="text-gray-500">بيان بأن المعلومات المذكورة في الإشعار الخطي دقيقة وصحيحة. </p>
+          <p class="text-gray-500">بيان يؤكد أن المستخدم مخول من قبل مالك حقوق الطبع والنشر بالتصرف نيابة عنه، وذلك تحت
+            عقوبة الحنث بالقسم. </p>
+          <p class="text-gray-500">يتوجب على المستخدم المتقدم بالإشعار الخطي معرفة أنه في حالة ثبوت تحريفه للمواد
+            والمطالبة بحقوق نشرها بشكل خاطيء ومتعمد، سوف يكون مسؤولاً عن الأضرار الناجمة (بما في ذلك الرسوم والتكاليف
+            القانونية). </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-gray-700 font-medium">سابعاً: الاعتماد على المعلومات التي ينشرها الموقع </h4>
+          <p class="text-gray-500">إن المعلومات المقدمة على الموقع أو من خلاله متاحة فقط لهدف المعرفة والمعلومات العامة،
+            ولا تقدم المنصة أي بيان يؤكد على مدى كمالية أو دقة الفائدة المرجوة من هذه المعلومات. أي اعتماد كامل لصحة هذه
+            المعلومات ودقتها يقع على المسؤولية الشخصية للمستخدم. يتضمن الموقع على محتوى ومواد من أطراف أخرى، ومن ضمنها
+            مواد مطروحة من مستخدمين آخرين أو أطراف أخرى مرخص لها. المنصة غير مسؤولة تجاه المستخدم أو أي طرف آخر عن محتوى
+            ودقة المواد المقدمة من قبل أي طرف آخر. </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-gray-700 font-medium">ثامناً: الخصوصية </h4>
+          <p class="text-gray-500">جميع المعلومات التي يقدمها الموقع تخضع لسياسة الخصوصية، وباستخدام الموقع، فإن
+            المستخدم يوافق على جميع الإجراءات التي تتخذها الشركة فيما يتعلق بالمعلومات الخاصة به وفقا لسياسة الخصوصية.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-gray-700 font-medium">تاسعاً: روابط من الموقع </h4>
+          <p class="text-gray-500">إن كان الموقع يحتوي على روابط تقود إلى مواقع أو موارد أخرى مقدمة من أطراف أخرى، فإن
+            هذه الروابط توفرها المنصة لضمان راحة المستخدم فقط، ولا تستطيع المنصة السيطرة على محتويات تلك المواقع أو
+            المواد التي تقدمها، ولا تتحمل المنصة مسؤولية أي خسارة أو ضرر للمستخدم نجم عن استخدامه لها. في حالة رغبة
+            المستخدم بالوصول إلى أي مواقع أخرى عبر الروابط المتوفرة على الموقع، فإنه يقوم بذلك على مسؤوليته الشخصية،
+            ويكون خاضعاً لأحكام وشروط استخدام تلك المواقع. </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-gray-700 font-medium">عاشراً: ربط الموقع بمواقع أخرى ومميزات وسائل التواصل الاجتماعي </h4>
+          <p class="text-gray-500">يمكن للمستخدم ربط موقع المنصة بشرط فعل ذلك بطريقة قانونية وعادلة لا تضر بسمعة المنصة
+            أو تستغل الخدمات التي تقدمها، ولا يجب على المستخدم ربط موقعنا بأي موقع خاص بطريقة توحي الموافقة عليها أو
+            تأييد لها من جانب ادارة المنصة (إلا في حالة حصول المستخدم على موافقة خطية من ادارة المنصة). قد يقوم الموقع
+            بتوفير بعض الميزات المتعلقة بوسائط التواصل الاجتماعي التي تمكن المستخدم من: </p>
+          <p class="text-gray-500">وصل الموقع بمواقع خاصة بأطراف أخرى خاصة أو لمحتوى معين على ذلك الموقع. </p>
+          <p class="text-gray-500">إرسال رسائل إلكترونية أو غيرها من أنواع الاتصالات بمحتوى معين أو روابط محتوى معين على
+            الموقع. </p>
+          <p class="text-gray-500">توفير أجزاء محدودة من الموقع ليتم عرضها على موقع المستخدم أو مواقع أطراف أخرى. </p>
+          <p class="text-gray-500">يمكن للمستخدم استخدام هذه الميزات بالطريقة التي يقوم الموقع بتوفيرها وفقط بالطريقة
+            التي يظهر فيها المحتوى، مع مراعاة شروط أحكام إضافية يقدمها الموقع بما يتعلق بهذه الميزات، يجب على المستخدم:
+          </p>
+          <p class="text-gray-500">أن لا يقوم بإنشاء أي روابط إلكترونية من أي موقع لا يملكه. </p>
+          <p class="text-gray-500">أن لا يتسبب في ظهور الموقع أو أي جزء منه على أي موقع آخر، مثل إعادة صياغة المحتوى أو
+            ربطه بالموقع الآخر. </p>
+          <p class="text-gray-500">أن يقوم فقط بربط الرئيسية وليس أي جزء آخر من الموقع. </p>
+          <p class="text-gray-500">عدم اتخاذ أي إجراء بحق المواد المعروضة على الموقع تتعارض مع أي حكم آخر من أحكام هذه
+            الاتفاقية. </p>
+          <p class="text-gray-500">إن الموقع الذي يقوم المستخدم بربطه أو ربط أجزاء منه من أجل وصول المستخدمين إليه، يجب
+            أن يتوافق مع جميع معايير المحتوى المنصوص عليها في هذه الاتفاقية. يوافق المستخدم على التعاون مع المنصة في
+            حالة تسبب بضرر أو اتهامات وذلك من أجل إيقافها. تحتفظ المنصة بحق سحب أي إذن ربط دون سابق إنذار. يحق للمنصة
+            حسب تقديرها إيقاف كل أو أحد ميزات وسائط التواصل الاجتماعي أو رابط في أي وقت دون سابق إنذار. </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-gray-700 font-medium">حادي عشر: لا وعود </h4>
+          <p class="text-gray-500">إن استخدام المستخدم للموقع أو أي ميزة يحصل عليها من خلال الموقع تقع على مسؤوليته
+            الخاصة. تقدم المنصة الموقع على أسس (كما هو) و(كما هو متوفر) دون أي وعود بأي شكل من الأشكال صريحة كانت أم
+            ضمنية. لا تقدم المنصة أو أي شخص أو جهة مرتبطة بها أي وعود أو ضمانات أو تمثيل فيما يتعلق بكمال وأمن وجودة
+            وموثوقية وتوافر الموقع. دون تحديد ما سبق، لا تقدم المنصة أو أي شخص أو جهة مرتبطة بها أي وعود أو ضمانات أن
+            محتويات الموقع أو أجزاءه ستكون دقيقة وخالية من الأخطاء وغير منقطعة، أو خالية من الفيروسات والمكونات الضارة
+            الأخرى، أو أن الموقع وأي ميزة يحصل عليها المستخدم من خلاله سوف تلاقي احتياجاته وتوقعاته، وبناءً على ما سبق،
+            فإن المنصة تخلي مسؤوليتها من كافة الضمانات سواء كانت صريحة أو ضمنية، قانوينة أو غير ذلك، بما في ذلك دون
+            الحصر، أي ضمانات للرواج وعدم التعدي أو ملائمتها لأغراض معينة. </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-gray-700 font-medium">ثاني عشر: تحديد المسؤولية </h4>
+          <p class="text-gray-500">لا تتحمل المنصة وموظفوها ووكلاؤها والمرخصون من قبلها ومدراؤها إلى الحد الذي يسمح به
+            القانون المسؤولية تجاه المستخدم أو أي طرف آخر عن أية أضرار خاصة أو عرضية أو غير مباشرة من أي نوع، أو أي نوع
+            من الأضرار الناجمة، التي تشمل دون الحصر، فقدان الاستخدام وضياع البيانات أو الأرباح حتى في حالة تبليغ المنصة
+            عن احتمالية وقوع هذه الأضرار، وعن أي أضرار ناشئة من استخدام الروابط المتاحة على موقعنا. إن المستخدم يتحمل
+            المسؤولية الكاملة عن جميع الأضرار الناجمة عن سوء استخدام الموقع من قبله. </p>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-gray-700 font-medium">ثالث عشر: التغيرات الحاصلة على هذه السياسة </h4>
+          <p class="text-gray-500">تحتفظ المنصة في تقديرها بحق تغيير شروط هذه السياسة في أي وقت، وأن أي تغييرات تعتبر
+            نافذة فور نشرها على الموقع. وان استمرار استخدام الموقع من قبل المستخدم تعني موافقته على جميع الشروط
+            والأحكام. </p>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <h4 class="text-gray-700 font-medium">رابع عشر: المساعدة العادلة </h4>
+        <p class="text-gray-500">يقر المستخدم بأن أي خرق لسرية أو حقوق الملكية المذكورة في هذه الاتفاقية قد يتسبب بأضرار
+          لا يمكن إصلاحها للمنصة، حيث يمكن للتعويضات المقدمة أن تكون غير كافية، وبالتالي، فإن المنصة ستقوم برفع دعوى من
+          أجل منع المستخدم من انتهاك كافة أو إحدى هذه الأحكام، حيث ستكون بشكل تراكمي، ويجوز للمنصة اللجوء للقضاء من أجل
+          منع أي خرق أو تهديد لهذه الأحكام، بالإضافة إلى اللجوء إلى أي جهة أخرى يشملها القانون. </p>
+      </div>
+      </div>
+
+      <div class="mb-6">
+        <h4 class="text-gray-700 font-medium">خامس عشر: القوانين والأحكام </h4>
+        <p class="text-gray-500">إن هذه السياسة مبينة وخاضعة لأحكام وقوانين دولة فلسطين، بغض النظر عن مباديء تعارض
+          القوانين معها. </p>
+      </div>
+      </div>
+
+      <div class="mb-6">
+        <h4 class="text-gray-700 font-medium">سادس عشر: القابلية </h4>
+        <p class="text-gray-500">في حالة تم إثبات أي بند من أحكام هذه السياسة بأنه مخالف للقانون من قبل محكمة مختصة،
+          سيتم تغيير البند من أجل تحقيق الأهداف الأصلية لهذه السياسة إلى أقصى الدرجات التي يسمح بها القانون، وستبقى
+          البنود والأحكام الأخرى في هذه السياسة نافذة وفعالة. </p>
+      </div>
+      </div>
+
+      <div class="mb-6">
+        <h4 class="text-gray-700 font-medium">سابع عشر: التنازل والتعديل </h4>
+        <p class="text-gray-500">في حالة فشلت المنصة في الحصول على الالتزامات المستوجبة من قبل المستخدم، أو فشلها في
+          ممارسة أي من الحقوق التي تمنحها لها هذه السياسة، فإن هذا لن يشكل تنازل من قبل المنصة عن حقوقها أو التعويضات
+          التي تحق لها، ولا يقلل مدى الالتزام من قبل المستخدم. لا يعتبر أي تنازل من قبل المنصة تنازلاً عن تقصير لاحق،
+          وأي تنازل من قبل المنصة في أي من هذه البنود لن يكون فعالاً إذا لم ينص صراحة عليه مرفقأ بتنازل خطي من قبل
+          المنصة. </p>
+      </div>
+      </div>
+
+      <div class="mb-6">
+        <h4 class="text-gray-700 font-medium">ثامن عشر: المعاملات التجارية المستقبلية </h4>
+        <p class="text-gray-500">قد تخضع المنصة أثناء مواصلتها لتطوير أعمالها لعملية تغيير ملكية مثل الدمج أو بيعها أو
+          بيع جزء كبير من الأصول التجارية لديها، وفي هذه الحالة تعتبر معلومات المستخدم بشكل عام أحد الأصول التجارية
+          المنقولة، وبناءً عليه فإن أي معلومة أو مساهمات يقدمها المستخدم يوافق على نقلها لتك الأطراف في هذه الظروف، لكن
+          شراء أي طرف لهذه الأصول يخضع لأحكام المحافظة على سلامة المعلومات الشخصية الخاصة بالمستخدم. </p>
+      </div>
+
+      <div class="mb-6">
+        <h4 class="text-gray-700 font-medium">تاسع عشر: الفهم الكامل </h4>
+        <p class="text-gray-500">إن هذه الاتفاقية تشكل الاتفاق الوحيد بين المستخدم والمنصة فيما يتعلق باستخدام الموقع،
+          وتلغي جميع الاتفاقيات والتأكيدات والضمانات السابقة، سواء المكتوبة منها أو الشفهية. </p>
+      </div>
+
+      <div class="mb-6">
+        <h4 class="text-gray-700 font-medium">عشرون: تعليقات المستخدم وشواغله </h4>
+        <p class="text-gray-500">يرجى التواصل مع المنصة في حالة وجود أي استفسارات أو أسئلة على البريد الإلكتروني
+          info@arab-scholars.com </p>
+      </div>
+
+      <div class="mb-6">
+        <h4 class="text-gray-700 font-medium">الحادي والعشرون: عند الدفع بواسطة بطاقة الإعتماد </h4>
+        <p class="text-gray-500">سياسة الإلغاء: لا يستطيع العميل الغاء الطلب إلا إذا تم اتفاق مشترك بين العميل و منصة
+          الباحثون العرب. </p>
+        <p class="text-gray-500">يجب أن يخبر العميل منصة الباحثون برغبته فى استبدال الخدمة خلال 24 ساعة من استلامها
+          باتصال هاتفى. </p>
+        <p class="text-gray-500">التوصيل: عند اتمام عملية الدفع يمكن للعميل الوصول الى المحتوى المشترى مباشره.</p>
+      </div>
+
+      </div>
+    </section>
+
+    <section class="w-full">
+      <h2 class="text-3xl font-semibold text-gray-800 mb-8">الأسئلة الشائعة</h2>
+      <div class="space-y-4 bg-white p-6 border-2 border-textGreen">
+
+        <!-- FAQ Item 1 -->
+        <div class="border-b border-gray-200">
+          <button onclick="toggleFAQ('faq1')" class="w-full text-left py-4 flex justify-between items-center">
+            <span class="text-lg font-medium text-gray-700">ضمان الحقوق</span>
+            <svg id="faq1-icon" class="w-5 h-5 text-gray-500 transform" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div id="faq1-content" class="hidden text-gray-600 pb-4">
+            Tailwind CSS is a utility-first CSS framework that provides low-level CSS classes to build custom designs
+            quickly.
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="border-b border-gray-200">
+          <button onclick="toggleFAQ('faq2')" class="w-full text-left py-4 flex justify-between items-center">
+            <span class="text-lg font-medium text-gray-700">طلب الوثائق الشخصية</span>
+            <svg id="faq2-icon" class="w-5 h-5 text-gray-500 transform" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div id="faq2-content" class="hidden text-gray-600 pb-4">
+            You can install Tailwind CSS using npm, yarn, or via CDN. Detailed instructions are available in the
+            official Tailwind documentation.
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="border-b border-gray-200">
+          <button onclick="toggleFAQ('faq3')" class="w-full text-left py-4 flex justify-between items-center">
+            <span class="text-lg font-medium text-gray-700">توثيق الحسابات </span>
+            <svg id="faq3-icon" class="w-5 h-5 text-gray-500 transform" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div id="faq3-content" class="hidden text-gray-600 pb-4">
+            Yes, Tailwind CSS is fully customizable. You can adjust colors, spacing, fonts, and more in the
+            `tailwind.config.js` file.
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="border-b border-gray-200">
+          <button onclick="toggleFAQ('faq4')" class="w-full text-left py-4 flex justify-between items-center">
+            <span class="text-lg font-medium text-gray-700">نظام الحسابات المالية للمنصة</span>
+            <svg id="faq4-icon" class="w-5 h-5 text-gray-500 transform" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div id="faq4-content" class="hidden text-gray-600 pb-4">
+            Yes, Tailwind CSS is fully customizable. You can adjust colors, spacing, fonts, and more in the
+            `tailwind.config.js` file.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="pt-[100px] bg-white">
+    <div class="wrapper flex flex-wrap justify-between gap-16 mb-8">
+
+      <div>
+        <img class="min-w-[130px] w-[130px] mb-1" src="./src/assets/images/logo.png" alt="logo">
+        <p class="text-[#707070] text-base md:text-lg">معاً نسعى لتحقيق راحتك</p>
+      </div>
+
+      <div class="min-w-[120px] text-[#707070] text-lg flex flex-col gap-2 self-end">
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#benefits">الرئيسية</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#courses">الطلبات</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#testimonials">الوظائف</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#faq">العروض</a>
+      </div>
+
+      <div class="min-w-[120px] text-[#707070] text-lg flex flex-col gap-2 self-end">
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">الإعدادات</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">شروط الاستخدام</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">الدعم الفني</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">مساعدة</a>
+      </div>
+
+      <div class="min-w-[120px] text-[#707070] text-lg flex flex-col gap-2 self-end">
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#benefits">الرئيسية</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#courses">الطلبات</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#testimonials">الوظائف</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#faq">العروض</a>
+      </div>
+
+      <div class="min-w-[120px] text-[#707070] text-lg flex flex-col gap-2 self-end">
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">الإعدادات</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">شروط الاستخدام</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">الدعم الفني</a>
+        <a class="block text-[rgba(89, 89, 90, 1)] hover:underline mb-2" href="#">مساعدة</a>
+      </div>
+
+      <div class="min-w-[200px]">
+        <p class="font-normal mb-5 text-lg text-[#707070]">تابعنا لتعرف عن أحدث تحديثاتنا وعروضنا الحصرية </p>
+        <div class="flex flex-col justify-start gap-2 text-[#707070]">
+          <span class="flex  gap-2 mb-5">
+            <img class="w-6 h-auto" src="./src/assets/icons/location-filled.svg" alt="location">
+            <p>الرياض</p>
+          </span>
+          <span class="flex  gap-2 mb-5">
+            <img class="w-7 h-auto" src="./src/assets/icons/footer-email.svg" alt="email">
+            <p>btdtarvellll@gmail.com</p>
+          </span>
+          <span class="flex  gap-2 mb-5">
+            <img class="w-6 h-auto" src="./src/assets/icons/phone.svg" alt="phone">
+            <p>+91 91813 23 2309</p>
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="wrapper border-t border-[#E6E6E6] py-6 px-4 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="#">
+          <img class="w-7" src="./src/assets/icons/facebook.svg" alt="facebook">
+        </a>
+        <a href="#">
+          <img class="w-7" src="./src/assets/icons/instgram.svg" alt="instgram">
+        </a>
+        <a href="#">
+          <img class="w-7" src="./src/assets/icons/twitter.svg" alt="twitter">
+        </a>
+        <a href="#">
+          <img class="w-7" src="./src/assets/icons/linkedin.svg" alt="linkedin">
+        </a>
+      </div>
+      <p class="text-center text-[#707070] text-lg">
+        All rights reserved to
+        <span class="font-bold">BTD</span>
+        Company © 2024
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
