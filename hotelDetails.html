@@ -446,97 +446,56 @@
 
     <section class="wrapper">
 
-      <div class="flex flex-col-reverse gap-12 md:flex-row items-center justify-between mb-16">
+      <div class="flex flex-col-reverse gap-12 md:flex-row items-center justify-between mt-10 mb-16">
         <div class="flex flex-col gap-8 flex-1">
-          <h3 class="text-xl font-semibold text-[#707070]">غرفة فاخرة للإيجار في فندقنا</h3>
-          <p class="text-lg text-[#707070]">استمتع بالإقامة في واحدة من غرفنا الفاخرة المجهزة
-            بكل وسائل الراحة الحديثة. تتضمن الغرفة</p>
+          <h3 class="text-lg font-semibold text-textGreen">نبذة عن الشركة</h3>
+          <p class="text-lg text-[#707070]">
+            شركة متخصصة في تقديم خدمات الفنادق المتميزة
+            حيث تقدم حلولاً شاملة ومتكاملة لتلبية احتياجات قطاع الضيافة.
+            تتنوع خدماتنا لتشمل إدارة وتشغيل الفنادق، تقديم الاستشارات الفندقية،
+            تدريب وتطوير الكوادر البشرية، وتقديم خدمات الصيانة
+            والنظافة لضمان أعلى معايير الجودة.
+          </p>
 
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 list-none">
-            <li
-              class="relative pr-6 before:absolute before:right-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-green-500 before:rounded-full">
-              سريرين مزدوج مريح
-            </li>
-            <li
-              class="relative pr-6 before:absolute before:right-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-green-500 before:rounded-full">
-              اتصال مجاني بالإنترنت
-            </li>
-            <li
-              class="relative pr-6 before:absolute before:right-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-green-500 before:rounded-full">
-              منطقة جلوس واسعة
-            </li>
-            <li
-              class="relative pr-6 before:absolute before:right-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-green-500 before:rounded-full">
-              حمام خاص
-            </li>
-            <li
-              class="relative pr-6 before:absolute before:right-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-green-500 before:rounded-full">
-              شاشة تلفاز مسطحة
-            </li>
-            <li
-              class="relative pr-6 before:absolute before:right-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-green-500 before:rounded-full">
-              إطلالة رائعة
-            </li>
-          </ul>
+          <div class="text-lg font-semibold flex items-center gap-6 text-[#707070]">
+            <h3 class="text-textGreen">مسؤول مالي</h3>
+            <p>محمد عماد</p>
+            <p>125656555</p>
+          </div>
 
-          <p class="text-lg text-[#707070]">الغرفة مصممة بأسلوب يجمع بين الفخامة والراحة
-            لتوفير تجربة استثنائية لضيوفنا. يتم تنظيف الغرفة يوميًا
-            مع خدمة الغرف على مدار 24 ساعة</p>
-          <div class="flex items-center justify-between gap-4 ">
-
-            <div class="flex items-center justify-center gap-4">
-              <img class="h-7 w-auto" src="./src/assets/icons/home.svg" alt="home">
-              <div class="text-center">
-                <h3 class="text-lg font-semibold text-[#707070]">نوع الغرفة</h3>
-                <p class="text-textGreen font-semibold">سريرين وصالون</p>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-center gap-4">
-              <img class="h-7 w-auto" src="./src/assets/icons/dollar-sign.svg" alt="dollar">
-              <div class="text-center">
-                <h3 class="text-lg font-semibold text-[#707070]">السعر للليلة</h3>
-                <p class="text-textGreen font-semibold">70$</p>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-center gap-4">
-              <img class="h-7 w-auto" src="./src/assets/icons/location-filled.svg" alt="location">
-              <div class="text-center">
-                <h3 class="text-lg font-semibold text-[#707070]">الموقع</h3>
-                <p class="text-textGreen font-semibold">الرياض</p>
-              </div>
-            </div>
-
+          <div class="text-lg font-semibold flex items-center gap-6 text-[#707070]">
+            <h3 class="text-textGreen">مسؤول الحجوزات</h3>
+            <p>محمد عماد</p>
+            <p>125656555</p>
           </div>
         </div>
 
-        <!-- Swiper Container -->
-        <div class="flex-1 p-5 w-full">
-          <div class="flex items-center justify-center">
-            <swiper-container class="mySwiper w-full max-w-[250px] sm:max-w-[400px] h-[300px] md:h-[400px]" effect="cards" grab-cursor="true">
-              <swiper-slide class="flex items-center justify-center rounded-lg text-white font-bold text-xl bg-red-600">
-                <img class="w-full h-full" src="./src/assets/images/offer.png" alt="gallery">
-              </swiper-slide>
-              <swiper-slide
-                class="flex items-center justify-center rounded-lg text-white font-bold text-xl bg-blue-500">
-                <img class="w-full h-full" src="./src/assets/images/offer.png" alt="gallery">
-              </swiper-slide>
-              <swiper-slide
-                class="flex items-center justify-center rounded-lg text-white font-bold text-xl bg-green-500">
-                <img class="w-full h-full" src="./src/assets/images/offer.png" alt="gallery">
-              </swiper-slide>
-              <swiper-slide
-                class="flex items-center justify-center rounded-lg text-white font-bold text-xl bg-orange-600">
-                <img class="w-full h-full" src="./src/assets/images/offer.png" alt="gallery">
-              </swiper-slide>
-            </swiper-container>
+        <div class="flex-1 flex items-center justify-end">
+          <div class="relative flex flex-col justify-center items-center gap-2 border-2 border-textGreen rounded-md p-4 pt-20 w-full max-w-[300px]">
+            <div class="w-32 h-32 rounded-full border border-textGreen absolute -top-1/2 left-1/2 transform -translate-x-1/2 translate-y-[30px]">
+              <img class="w-full h-full object-cover" src="./src/assets/images/hotel.png" alt="hotel">
+            </div>
+            <h3 class="text-xl text-textGreen font-semibold">فندق الأمل</h3>
+            <p class="text-[#707070] mb-6">مقدم خدمة</p>
+            <div class="flex w-full items-center justify-between gap-2">
+              <span class="flex gap-2">
+                <img class="w-6 h-auto" src="./src/assets/icons/location-filled.svg" alt="location">
+                <p class="text-lg text-textGreen font-semibold">الرياض</p>
+              </span>
+              <div class="flex items-center gap-1">
+                <img class="w-4 min-w-4 h-4 min-h-4" src="./src/assets/icons/gray-star.svg" alt="rate">
+                <img class="w-4 min-w-4 h-4 min-h-4" src="./src/assets/icons/yellow-star.svg" alt="rate">
+                <img class="w-4 min-w-4 h-4 min-h-4" src="./src/assets/icons/yellow-star.svg" alt="rate">
+                <img class="w-4 min-w-4 h-4 min-h-4" src="./src/assets/icons/yellow-star.svg" alt="rate">
+                <img class="w-4 min-w-4 h-4 min-h-4" src="./src/assets/icons/yellow-star.svg" alt="rate">
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="float-left md:pl-20">
-        <a href="#" class="block w-fit bg-textGreen py-3 px-16 rounded-md text-white font-semibold">احجز الان</a>
+        <a href="#" class="block w-fit bg-textGreen py-3 px-16 rounded-md text-white font-semibold">تقديم طلب</a>
       </div>
 
     </section>
