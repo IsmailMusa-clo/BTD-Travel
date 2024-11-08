@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BTD Travel - Order Info</title>
+  <title>BTD Travel - Settings</title>
 
   <link rel="stylesheet" href="./dist/output.css">
 
@@ -62,6 +62,28 @@
         notificationsDropdownMenu.classList.add("hidden");
       }
     });
+
+    // Settings Toggle
+    function settingsToggle(btn) {
+      const basicInfo = document.getElementById("basic-info");
+      const generalSettings = document.getElementById("general-settings");
+      
+      const basicInfoBtn = document.querySelector(".basic-info-btn");
+      const generalSettingsBtn = document.querySelector(".general-settings-btn");
+
+      if (btn.classList.contains('basic-info-btn')) {
+        generalSettings.classList.add("hidden");
+        generalSettingsBtn.style.opacity = '0.6';
+        basicInfo.classList.remove("hidden");
+        basicInfoBtn.style.opacity = '1'
+      }else{
+        basicInfo.classList.add("hidden");
+        basicInfoBtn.style.opacity = '0.6';
+        generalSettings.classList.remove("hidden");
+        generalSettingsBtn.style.opacity = '1';
+      }
+    }
+
 
   </script>
 </head>
@@ -423,17 +445,135 @@
   </header>
 
   <!-- Main Section -->
-  <main class="my-20 bg-orderBgEffect bg-center bg-cover w-full min-h-screen">
+  <main class="wrapper my-20 flex flex-col sm:flex-row items-start justify-between  gap-10">
 
-    <section class="wrapper border-b border-[#69BE96]">
-
-      <div class="flex items-center justify-between gap-4 bg-white p-5 border-b border-[#707070]">
-        <div class="flex items-center gap-2">
-          <img class="w-6 h-6" src="./src/assets/icons/order-info-plus.svg" alt="plus">
-          <h3 class="text-xl font-semibold text-textGreen">بيانات الطلب</h3>
+    <section class="flex-1 w-full">
+      <div class="flex items-center flex-wrap justify-center md:justify-start gap-6 ">
+        <div class="w-32 h-32 rounded-full border border-textGreen relative">
+          <img class="w-full h-full object-cover" src="./src/assets/images/user.png" alt="user">
+          <span
+            class="absolute top-0 right-0 w-8 h-8 rounded-full bg-textGreen flex items-center justify-center cursor-pointer">
+            <img class="w-4" src="./src/assets/icons/camera.svg" alt="camera">
+          </span>
         </div>
-        <div class="flex items-center gap-2">
-          <p class="text-lg text-[#707070] font-semibold">استخدم بياناتي</p>
+        <h3 class="text-3xl font-bold text-textGreen">علاء أحمد</h3>
+      </div>
+      <div class="mt-6 flex-1 sm:max-w-[350px]">
+        <h2 class="text-2xl font-semibold text-[#707070]">الإعدادات</h2>
+
+        <div
+          onclick="settingsToggle(this)"
+          class="basic-info-btn flex-1 rounded-sm overflow-hidden bg-[#e8e8e8] cursor-pointer shadow-md h-14 align-middle flex items-center justify-between p-4 mt-6 border-r-8 border-textGreen">
+          <p class="text-lg font-medium">معلومات رئيسية</p>
+          <img class="w-5" src="./src/assets/icons/left-arrow.svg" alt="arrow">
+        </div>
+
+        <div
+          onclick="settingsToggle(this)"
+          class="general-settings-btn flex-1 rounded-sm overflow-hidden bg-[#e8e8e8] cursor-pointer shadow-md h-14 align-middle flex items-center justify-between p-4 mt-6 opacity-60">
+          <p class="text-lg font-medium">إعدادات عامة</p>
+          <img class="w-5" src="./src/assets/icons/left-arrow.svg" alt="arrow">
+        </div>
+      </div>
+    </section>
+
+    <section class="flex-1 w-full">
+
+      <div id="basic-info" class="my-6">
+        <h2 class="text-xl font-semibold">المعلومات الشخصية</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 [@media(min-width:1900px)]:grid-cols-3 gap-x-8 gap-y-4 my-6">
+
+          <div class="flex-1 mt-2">
+            <input name="name" type="text" required placeholder="الاسم"
+              class="block w-full py-2 px-4 text-[#707070] text-lg outline-none rounded-lg shadow-sm border border-textGreen bg-white">
+          </div>
+
+          <div class="flex-1 mt-2">
+            <input name="residence" type="text" required placeholder="الإقامة"
+              class="block w-full py-2 px-4 text-[#707070] text-lg outline-none rounded-lg shadow-sm border border-textGreen bg-white">
+          </div>
+
+          <div class="flex-1 mt-2">
+            <input name="country" type="text" required placeholder="الدولة"
+              class="block w-full py-2 px-4 text-[#707070] text-lg outline-none rounded-lg shadow-sm border border-textGreen bg-white">
+          </div>
+
+          <div class="flex-1 mt-2">
+            <input name="city" type="text" required placeholder="المدينة"
+              class="block w-full py-2 px-4 text-[#707070] text-lg outline-none rounded-lg shadow-sm border border-textGreen bg-white">
+          </div>
+
+          <div class="flex-1 mt-2">
+            <input name="email" type="email" required placeholder="البريد الإلكتروني"
+              class="block w-full py-2 px-4 text-[#707070] text-lg outline-none rounded-lg shadow-sm border border-textGreen bg-white">
+          </div>
+
+          <div class="flex-1 mt-2">
+            <input name="phone" type="text" required placeholder="رقم الهاتف"
+              class="block w-full py-2 px-4 text-[#707070] text-lg outline-none rounded-lg shadow-sm border border-textGreen bg-white">
+          </div>
+
+          <div class="flex-1 mt-2">
+            <input name="password" type="password" required placeholder="تغير كلمة المرور"
+              class="block w-full py-2 px-4 text-[#707070] text-lg outline-none rounded-lg shadow-sm border border-textGreen bg-white">
+          </div>
+
+          <div class="flex-1 mt-2">
+            <input name="password" type="password" required placeholder="تغير كلمة المرور"
+              class="block w-full py-2 px-4 text-[#707070] text-lg outline-none rounded-lg shadow-sm border border-textGreen bg-white">
+          </div>
+
+        </div>
+        <div class="flex items-center gap-4 justify-end">
+          <button type="submit" class="rounded-md bg-textGreen w-[180px] py-2 text-lg text-white shadow-sm">
+            حفظ
+          </button>
+          <button type="submit" class="rounded-md bg-[#BB5656] w-[180px] py-2 text-lg text-white shadow-sm">
+            تسجيل الخروج
+          </button>
+        </div>
+      </div>
+
+      <div id="general-settings" class="my-6 hidden">
+        <div class="flex items-center gap-10 border-b border-[#707070] py-4">
+          <h3 class="text-2xl font-semibold">نوع العميل</h3>
+          <div class="flex items-center gap-3">
+            <input type="radio" name="clientType" id="noraml"
+              class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-[#707070] text-lg outline-none accent-emerald-600 checked:text-textGreen">
+            <label for="noraml" class="block text-xl font-medium text-[#707070]">عادي</label>
+          </div>
+          <div class="flex items-center gap-3">
+            <input type="radio" name="clientType" id="business"
+              class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-[#707070] text-lg outline-none accent-emerald-600 checked:text-textGreen">
+            <label for="business" class="block text-xl font-medium text-[#707070]">أعمال</label>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 py-4">
+          <div class="flex items-center gap-3">
+            <input type="radio" name="clientType" id="single"
+              class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-[#707070] text-lg outline-none accent-emerald-600 checked:text-textGreen">
+            <label for="single" class="block text-xl font-medium text-[#707070]">فردي</label>
+          </div>
+          <div class="flex items-center gap-3">
+            <input type="radio" name="clientType" id="tourismCompany"
+              class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-[#707070] text-lg outline-none accent-emerald-600 checked:text-textGreen">
+            <label for="tourismCompany" class="block text-xl font-medium text-[#707070]">وكيل شركة سياحية</label>
+          </div>
+          <div class="flex items-center gap-3">
+            <input type="radio" name="clientType" id="tradingComapny"
+              class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-[#707070] text-lg outline-none accent-emerald-600 checked:text-textGreen">
+            <label for="tradingComapny" class="block text-xl font-medium text-[#707070]">وكيل شركة تجارية</label>
+          </div>
+          <div class="flex items-center gap-3">
+            <input type="radio" name="clientType" id="govermentDepartment"
+              class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-[#707070] text-lg outline-none accent-emerald-600 checked:text-textGreen">
+            <label for="govermentDepartment" class="block text-xl font-medium text-[#707070]">وكيل دائرة حكومية</label>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-10 border-b border-[#707070] py-4">
+          <p class="text-xl font-semibold">الإشعارات</p>
           <label class="relative inline-flex items-center cursor-pointer w-16 h-8">
             <input type="checkbox" class="sr-only peer">
             <span
@@ -442,194 +582,15 @@
               class="absolute top-1/2 left-1 w-5 h-5 bg-white rounded-full transform -translate-y-1/2 transition duration-300 peer-checked:left-10"></span>
           </label>
         </div>
-      </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
-
-        <div class="flex-1">
-          <label for="name" class="block font-medium text-[#707070]">الاسم</label>
-          <div class="mt-2">
-            <input id="name" name="name" type="text" required
-              class="block w-full  py-2 px-4 text-[#707070] text-lg font-medium outline-none rounded-lg shadow-sm border border-textGreen bg-white">
-          </div>
+        <div class="flex items-center gap-4 justify-end mt-6">
+          <button type="submit" class="rounded-md bg-textGreen w-[180px] py-2 text-lg text-white shadow-sm">
+            حفظ
+          </button>
+          <button type="submit" class="rounded-md bg-[#BB5656] w-[180px] py-2 text-lg text-white shadow-sm">
+            تسجيل الخروج
+          </button>
         </div>
-
-        <div class="flex-1">
-          <label for="email" class="block font-medium text-[#707070]">البريد الإلكتروني</label>
-          <div class="mt-2">
-            <input id="email" name="email" type="email" required
-              class="block w-full  py-2 px-4 text-[#707070] text-lg font-medium outline-none rounded-lg shadow-sm border border-textGreen bg-white">
-          </div>
-        </div>
-
-        <div class="flex-1">
-          <label for="phone" class="block font-medium text-[#707070]">رقم الجوال</label>
-          <div class="mt-2">
-            <input id="phone" name="phone" type="text" required
-              class="block w-full py-2 px-4 text-[#707070] text-lg font-medium outline-none rounded-lg shadow-sm border border-textGreen bg-white">
-          </div>
-        </div>
-
-        <div class="flex-1">
-          <label for="country" class="block font-medium text-[#707070]">الدولة</label>
-          <select id="country" name="country"
-            class="mt-2 block flex-1 min-w-[170px] w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
-            <option class="font-semibold text-textGreen" value="" disabled selected></option>
-            <option class="font-semibold text-textGreen" value="option2">فلسطين</option>
-            <option class="font-semibold text-textGreen" value="option3">لبنان</option>
-            <option class="font-semibold text-textGreen" value="option4">تركيا</option>
-          </select>
-        </div>
-
-        <div class="flex-1">
-          <label for="city" class="block font-medium text-[#707070]">المدينة</label>
-          <select id="city" name="city"
-            class="mt-2 block flex-1 min-w-[170px] w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
-            <option class="font-semibold text-textGreen" value="" disabled selected></option>
-            <option class="font-semibold text-textGreen" value="option2">غزة</option>
-            <option class="font-semibold text-textGreen" value="option3">القدس</option>
-            <option class="font-semibold text-textGreen" value="option4">نابلس</option>
-          </select>
-        </div>
-
-        <div class="flex-1">
-          <label for="preferredHotels" class="block font-medium text-[#707070]">الفنادق المفضلة</label>
-          <select id="preferredHotels" name="preferredHotels"
-            class="mt-2 block flex-1 min-w-[170px] w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
-            <option class="font-semibold text-textGreen" value="" disabled selected></option>
-            <option class="font-semibold text-textGreen" value="option2">فندق الرشيد</option>
-            <option class="font-semibold text-textGreen" value="option3">فندق اسطنبول</option>
-            <option class="font-semibold text-textGreen" value="option4">فندق اخر</option>
-          </select>
-        </div>
-
-        <div class="flex-1">
-          <label for="meal" class="block font-medium text-[#707070]">نوع الوجبة</label>
-          <select id="meal" name="meal"
-            class="mt-2 block flex-1 min-w-[170px] w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
-            <option class="font-semibold text-textGreen" value="" disabled selected></option>
-            <option class="font-semibold text-textGreen" value="option4">فطور</option>
-            <option class="font-semibold text-textGreen" value="option4">فطور - غداء</option>
-            <option class="font-semibold text-textGreen" value="option4">فطور - عشاء</option>
-            <option class="font-semibold text-textGreen" value="option4">غداء</option>
-            <option class="font-semibold text-textGreen" value="option4">غداء - عشاء</option>
-            <option class="font-semibold text-textGreen" value="option4">عشاء</option>
-          </select>
-        </div>
-
-        <div class="flex-1">
-          <label for="kitchen" class="block font-medium text-[#707070]">نوع المطلبخ</label>
-          <select id="kitchen" name="kitchen"
-            class="mt-2 block flex-1 min-w-[170px] w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
-            <option class="font-semibold text-textGreen" value="" disabled selected></option>
-            <option class="font-semibold text-textGreen" value="option4">داخلي</option>
-            <option class="font-semibold text-textGreen" value="option4">خارجي</option>
-            <option class="font-semibold text-textGreen" value="option4">بدون مطبخ</option>
-          </select>
-        </div>
-
-        <div class="flex-1">
-          <label for="orderDuration" class="block font-medium text-[#707070]">مدة العرض</label>
-          <div
-            class="mt-2 flex flex-1 min-w-[170px] rounded-lg shadow-sm border border-textGreen overflow-hidden bg-white">
-            <input type="text" name="orderDuration" id="orderDuration"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-textGreen text-lg font-medium outline-none">
-            <span class="w-1/6 bg-textGreen text-white flex items-center justify-center text-lg">يوم</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="wrapper mt-6">
-
-      <div class="flex items-center justify-between flex-wrap gap-4 bg-white px-5 py-3 border-b border-[#707070]">
-        <div class="flex items-center gap-2">
-          <img class="w-6 h-6" src="./src/assets/icons/rooms-info.svg" alt="plus">
-          <h3 class="text-xl font-semibold text-textGreen">بيانات الغرف</h3>
-        </div>
-        <div class="flex items-center">
-          <div
-            class="flex flex-1 min-w-[170px] rounded-lg rounded-tl-none rounded-bl-none shadow-sm border border-textGreen sm:max-w-md overflow-hidden bg-white">
-            <input type="date" name="arriving-date" dir="ltr"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] text-lg font-medium outline-none"
-              placeholder="تاريخ الوصول">
-          </div>
-
-          <div
-            class="flex flex-1 min-w-[170px] rounded-lg rounded-tr-none rounded-br-none shadow-sm border border-textGreen sm:max-w-md overflow-hidden">
-            <input type="date" name="leaving-date" dir="ltr"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] text-lg font-medium outline-none placeholder-shown:text-textGreen placeholder-shown:italic color-scheme-dark"
-              placeholder="تاريخ المغادرة">
-          </div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-4 my-6">
-
-        <div class="flex-1 lg:col-span-3">
-          <label for="roomDetails" class="block font-medium text-[#707070]">تفاصيل الغرفة</label>
-          <div class="flex items-center gap-4 mt-2">
-            <select name="roomDetails"
-              class="block min-w-[170px] w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-normal text-[#707070] focus:outline-none focus:ring-textGreen focus:border-textGreen">
-              <option class="font-normal text-textGreen" value="" disabled selected>تفاصيل الغرفة</option>
-              <option class="font-semibold text-textGreen" value="option4">غرفة بثلاث أسرة وحمام</option>
-              <option class="font-semibold text-textGreen" value="option2">غرفة بسريرين وحمام</option>
-              <option class="font-semibold text-textGreen" value="option3">غرفة بسرير وحمام</option>
-            </select>
-
-            <div class="flex min-w-[70px] rounded-lg shadow-sm border border-textGreen bg-white">
-              <input type="number" name="roomsNumber"
-                class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-[#707070] text-lg outline-none"
-                placeholder="عدد الغرف">
-            </div>
-          </div>
-        </div>
-
-        <div class="flex-1 lg:col-span-3">
-          <label class="block font-medium text-[#707070]">عدد الأفراد</label>
-          <div class="flex flex-1 items-center gap-4 mt-2">
-            <div class="flex flex-1  min-w-[70px] rounded-lg shadow-sm border border-textGreen bg-white">
-              <input type="number" name="adaltsNumbers"
-                class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-[#707070] text-lg outline-none"
-                placeholder="البالغين">
-            </div>
-
-            <div class="flex flex-1 min-w-[70px] rounded-lg shadow-sm border border-textGreen bg-white">
-              <input type="number" name="tenagersNumbers"
-                class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-[#707070] text-lg outline-none"
-                placeholder="اليافعين">
-            </div>
-
-            <div class="flex flex-1 min-w-[70px] rounded-lg shadow-sm border border-textGreen bg-white">
-              <input type="number" name="childrenNumbers"
-                class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-[#707070] text-lg outline-none"
-                placeholder="الأطفال">
-            </div>
-          </div>
-        </div>
-
-        <div class="flex-1 lg:col-span-1">
-          <label for="roomMembersCount" class="block font-medium text-[#707070]">سعة الغرفة</label>
-          <div class="flex min-w-[70px] rounded-lg shadow-sm border border-textGreen bg-white mt-2">
-            <input type="number" name="roomMembersCount" id="roomMembersCount"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-[#707070] text-lg outline-none"
-              placeholder="سعة الغرفة">
-          </div>
-        </div>
-
-      </div>
-
-      <div class="w-full flex flex-col items-end">
-        <div class="flex flex-1 w-full rounded-lg shadow-lg border border-textGreen overflow-hidden mb-6 bg-white">
-          <textarea type="date" name="order-data"
-            class="block w-full h-60 border-0 bg-transparent py-2 px-4 text-[#707070]  placeholder:text-base text-lg font-normal outline-none"
-            placeholder="قم بكتابة البيانات الوصفية للفندق المطلوب"></textarea>
-        </div>
-
-        <button type="submit"
-          class="rounded-md  bg-textGreen w-[250px] h-12 text-2xl font-bold text-white shadow-sm hover:bg-mainGreen">نشر
-          الان</button>
       </div>
     </section>
 
