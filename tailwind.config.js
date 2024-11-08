@@ -13,7 +13,8 @@ module.exports = {
         lightGray: '#F7F9FB',
       },
       backgroundImage: {
-        backgroundEffect: "url('../src/assets/images/background-effect.png')"
+        backgroundEffect: "url('../src/assets/images/background-effect.png')",
+        orderBgEffect: "url('../src/assets/images/background-effect.png')"
       }
     },
   },
