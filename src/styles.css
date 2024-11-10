@@ -77,3 +77,12 @@
   font-weight: 200;
   src: url('../src/assets/fonts/Cairo-ExtraLight.ttf') format('truetype');
 }
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
