@@ -4,17 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BTD Travel - Offer Details</title>
+  <title>BTD Travel - Favorite</title>
 
   <link rel="stylesheet" href="./dist/output.css">
-
-  <link rel="stylesheet" href="./css/owl.carousel.min.css">
-  <link rel="stylesheet" href="./css/owl.theme.default.min.css">
-
-  <script src="./js/jquery.js"></script>
-  <script src="./js/owl.carousel.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
   <script>
     // Profile Menu Toggle
@@ -71,17 +63,6 @@
       }
     });
 
-    // Testimonials Carousel
-    $(document).ready(function () {
-      $(".owl-carousel").owlCarousel({
-        loop: true,
-        autoWidth: true,
-        // autoplay: true,
-        autoplayTimeout: 1000,
-        autoplayHoverPause: true,
-        dots: false
-      })
-    })
   </script>
 </head>
 
@@ -339,7 +320,7 @@
 
                   </div>
 
-                  <a href="./notifications.html" class="block font-bold text-center text-white bg-textGreen text-lg py-3 cursor-pointer">
+                  <a href="./notifications.html" class=" block font-bold text-center text-white bg-textGreen text-lg py-3 cursor-pointer">
                     عرض جميع الإشعارات
                   </a>
                 </div>
@@ -347,7 +328,7 @@
             </div>
 
             <div class="flex rounded-lg border-0 md:border border-textGreen sm:max-w-md pl-4">
-              <input type="text" name="search" cursor-pointer
+              <input type="text" name="search"
                 class="w-[85%] hidden md:block flex-1 border-0 bg-transparent py-2 px-4 text-textGray placeholder:text-textGreen placeholder:font-semibold text-lg font-medium outline-none"
                 placeholder="البحث">
               <img class="w-6 min-w-6" src="./src/assets/icons/search.svg" alt="search">
@@ -441,260 +422,509 @@
     </div>
   </header>
 
-  <!-- Main Section -->
-  <main class="my-20 flex flex-col gap-20">
+  <section class="wrapper mt-10">
 
-    <section class="wrapper">
 
-      <div class="flex flex-col-reverse gap-12 md:flex-row items-center justify-between mb-16">
-        <div class="flex flex-col gap-8 flex-1">
-          <h3 class="text-xl font-semibold text-[#707070]">غرفة فاخرة للإيجار في فندقنا</h3>
-          <p class="text-lg text-[#707070]">استمتع بالإقامة في واحدة من غرفنا الفاخرة المجهزة
-            بكل وسائل الراحة الحديثة. تتضمن الغرفة</p>
+    <div class="flex flex-col sm:flex-row justify-around gap-4 ">
 
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 list-none">
-            <li
-              class="relative pr-6 before:absolute before:right-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-green-500 before:rounded-full">
-              سريرين مزدوج مريح
-            </li>
-            <li
-              class="relative pr-6 before:absolute before:right-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-green-500 before:rounded-full">
-              اتصال مجاني بالإنترنت
-            </li>
-            <li
-              class="relative pr-6 before:absolute before:right-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-green-500 before:rounded-full">
-              منطقة جلوس واسعة
-            </li>
-            <li
-              class="relative pr-6 before:absolute before:right-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-green-500 before:rounded-full">
-              حمام خاص
-            </li>
-            <li
-              class="relative pr-6 before:absolute before:right-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-green-500 before:rounded-full">
-              شاشة تلفاز مسطحة
-            </li>
-            <li
-              class="relative pr-6 before:absolute before:right-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-green-500 before:rounded-full">
-              إطلالة رائعة
-            </li>
-          </ul>
+      <!-- Filter Section -->
+      <div class="w-full sm:w-[30%]">
+        <h3 class="flex flex-col gap-1 mb-8">
+          <span class="text-xl font-bold text-[#707070]">الرئيسية</span>
+          <span class="text-xl font-bold text-textGreen">قائمة المفضلة</span>
+        </h3>
+        <aside
+          class="sm:bg-white sm:shadow-lg rounded-xl p-6 flex flex-row sm:flex-col flex-wrap gap-8 w-full h-fit mb-6">
 
-          <p class="text-lg text-[#707070]">الغرفة مصممة بأسلوب يجمع بين الفخامة والراحة
-            لتوفير تجربة استثنائية لضيوفنا. يتم تنظيف الغرفة يوميًا
-            مع خدمة الغرف على مدار 24 ساعة</p>
-          <div class="flex items-center justify-between gap-4 ">
-
-            <div class="flex items-center justify-center gap-4">
-              <img class="h-7 w-auto" src="./src/assets/icons/home.svg" alt="home">
-              <div class="text-center">
-                <h3 class="text-lg font-semibold text-[#707070]">نوع الغرفة</h3>
-                <p class="text-textGreen font-semibold">سريرين وصالون</p>
-              </div>
+          <div
+            class="flex-1 min-w-[170px] sm:min-w-0 sm:w-full flex items-center justify-between gap-2 rounded-lg shadow-sm border-2 border-mainGreen px-4">
+            <input type="text" name="search"
+              class="border-0 bg-transparent py-2 text-textGray placeholder:text-textGreen placeholder:font-semibold text-lg font-medium outline-none w-[85%]"
+              placeholder="البحث">
+            <div class="min-w-6">
+              <img class="w-6" src="./src/assets/icons/search.svg" alt="search">
             </div>
-
-            <div class="flex items-center justify-center gap-4">
-              <img class="h-7 w-auto" src="./src/assets/icons/dollar-sign.svg" alt="dollar">
-              <div class="text-center">
-                <h3 class="text-lg font-semibold text-[#707070]">السعر للليلة</h3>
-                <p class="text-textGreen font-semibold">70$</p>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-center gap-4">
-              <img class="h-7 w-auto" src="./src/assets/icons/location-filled.svg" alt="location">
-              <div class="text-center">
-                <h3 class="text-lg font-semibold text-[#707070]">الموقع</h3>
-                <p class="text-textGreen font-semibold">الرياض</p>
-              </div>
-            </div>
-
           </div>
-        </div>
 
-        <!-- Swiper Container -->
-        <div class="flex-1 p-5 w-full">
-          <div class="flex items-center justify-center">
-            <swiper-container class="mySwiper w-full max-w-[250px] sm:max-w-[400px] h-[300px] md:h-[400px]" effect="cards" grab-cursor="true">
-              <swiper-slide class="flex items-center justify-center rounded-lg text-white font-bold text-xl bg-red-600">
-                <img class="w-full h-full" src="./src/assets/images/offer.png" alt="gallery">
-              </swiper-slide>
-              <swiper-slide
-                class="flex items-center justify-center rounded-lg text-white font-bold text-xl bg-blue-500">
-                <img class="w-full h-full" src="./src/assets/images/offer.png" alt="gallery">
-              </swiper-slide>
-              <swiper-slide
-                class="flex items-center justify-center rounded-lg text-white font-bold text-xl bg-green-500">
-                <img class="w-full h-full" src="./src/assets/images/offer.png" alt="gallery">
-              </swiper-slide>
-              <swiper-slide
-                class="flex items-center justify-center rounded-lg text-white font-bold text-xl bg-orange-600">
-                <img class="w-full h-full" src="./src/assets/images/offer.png" alt="gallery">
-              </swiper-slide>
-            </swiper-container>
+          <select id="options" name="options" aria-placeholder=""
+            class="block flex-1 min-w-[170px] sm:min-w-0 sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-mainGreen">
+            <option class="font-semibold text-textGreen" value="" disabled selected>المدينة</option>
+            <option class="font-semibold text-textGreen" value="option2">الرياض</option>
+            <option class="font-semibold text-textGreen" value="option3">جدة</option>
+            <option class="font-semibold text-textGreen" value="option4">الشارقة</option>
+          </select>
+
+          <select id="options" name="options" aria-placeholder=""
+            class="block flex-1 min-w-[170px] sm:min-w-0 sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
+            <option class="font-semibold text-textGreen" value="" disabled selected>الفندق</option>
+            <option class="font-semibold text-textGreen" value="option2">فندق الرشيد</option>
+            <option class="font-semibold text-textGreen" value="option3">فندق اسطنبول</option>
+            <option class="font-semibold text-textGreen" value="option4">فندق اخر</option>
+          </select>
+
+          <select id="options" name="options" aria-placeholder=""
+            class="flex-1 min-w-[170px] sm:min-w-0 max-h-[42px] block sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
+            <option class="font-semibold text-textGreen" value="" disabled selected>الفئة</option>
+            <option class="font-semibold text-textGreen" value="option2">فئة 1</option>
+            <option class="font-semibold text-textGreen" value="option2">فئة 2</option>
+            <option class="font-semibold text-textGreen" value="option2">فئة 3</option>
+          </select>
+
+          <div class="flex-1 min-w-[170px] sm:min-w-0 sm:w-full">
+            <label for="price" class="font-semibold text-textGreen self-end w-full text-lg">السعر</label>
+            <input dir="ltr" type="range" min="0" max="100" value="0" class="w-full h-2 bg-[#707070] rounded-lg appearance-none cursor-pointer
+                  accent-mainGreen
+                  range-thumb" />
+            <div class="flex items-center justify-between w-full">
+              <span class="text-sm font-bold text-mainGreen">1000$</span>
+              <span class="text-sm font-bold text-mainGreen">0$</span>
+            </div>
           </div>
-        </div>
+
+          <div class="flex-1 min-w-[170px] sm:min-w-0 sm:w-full">
+            <label for="price" class="font-semibold text-textGreen self-end w-full text-lg">تاريخ النشر</label>
+            <input dir="ltr" type="range" min="0" max="100" value="0" class="w-full h-2 bg-[#707070] rounded-lg appearance-none cursor-pointer
+                  accent-mainGreen
+                  range-thumb" />
+            <div class="flex items-center justify-between w-full">
+              <span class="text-sm font-bold text-mainGreen">30 يوم</span>
+              <span class="text-sm font-bold text-mainGreen">1 ساعة</span>
+            </div>
+          </div>
+        </aside>
       </div>
 
-      <div class="float-left md:pl-20">
-        <a href="#" class="block w-fit bg-textGreen py-3 px-16 rounded-md text-white font-semibold">احجز الان</a>
-      </div>
+      <main class="w-full sm:w-[60%] max-w-[800px]">
 
-    </section>
+        <!-- Post 1  -->
+        <div class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
 
-    <section>
-      <div class="wrapper relative mb-32">
-
-        <h2 class="text-textGreen text-3xl font-bold text-center mx-auto">تقيمات عملاؤنا</h2>
-
-        <div class="absolute top-10 right-0 w-20 h-28 bg-textGreen rounded-2xl"></div>
-        <div class="absolute -bottom-6 left-0 w-20 h-28 bg-textGreen rounded-2xl"></div>
-
-        <!-- <div class="owl-carousel w-[700px] p-[10px] md:p-6 lg:p-7 mb-7 lg:mb-20 xl:mb-[100px]"> -->
-        <div
-          class="w-full flex flex-col md:flex-row items-center justify-between gap-4 p-0 lg:px-8 z-10 relative mt-8 mb-14">
-          <div class="w-full flex items-center gap-4 bg-white rounded-xl shadow-xl py-10 px-4 lg:p-10">
-            <div class="rounded-full relative">
-              <img class="w-16 h-16 rounded-full object-cover" src="./src/assets/images/testimonial.png"
-                alt="testimonial">
-              <img class="absolute -bottom-2 left-1/5 w-5 h-5" src="./src/assets/icons/green-heart.svg" alt="heart">
+          <div class="flex items-center gap-4 w-full">
+            <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
+              <img class="w-full h-full object-fill" src="./src/assets/images/Avatar.png" alt="User Profile" />
             </div>
-            <div>
-              <h3 class="text-xl font-semibold mb-4">خالد الأحمد</h3>
-              <div class="flex items-center gap-1 mb-4">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-              </div>
-              <p class="text-[#707070] text-xl">
-                <span class="border-b border-textGreen pb-1">كانت</span>
-                <span>تجربة إستثنائية</span>
+
+            <div class="flex-1">
+              <h3 class="font-semibold md:text-lg !leading-[1.2]">أحمد العيسى</h3>
+              <p class="text-sm text-mainGreen font-normal leading-[1]">عميل جديد</p>
+              <p class="flex items-center gap-1 mt-1">
+                <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                <span class="text-[8px] text-[#707070]">منذ ساعة</span>
               </p>
             </div>
+
+            <div class="flex items-end">
+              <span class="text=[12px] font-bold transform translate-x-[-16px]">20 يوم</span>
+              <img class="w-10 h-10" src="./src/assets/icons/post-time.svg" alt="time">
+            </div>
           </div>
 
-          <div class="w-full flex items-center gap-4 bg-white rounded-xl shadow-xl py-10 px-4 lg:p-10">
-            <div class="rounded-full relative">
-              <img class="w-16 h-16 rounded-full object-cover" src="./src/assets/images/testimonial.png"
-                alt="testimonial">
-              <img class="absolute -bottom-2 left-1/5 w-5 h-5" src="./src/assets/icons/green-heart.svg" alt="heart">
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold mb-4">خالد الأحمد</h3>
-              <div class="flex items-center gap-1 mb-4">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
+          <div class="px-2">
+            <p class="text-[#707070] font-semibold text-lg">
+              مرحباً ابحث عن شركة او فندق سياحي في القاهرة من اجل الإقامة يرجى وضع التكلفة مقابل الخدمة للليلة الواحدة
+            </p>
+          </div>
+
+          <div class="flex items-center flex-wrap gap-6">
+
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/location-filled.svg" alt="location">
+              <div>
+                <h3 class="text-xl text-mainGreen font-bold">الإقامة</h3>
+                <p class="font-semibold text-sm">اسطنبول</p>
               </div>
-              <p class="text-[#707070] text-xl">
-                <span class="border-b border-textGreen pb-1">كانت</span>
-                <span>تجربة إستثنائية</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/dollar-sign.svg" alt="location">
+              <div>
+                <h3 class="text-xl text-mainGreen font-bold">التكلفة اليومية</h3>
+                <p class="font-semibold text-sm">50$-100$</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/clock-filled.svg" alt="location">
+              <div>
+                <h3 class="text-xl text-mainGreen font-bold">تاريخ الوصول</h3>
+                <p class="font-semibold text-sm">20/10/2024</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/clock-filled.svg" alt="location">
+              <div>
+                <h3 class="text-xl text-mainGreen font-bold">تاريخ المغادرة</h3>
+                <p class="font-semibold text-sm">30/10/2024</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/hotel.svg" alt="location">
+              <div class="flex items-center gap-1 font-normal text-[#707070] text-lg">
+                <p>فندق الرياض</p>
+                <span>-</span>
+                <p>فندق الرشيد</p>
+                <span>-</span>
+                <p>فندق النجوم</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/dish.svg" alt="location">
+              <div>
+                <div class="flex items-center gap-1 font-normal text-[#707070] text-lg leading-[1]">
+                  <p>إفطار</p>
+                  <span>-</span>
+                  <p>عشاء</p>
+                </div>
+                <span class="text-[#707070] text-sm">مطبخ إيطالي</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="flex items-center justify-between gap-2 w-full">
+
+            <div class="flex items-center gap-2 cursor-pointer">
+              <img class="h-10" src="./src/assets/icons/start-chat.svg" alt="heart">
+              <div>
+                <p class="font-normal text-[#707070] hidden sm:block">بيانات الطلب</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 cursor-pointer">
+              <img class="h-7" src="./src/assets/icons/heart.svg" alt="heart">
+              <div>
+                <p class="font-normal text-[#707070] hidden sm:block">اضف الى المفضلة</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <div>
+                <p class="font-bold text-[#707070]">عدد العروض</p>
+              </div>
+              <div
+                class="w-11 h-11 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center">
+                25
+              </div>
+              <!-- <div class="relative">
+                <div
+                  class="w-11 h-11 opacity-20 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center absolute z-9 left-1">
+                </div>
+                <div
+                  class="w-11 h-11 opacity-30 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center absolute z-8 left-2">
+                </div>
+                <div
+                  class="w-11 h-11 opacity-40 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center absolute z-7 left-3">
+                </div>
+                <div
+                  class="w-11 h-11 opacity-50 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center absolute z-6 left-4">
+                </div>
+                <div
+                  class="w-11 h-11 opacity-60 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center absolute z-5 left-5">
+                </div>
+                <div
+                  class="w-11 h-11 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center absolute z-4 left-6">
+                25
+                </div>
+              </div> -->
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Post 2  -->
+        <div class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
+
+          <div class="flex items-center gap-4 w-full">
+            <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
+              <img class="w-full h-full object-fill" src="./src/assets/images/Avatar.png" alt="User Profile" />
+            </div>
+
+            <div class="flex-1">
+              <h3 class="font-semibold md:text-lg !leading-[1.2]">أحمد العيسى</h3>
+              <p class="text-sm text-mainGreen font-normal leading-[1]">عميل جديد</p>
+              <p class="flex items-center gap-1 mt-1">
+                <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                <span class="text-[8px] text-[#707070]">منذ ساعة</span>
               </p>
             </div>
+
+            <div class="flex items-end">
+              <span class="text=[12px] font-bold transform translate-x-[-16px]">20 يوم</span>
+              <img class="w-10 h-10" src="./src/assets/icons/post-time.svg" alt="time">
+            </div>
           </div>
 
-          <div class="w-full flex items-center gap-4 bg-white rounded-xl shadow-xl py-10 px-4 lg:p-10">
-            <div class="rounded-full relative">
-              <img class="w-16 h-16 rounded-full object-cover" src="./src/assets/images/testimonial.png"
-                alt="testimonial">
-              <img class="absolute -bottom-2 left-1/5 w-5 h-5" src="./src/assets/icons/green-heart.svg" alt="heart">
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold mb-4">خالد الأحمد</h3>
-              <div class="flex items-center gap-1 mb-4">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
+          <div class="px-2">
+            <p class="text-[#707070] font-semibold text-lg">
+              مرحباً ابحث عن شركة او فندق سياحي في القاهرة من اجل الإقامة يرجى وضع التكلفة مقابل الخدمة للليلة الواحدة
+            </p>
+          </div>
+
+          <div class="flex items-center flex-wrap gap-6">
+
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/location-filled.svg" alt="location">
+              <div>
+                <h3 class="text-xl text-mainGreen font-bold">الإقامة</h3>
+                <p class="font-semibold text-sm">اسطنبول</p>
               </div>
-              <p class="text-[#707070] text-xl">
-                <span class="border-b border-textGreen pb-1">كانت</span>
-                <span>تجربة إستثنائية</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/dollar-sign.svg" alt="location">
+              <div>
+                <h3 class="text-xl text-mainGreen font-bold">التكلفة اليومية</h3>
+                <p class="font-semibold text-sm">50$-100$</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/clock-filled.svg" alt="location">
+              <div>
+                <h3 class="text-xl text-mainGreen font-bold">تاريخ الوصول</h3>
+                <p class="font-semibold text-sm">20/10/2024</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/clock-filled.svg" alt="location">
+              <div>
+                <h3 class="text-xl text-mainGreen font-bold">تاريخ المغادرة</h3>
+                <p class="font-semibold text-sm">30/10/2024</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/hotel.svg" alt="location">
+              <div class="flex items-center gap-1 font-normal text-[#707070] text-lg">
+                <p>فندق الرياض</p>
+                <span>-</span>
+                <p>فندق الرشيد</p>
+                <span>-</span>
+                <p>فندق النجوم</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/dish.svg" alt="location">
+              <div>
+                <div class="flex items-center gap-1 font-normal text-[#707070] text-lg leading-[1]">
+                  <p>إفطار</p>
+                  <span>-</span>
+                  <p>عشاء</p>
+                </div>
+                <span class="text-[#707070] text-sm">مطبخ إيطالي</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="flex items-center justify-between gap-2 w-full">
+
+            <div class="flex items-center gap-2 cursor-pointer">
+              <img class="h-10" src="./src/assets/icons/start-chat.svg" alt="heart">
+              <div>
+                <p class="font-normal text-[#707070] hidden sm:block">بيانات الطلب</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 cursor-pointer">
+              <img class="h-7" src="./src/assets/icons/heart.svg" alt="heart">
+              <div>
+                <p class="font-normal text-[#707070] hidden sm:block">اضف الى المفضلة</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <div>
+                <p class="font-bold text-[#707070]">عدد العروض</p>
+              </div>
+              <div
+                class="w-11 h-11 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center">
+                25
+              </div>
+              <!-- <div class="flex items-center">
+                <div
+                  class="w-11 h-11 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center">
+                  25
+                </div>
+                <div
+                  class="w-11 h-11 opacity-20 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center transform translate-x-[40px]">
+                </div>
+                <div
+                  class="w-11 h-11 opacity-25 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center transform translate-x-[45px]">
+                </div>
+                <div
+                  class="w-11 h-11 opacity-30 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center transform translate-x-[50px]">
+                </div>
+                <div
+                  class="w-11 h-11 opacity-35 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center transform translate-x-[55px]">
+                </div>
+                <div
+                  class="w-11 h-11 opacity-40 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center transform translate-x-[60px]">
+                </div>
+                <div
+                  class="w-11 h-11 opacity-45 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center transform translate-x-[65px]">
+                </div>
+
+              </div> -->
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Post 3  -->
+        <div class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
+
+          <div class="flex items-center gap-4 w-full">
+            <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
+              <img class="w-full h-full object-fill" src="./src/assets/images/Avatar.png" alt="User Profile" />
+            </div>
+
+            <div class="flex-1">
+              <h3 class="font-semibold md:text-lg !leading-[1.2]">أحمد العيسى</h3>
+              <p class="text-sm text-mainGreen font-normal leading-[1]">عميل جديد</p>
+              <p class="flex items-center gap-1 mt-1">
+                <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                <span class="text-[8px] text-[#707070]">منذ ساعة</span>
               </p>
             </div>
+
+            <div class="flex items-end">
+              <span class="text=[12px] font-bold transform translate-x-[-16px]">20 يوم</span>
+              <img class="w-10 h-10" src="./src/assets/icons/post-time.svg" alt="time">
+            </div>
           </div>
 
-          <!-- <div class="w-[300px] flex items-center gap-4 bg-white rounded-xl shadow-xl p-10">
-            <div class="rounded-full relative">
-              <img class="w-16 h-16 rounded-full object-cover" src="./src/assets/images/testimonial.png"
-                alt="testimonial">
-              <img class="absolute -bottom-2 left-1/5 w-5 h-5" src="./src/assets/icons/green-heart.svg" alt="heart">
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold mb-4">خالد الأحمد</h3>
-              <div class="flex items-center gap-1 mb-4">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
+          <div class="px-2">
+            <p class="text-[#707070] font-semibold text-lg">
+              مرحباً ابحث عن شركة او فندق سياحي في القاهرة من اجل الإقامة يرجى وضع التكلفة مقابل الخدمة للليلة الواحدة
+            </p>
+          </div>
+
+          <div class="flex items-center flex-wrap gap-6">
+
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/location-filled.svg" alt="location">
+              <div>
+                <h3 class="text-xl text-mainGreen font-bold">الإقامة</h3>
+                <p class="font-semibold text-sm">اسطنبول</p>
               </div>
-              <p class="text-[#707070] text-xl">
-                <span class="border-b border-textGreen pb-1">كانت</span>
-                <span>تجربة إستثنائية</span>
-              </p>
             </div>
-          </div>
 
-          <div class="w-[300px] flex items-center gap-4 bg-white rounded-xl shadow-xl p-10">
-            <div class="rounded-full relative">
-              <img class="w-16 h-16 rounded-full object-cover" src="./src/assets/images/testimonial.png"
-                alt="testimonial">
-              <img class="absolute -bottom-2 left-1/5 w-5 h-5" src="./src/assets/icons/green-heart.svg" alt="heart">
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold mb-4">خالد الأحمد</h3>
-              <div class="flex items-center gap-1 mb-4">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
-                <img class="w-6 h-6" src="./src/assets/icons/green-star.svg" alt="star">
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/dollar-sign.svg" alt="location">
+              <div>
+                <h3 class="text-xl text-mainGreen font-bold">التكلفة اليومية</h3>
+                <p class="font-semibold text-sm">50$-100$</p>
               </div>
-              <p class="text-[#707070] text-xl">
-                <span class="border-b border-textGreen pb-1">كانت</span>
-                <span>تجربة إستثنائية</span>
-              </p>
             </div>
-          </div> -->
 
-        </div>
-      </div>
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/clock-filled.svg" alt="location">
+              <div>
+                <h3 class="text-xl text-mainGreen font-bold">تاريخ الوصول</h3>
+                <p class="font-semibold text-sm">20/10/2024</p>
+              </div>
+            </div>
 
-      <div class="wrapper grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/clock-filled.svg" alt="location">
+              <div>
+                <h3 class="text-xl text-mainGreen font-bold">تاريخ المغادرة</h3>
+                <p class="font-semibold text-sm">30/10/2024</p>
+              </div>
+            </div>
 
-        <div class="flex items-center justify-center gap-4  bg-white rounded-xl shadow-xl py-6 px-1">
-          <div class="w-14 h-14 rounded-full bg-textGreen flex items-center justify-center">
-            <img class="w-6" src="./src/assets/icons/user.svg" alt="user">
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/hotel.svg" alt="location">
+              <div class="flex items-center gap-1 font-normal text-[#707070] text-lg">
+                <p>فندق الرياض</p>
+                <span>-</span>
+                <p>فندق الرشيد</p>
+                <span>-</span>
+                <p>فندق النجوم</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <img class="h-8" src="./src/assets/icons/dish.svg" alt="location">
+              <div>
+                <div class="flex items-center gap-1 font-normal text-[#707070] text-lg leading-[1]">
+                  <p>إفطار</p>
+                  <span>-</span>
+                  <p>عشاء</p>
+                </div>
+                <span class="text-[#707070] text-sm">مطبخ إيطالي</span>
+              </div>
+            </div>
+
           </div>
-          <div class="text-center">
-            <h3 class="text-xl font-semibold">عدد العملاء</h3>
-            <p class="text-2xl text-textGreen font-bold">+30</p>
+
+          <div class="flex items-center justify-between gap-2 w-full">
+
+            <div class="flex items-center gap-2 cursor-pointer">
+              <img class="h-10" src="./src/assets/icons/start-chat.svg" alt="heart">
+              <div>
+                <p class="font-normal text-[#707070] hidden sm:block">بيانات الطلب</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 cursor-pointer">
+              <img class="h-7" src="./src/assets/icons/heart.svg" alt="heart">
+              <div>
+                <p class="font-normal text-[#707070] hidden sm:block">اضف الى المفضلة</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <div>
+                <p class="font-bold text-[#707070]">عدد العروض</p>
+              </div>
+              <div
+                class="w-11 h-11 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center">
+                25
+              </div>
+              <!-- <div class="flex items-center">
+                <div
+                  class="w-11 h-11 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center">
+                  25
+                </div>
+                <div
+                  class="w-11 h-11 opacity-20 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center transform translate-x-[40px]">
+                </div>
+                <div
+                  class="w-11 h-11 opacity-25 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center transform translate-x-[45px]">
+                </div>
+                <div
+                  class="w-11 h-11 opacity-30 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center transform translate-x-[50px]">
+                </div>
+                <div
+                  class="w-11 h-11 opacity-35 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center transform translate-x-[55px]">
+                </div>
+                <div
+                  class="w-11 h-11 opacity-40 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center transform translate-x-[60px]">
+                </div>
+                <div
+                  class="w-11 h-11 opacity-45 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center transform translate-x-[65px]">
+                </div>
+
+              </div> -->
+
+            </div>
+
           </div>
         </div>
 
-        <div class=" bg-white rounded-xl shadow-xl py-6 px-1 text-center">
-          <h3 class="text-xl font-semibold">العروض المقدمة </h3>
-          <p class="text-2xl text-textGreen font-bold">22</p>
-        </div>
+      </main>
 
-        <div class=" bg-white rounded-xl shadow-xl py-6 px-1 text-center">
-          <h3 class="text-xl font-semibold">العروض المؤكدة</h3>
-          <p class="text-2xl text-textGreen font-bold">10</p>
-        </div>
-
-        <div class=" bg-white rounded-xl shadow-xl py-6 px-1 text-center">
-          <h3 class="text-xl font-semibold">العروض المرفوضة</h3>
-          <p class="text-2xl text-textGreen font-bold">6</p>
-        </div>
-      </div>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <!-- Footer Section -->
   <footer class="pt-[100px] bg-white">
@@ -775,6 +1005,7 @@
       </p>
     </div>
   </footer>
+
 </body>
 
 </html>
