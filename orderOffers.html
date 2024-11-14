@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BTD Travel - Home</title>
+  <title>BTD Travel - Order Offers</title>
 
   <link rel="stylesheet" href="./dist/output.css">
 
@@ -63,21 +63,137 @@
       }
     });
 
-    // Post Modal
-    function showPostModal() {
-      const postModal = document.getElementById('post-modal');
-      const postOverlay = document.getElementById('post-overlay');
-      postModal.classList.toggle("hidden");
-      postOverlay.classList.toggle("hidden");
+
+
+    // Offer Modal
+    function showOfferModal() {
+      const offerModal = document.getElementById('offer-modal');
+      const offerOverlay = document.getElementById('offer-overlay');
+      offerModal.classList.toggle("hidden");
+      offerOverlay.classList.toggle("hidden");
       document.body.classList = 'overflow-y-hidden'
     }
 
-    function hidePostModal() {
-      const postModal = document.getElementById('post-modal');
-      const postOverlay = document.getElementById('post-overlay');
-      postModal.classList.toggle("hidden");
-      postOverlay.classList.toggle("hidden");
+    function hideOfferModal() {
+      const offerModal = document.getElementById('offer-modal');
+      const offerOverlay = document.getElementById('offer-overlay');
+      offerModal.classList.toggle("hidden");
+      offerOverlay.classList.toggle("hidden");
       document.body.classList = 'overflow-y-auto'
+    }
+
+    // Show Chat Area
+    function messageOfferProvider(id) {
+      const chatArea = document.getElementById(`chatOffer-${id}`)
+      chatArea.classList.toggle('hidden')
+    }
+
+    // Hide Accept Offer Modal
+    function hideAcceptOfferModal(id) {
+      const AcceptOfferModal = document.getElementById(`acceptOfferModal-${id}`);
+      AcceptOfferModal.remove();
+      document.body.classList = 'overflow-y-auto'
+    }
+
+    // Accept Offer Modal
+    function acceptOfferModal(id) {
+      const acceptOfferModal = document.createElement('div')
+      acceptOfferModal.id = `acceptOfferModal-${id}`;
+      document.body.classList = 'overflow-y-hidden'
+
+      acceptOfferModal.innerHTML =
+        `
+        <!-- Accept Offer Modal -->
+        <div id="accept-offer-overlay" onclick="hideAcceptOfferModal(${id})"
+          class="fixed inset-0 bg-[#707070] bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+
+        <div id="accept-offer-modal" class="fixed inset-0 z-10 mx-auto w-fit overflow-y-auto">
+          <div
+            class=" flex min-h-full w-fit mx-auto items-end justify-center text-center sm:items-center sm:p-0 overflow-y-auto">
+            <div
+              class="flex flex-col gap-4 relative transform overflow-hidden rounded-lg bg-whitetext-center shadow-xl transition-all w-full sm:max-w-[850px] bg-lightGray">
+              <div class="text-center bg-textGreen py-4">
+                <h3 class="text-lg font-bold text-white" id="modal-title">قبول العرض</h3>
+              </div>
+
+                <div class="flex items-center gap-2 flex-wrap p-4">
+                  <div class="flex w-[150px] items-center gap-4 justify-center p-2 rounded-md bg-textGreen opacity-50">
+                    <p class="text-white font-medium text-lg">محفطة</p>
+                    <img class="w-7" src="./src/assets/icons/wallet.svg" alt="wallet">
+                  </div>
+                  <div class="flex w-[150px] items-center gap-4 justify-center p-2 rounded-md bg-textGreen">
+                    <p class="text-white font-medium text-lg">تحويل بنكي</p>
+                    <img class="w-7" src="./src/assets/icons/bank.svg" alt="bank">
+                  </div>
+                  <div class="flex w-[150px] items-center gap-4 justify-center p-2 rounded-md bg-textGreen opacity-50">
+                    <p class="text-white font-medium text-lg">فيزا كارد</p>
+                    <img class="w-8" src="./src/assets/icons/visa.svg" alt="visa.svg">
+                  </div>
+                  <div class="flex w-[150px] items-center gap-4 justify-center p-2 rounded-md bg-textGreen opacity-50">
+                    <p class="text-white font-medium text-lg">تمارا</p>
+                    <img class="w-8" src="./src/assets/icons/visa.svg" alt="visa.svg">
+                  </div>
+                  <div class="flex w-[150px] items-center gap-4 justify-center p-2 rounded-md bg-textGreen opacity-50">
+                    <p class="text-white font-medium text-lg">تابي</p>
+                    <img class="w-8" src="./src/assets/icons/visa.svg" alt="visa.svg">
+                  </div>
+                </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 p-4">
+
+                  <div class="flex items-center gap-4">
+                    <label for="BankName" class="block font-medium">اسم البنك</label>
+                    <select id="BankName" name="BankName"
+                      class="mt-2 block flex-1 min-w-[170px] w-full px-4 py-2 border border-mainGreen bg-white rounded-lg font-semibold text-[#707070] focus:outline-none focus:ring-textGreen focus:border-textGreen">
+                      <option class="font-semibold text-textGreen" value="option1">بنك الراجحي</option>
+                      <option class="font-semibold text-textGreen" value="option2">بنك الرشيد</option>
+                      <option class="font-semibold text-textGreen" value="option3">بنك اسطنبول</option>
+                      <option class="font-semibold text-textGreen" value="option4">بنك اخر</option>
+                    </select>
+                  </div>
+
+                  <div class="flex items-center gap-4">
+                    <label for="username" class="block font-medium">اسم المستخدم</label>
+                    <div class="mt-2 flex-1">
+                      <input id="username" name="username" type="text" required placeholder="أحمد محمد"
+                        class="block w-full  py-2 px-4 text-[#707070] outline-none rounded-lg shadow-sm border border-textGreen bg-white">
+                    </div>
+                  </div>
+
+                  <div class="flex items-center gap-4">
+                    <label for="IPAN" class="block font-medium">رقم الايبان</label>
+                    <div class="mt-2 flex-1">
+                      <input id="IPAN" name="IPAN" type="text" required placeholder="ABD787DF897"
+                        class="block w-full  py-2 px-4 text-[#707070] outline-none rounded-lg shadow-sm border border-textGreen bg-white">
+                    </div>
+                  </div>
+
+                  <div class="flex items-center gap-4">
+                    <label for="finalPrice" class="block font-medium">المبلغ النهائي</label>
+                    <div class="mt-2 flex-1">
+                      <input id="finalPrice" name="finalPrice" type="text" required placeholder="1500$"
+                        class="block w-full  py-2 px-4 text-[#707070] outline-none rounded-lg shadow-sm border border-textGreen bg-white">
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="text-right">
+                  <span class="text-[#707070] text-xs self-right text-right w-full px-8">المبلغ النهائي بعد اضافة رسوم إجرائية بنسبة 0% على عملية الدفع </span>
+                </div>
+
+                <button type="submit" onclick="hideAcceptOfferModal(${id})"
+                  class="rounded-md mx-auto mb-8 bg-textGreen w-[250px] h-12 text-2xl font-bold text-white shadow-sm hover:bg-mainGreen">
+                    قبول العرض
+                </button>
+
+            </div>
+          </div>
+        </div>
+      `
+
+      document.body.appendChild(acceptOfferModal)
+
     }
 
   </script>
@@ -213,7 +329,8 @@
 
                   </div>
 
-                  <a href="./chat.html" class="block font-bold text-center text-white bg-textGreen text-lg py-3 cursor-pointer">
+                  <a href="./chat.html"
+                    class="block font-bold text-center text-white bg-textGreen text-lg py-3 cursor-pointer">
                     عرض جميع الرسائل
                   </a>
                 </div>
@@ -337,7 +454,8 @@
 
                   </div>
 
-                  <a href="./notifications.html" class="block font-bold text-center text-white bg-textGreen text-lg py-3 cursor-pointer">
+                  <a href="./notifications.html"
+                    class="block font-bold text-center text-white bg-textGreen text-lg py-3 cursor-pointer">
                     عرض جميع الإشعارات
                   </a>
                 </div>
@@ -441,86 +559,24 @@
 
   <section class="wrapper mt-10">
 
-    <div class="w-[90%] md:w-[44%] flex items-center gap-4 mx-auto mb-6 bg-white rounded-md shadow-md py-4 px-4">
-
-      <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
-        <img class="w-full h-full object-fill" src="./src/assets/images/Avatar.png" alt="User Profile" />
-      </div>
-
-      <div id="post-input"
-        class="flex items-center justify-between gap-2 rounded-full shadow-sm border-2 border-mainGreen px-4 w-full">
-        <input type="text" onclick="showPostModal()" name="post"
-          class="border-0 bg-transparent py-2 text-[#707070] text-lg outline-none w-[85%]" placeholder="قم بنشر طلبك">
-      </div>
-
-    </div>
-
     <div class="flex flex-col sm:flex-row justify-between gap-4 ">
       <aside
-        class="sm:bg-white sm:shadow-lg rounded-xl p-6 flex flex-row sm:flex-col flex-wrap gap-8 w-full sm:w-[30%] md:w-[22%] h-fit mb-6">
+        class="p-6 w-full sm:w-[30%] md:w-[22%] h-fit flex sm:flex-col items-center sm:items-start justify-start gap-8 sm:gap-2">
 
-        <div
-          class="flex-1 min-w-[170px] sm:min-w-0 sm:w-full flex items-center justify-between gap-2 rounded-lg shadow-sm border-2 border-mainGreen px-4">
-          <input type="text" name="search"
-            class="border-0 bg-transparent py-2 text-textGray placeholder:text-textGreen placeholder:font-semibold text-lg font-medium outline-none w-[85%]"
-            placeholder="البحث">
-          <div class="min-w-6">
-            <img class="w-6" src="./src/assets/icons/search.svg" alt="search">
-          </div>
-        </div>
-
-        <select id="options" name="options" aria-placeholder=""
-          class="block flex-1 min-w-[170px] sm:min-w-0 sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-mainGreen">
-          <option class="font-semibold text-textGreen" value="" disabled selected>المدينة</option>
-          <option class="font-semibold text-textGreen" value="option2">الرياض</option>
-          <option class="font-semibold text-textGreen" value="option3">جدة</option>
-          <option class="font-semibold text-textGreen" value="option4">الشارقة</option>
+        <label for="offersFilters" class="font-semibold text-textGreen text-lg">التعليقات</label>
+        <select id="offersFilters"
+          class="block flex-1 min-w-[170px] sm:min-w-0 sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-[#707070] focus:outline-none focus:ring-textGreen focus:border-mainGreen">
+          <option class="font-semibold text-[#707070]" value="option2">أقل سعر</option>
+          <option class="font-semibold text-[#707070]" value="option3">الأعلى تقييم</option>
+          <option class="font-semibold text-[#707070]" value="option4">الأحدث</option>
+          <option class="font-semibold text-[#707070]" value="option5">الأقدم</option>
         </select>
-
-        <select id="options" name="options" aria-placeholder=""
-          class="block flex-1 min-w-[170px] sm:min-w-0 sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
-          <option class="font-semibold text-textGreen" value="" disabled selected>الفندق</option>
-          <option class="font-semibold text-textGreen" value="option2">فندق الرشيد</option>
-          <option class="font-semibold text-textGreen" value="option3">فندق اسطنبول</option>
-          <option class="font-semibold text-textGreen" value="option4">فندق اخر</option>
-        </select>
-
-        <select id="options" name="options" aria-placeholder=""
-          class="flex-1 min-w-[170px] sm:min-w-0 max-h-[42px] block sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
-          <option class="font-semibold text-textGreen" value="" disabled selected>الفئة</option>
-          <option class="font-semibold text-textGreen" value="option2">فئة 1</option>
-          <option class="font-semibold text-textGreen" value="option2">فئة 2</option>
-          <option class="font-semibold text-textGreen" value="option2">فئة 3</option>
-        </select>
-
-        <div class="flex-1 min-w-[170px] sm:min-w-0 sm:w-full">
-          <label for="price" class="font-semibold text-textGreen self-end w-full text-lg">السعر</label>
-          <input dir="ltr" type="range" min="0" max="100" value="0" class="w-full h-2 bg-[#707070] rounded-lg appearance-none cursor-pointer
-                  accent-mainGreen
-                  range-thumb" />
-          <div class="flex items-center justify-between w-full">
-            <span class="text-sm font-bold text-mainGreen">1000$</span>
-            <span class="text-sm font-bold text-mainGreen">0$</span>
-          </div>
-        </div>
-
-        <div class="flex-1 min-w-[170px] sm:min-w-0 sm:w-full">
-          <label for="price" class="font-semibold text-textGreen self-end w-full text-lg">تاريخ النشر</label>
-          <input dir="ltr" type="range" min="0" max="100" value="0" class="w-full h-2 bg-[#707070] rounded-lg appearance-none cursor-pointer
-                  accent-mainGreen
-                  range-thumb" />
-          <div class="flex items-center justify-between w-full">
-            <span class="text-sm font-bold text-mainGreen">30 يوم</span>
-            <span class="text-sm font-bold text-mainGreen">1 ساعة</span>
-          </div>
-        </div>
-
 
       </aside>
 
       <main class="w-full sm:w-[70%] md:w-[50%]">
 
-        <!-- Post 1  -->
+        <!-- Order Section -->
         <div class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
 
           <div class="flex items-center gap-4 w-full">
@@ -538,8 +594,7 @@
             </div>
 
             <div class="flex items-end">
-              <span class="text=[12px] font-bold transform translate-x-[-16px]">20 يوم</span>
-              <img class="w-10 h-10" src="./src/assets/icons/post-time.svg" alt="time">
+              <img class="h-6" src="./src/assets/icons/3dots.svg" alt="dots">
             </div>
           </div>
 
@@ -606,14 +661,23 @@
               </div>
             </div>
 
+            <div class="flex items-center gap-2">
+              <div class="flex items-end">
+                <span class="text=[12px] font-bold transform translate-x-[-16px]">20 يوم</span>
+                <img class="w-10 h-10" src="./src/assets/icons/post-time.svg" alt="time">
+              </div>
+
+              <p class="font-normal text-[#707070]">باقي لإنتهاء الطلب</p>
+            </div>
+
           </div>
 
           <div class="flex items-center justify-between gap-2 w-full">
 
-            <div class="flex items-center gap-2 cursor-pointer">
+            <div class="flex items-center gap-2 cursor-pointer" onclick="showOfferModal()">
               <img class="h-10" src="./src/assets/icons/start-chat.svg" alt="heart">
               <div>
-                <p class="font-normal text-[#707070] hidden sm:block">بيانات الطلب</p>
+                <p class="font-normal text-[#707070] hidden sm:block">تقديم عرض</p>
               </div>
             </div>
 
@@ -638,240 +702,292 @@
           </div>
         </div>
 
-        <!-- Post 1  -->
-        <div class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
 
-          <div class="flex items-center gap-4 w-full">
-            <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
-              <img class="w-full h-full object-fill" src="./src/assets/images/Avatar.png" alt="User Profile" />
+        <!-- Offers Section -->
+        <div>
+
+          <!-- Offer 1 Section -->
+          <div class="mb-5 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-3">
+
+            <div class="flex items-center gap-4 w-full">
+              <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
+                <img class="w-full h-full object-fill" src="./src/assets/images/hotel.png" alt="hotel" />
+              </div>
+
+              <div class="flex-1">
+                <h3 class="font-semibold md:text-lg !leading-[1.2]">الدوحة</h3>
+                <p class="text-sm text-mainGreen font-normal leading-[1]">فندق</p>
+                <p class="flex items-center gap-1 mt-1">
+                  <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                  <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+                </p>
+              </div>
             </div>
 
-            <div class="flex-1">
-              <h3 class="font-semibold md:text-lg !leading-[1.2]">أحمد العيسى</h3>
-              <p class="text-sm text-mainGreen font-normal leading-[1]">عميل جديد</p>
-              <p class="flex items-center gap-1 mt-1">
-                <img src="./src/assets/icons/clock-regular.svg" alt="clock">
-                <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+
+            <div class="flex items-center flex-wrap gap-4">
+
+              <div class="flex items-center gap-2">
+                <img class="h-5" src="./src/assets/icons/hotel.svg" alt="location">
+                <p class="font-normal text-[#707070] text-sm">فندق الدوحة</p>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <span class="w-7 h-7 bg-textGreen rounded-md shadow-md flex items-center justify-center">
+                  <img class="w-20 h-20 !max-w-none transform translate-x-[-1px]" src="./src/assets/icons/room.svg"
+                    alt="location">
+                </span>
+                <p class="font-normal text-[#707070] text-sm">3 غرف</p>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <img class="h-5" src="./src/assets/icons/dollar-sign.svg" alt="location">
+                <p class="text-sm text-[#707070]">500$ الليلة</p>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <img class="h-5" src="./src/assets/icons/dollar-sign.svg" alt="location">
+                <p class="text-sm text-[#707070]">1500$ الإجمالي</p>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <img class="h-5" src="./src/assets/icons/clock-filled.svg" alt="duration">
+                <div class="flex items-center gap-1 text-sm text-[#707070]">
+                  <p>20/10/2024</p>
+                  <span>-</span>
+                  <p>30/10/2024</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="p-2">
+              <p class="text-[#707070] font-normal">
+                مرحباً ابحث عن شركة او فندق سياحي في القاهرة من اجل الإقامة يرجى وضع التكلفة مقابل الخدمة للليلة الواحدة
               </p>
             </div>
 
-            <div class="flex items-end">
-              <span class="text=[12px] font-bold transform translate-x-[-16px]">20 يوم</span>
-              <img class="w-10 h-10" src="./src/assets/icons/post-time.svg" alt="time">
+            <div class="flex items-center gap-4 w-full border-t border-textGreen pt-2">
+
+              <div class="flex items-center gap-2 cursor-pointer" onclick="acceptOfferModal(1)">
+                <img class="h-3" src="./src/assets/icons/check.svg" alt="heart">
+                <p class="font-semibold text-xs sm:text-sm">قبول العرض</p>
+              </div>
+
+              <div class="flex items-center gap-2 cursor-pointer" onclick="messageOfferProvider(1)">
+                <img class="h-5" src="./src/assets/icons/start-chat.svg" alt="heart">
+                <p class="font-semibold text-xs sm:text-sm">مراسلة مقدم العرض</p>
+              </div>
+
+            </div>
+          </div>
+          <div id="chatOffer-1" class="hidden relative flex-1 w-full rounded-lg shadow-lg border border-textGreen mb-6">
+            <div
+              class="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 right-[170px]">
+            </div>
+            <textarea type="date" name="order-data"
+              class="block w-full h-28 border-0 bg-transparent py-2 px-4 text-[#707070] outline-none"
+              placeholder="مساحة نقاش بين العميل ومقدم الخدمة"></textarea>
+            <div class="flex items-center gap-4 absolute bottom-0 left-0">
+              <input type="file" id="fileInput" class="hidden" />
+              <button id="attachButton">
+                <img src="./src/assets/icons/link.svg" alt="link">
+              </button>
+
+              <button id="sendMessage">
+                <img class="h-8" src="./src/assets/icons/send-message.svg" alt="send">
+              </button>
             </div>
           </div>
 
-          <div class="px-2">
-            <p class="text-[#707070] font-semibold text-lg">
-              مرحباً ابحث عن شركة او فندق سياحي في القاهرة من اجل الإقامة يرجى وضع التكلفة مقابل الخدمة للليلة الواحدة
-            </p>
-          </div>
+          <!-- Offer 2 Section -->
+          <div class="mb-5 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-3">
 
-          <div class="flex items-center flex-wrap gap-6">
+            <div class="flex items-center gap-4 w-full">
+              <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
+                <img class="w-full h-full object-fill" src="./src/assets/images/hotel.png" alt="hotel" />
+              </div>
 
-            <div class="flex items-center gap-2">
-              <img class="h-8" src="./src/assets/icons/location-filled.svg" alt="location">
-              <div>
-                <h3 class="text-xl text-mainGreen font-bold">الإقامة</h3>
-                <p class="font-semibold text-sm">اسطنبول</p>
+              <div class="flex-1">
+                <h3 class="font-semibold md:text-lg !leading-[1.2]">الدوحة</h3>
+                <p class="text-sm text-mainGreen font-normal leading-[1]">فندق</p>
+                <p class="flex items-center gap-1 mt-1">
+                  <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                  <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+                </p>
               </div>
             </div>
 
-            <div class="flex items-center gap-2">
-              <img class="h-8" src="./src/assets/icons/dollar-sign.svg" alt="location">
-              <div>
-                <h3 class="text-xl text-mainGreen font-bold">التكلفة اليومية</h3>
-                <p class="font-semibold text-sm">50$-100$</p>
-              </div>
-            </div>
 
-            <div class="flex items-center gap-2">
-              <img class="h-8" src="./src/assets/icons/clock-filled.svg" alt="location">
-              <div>
-                <h3 class="text-xl text-mainGreen font-bold">تاريخ الوصول</h3>
-                <p class="font-semibold text-sm">20/10/2024</p>
-              </div>
-            </div>
+            <div class="flex items-center flex-wrap gap-4">
 
-            <div class="flex items-center gap-2">
-              <img class="h-8" src="./src/assets/icons/clock-filled.svg" alt="location">
-              <div>
-                <h3 class="text-xl text-mainGreen font-bold">تاريخ المغادرة</h3>
-                <p class="font-semibold text-sm">30/10/2024</p>
+              <div class="flex items-center gap-2">
+                <img class="h-5" src="./src/assets/icons/hotel.svg" alt="location">
+                <p class="font-normal text-[#707070] text-sm">فندق الدوحة</p>
               </div>
-            </div>
 
-            <div class="flex items-center gap-2">
-              <img class="h-8" src="./src/assets/icons/hotel.svg" alt="location">
-              <div class="flex items-center gap-1 font-normal text-[#707070] text-lg">
-                <p>فندق الرياض</p>
-                <span>-</span>
-                <p>فندق الرشيد</p>
-                <span>-</span>
-                <p>فندق النجوم</p>
+              <div class="flex items-center gap-2">
+                <span class="w-7 h-7 bg-textGreen rounded-md shadow-md flex items-center justify-center">
+                  <img class="w-20 h-20 !max-w-none transform translate-x-[-1px]" src="./src/assets/icons/room.svg"
+                    alt="location">
+                </span>
+                <p class="font-normal text-[#707070] text-sm">3 غرف</p>
               </div>
-            </div>
 
-            <div class="flex items-center gap-2">
-              <img class="h-8" src="./src/assets/icons/dish.svg" alt="location">
-              <div>
-                <div class="flex items-center gap-1 font-normal text-[#707070] text-lg leading-[1]">
-                  <p>إفطار</p>
+              <div class="flex items-center gap-2">
+                <img class="h-5" src="./src/assets/icons/dollar-sign.svg" alt="location">
+                <p class="text-sm text-[#707070]">500$ الليلة</p>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <img class="h-5" src="./src/assets/icons/dollar-sign.svg" alt="location">
+                <p class="text-sm text-[#707070]">1500$ الإجمالي</p>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <img class="h-5" src="./src/assets/icons/clock-filled.svg" alt="duration">
+                <div class="flex items-center gap-1 text-sm text-[#707070]">
+                  <p>20/10/2024</p>
                   <span>-</span>
-                  <p>عشاء</p>
+                  <p>30/10/2024</p>
                 </div>
-                <span class="text-[#707070] text-sm">مطبخ إيطالي</span>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="flex items-center justify-between gap-2 w-full">
-
-            <div class="flex items-center gap-2 cursor-pointer">
-              <img class="h-10" src="./src/assets/icons/start-chat.svg" alt="heart">
-              <div>
-                <p class="font-normal text-[#707070] hidden sm:block">بيانات الطلب</p>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-2 cursor-pointer">
-              <img class="h-7" src="./src/assets/icons/heart.svg" alt="heart">
-              <div>
-                <p class="font-normal text-[#707070] hidden sm:block">اضف الى المفضلة</p>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-2">
-              <div>
-                <p class="font-bold text-[#707070]">عدد العروض</p>
-              </div>
-              <div
-                class="w-11 h-11 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center">
-                25
               </div>
 
             </div>
 
-          </div>
-        </div>
-
-        <!-- Post 1  -->
-        <div class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
-
-          <div class="flex items-center gap-4 w-full">
-            <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
-              <img class="w-full h-full object-fill" src="./src/assets/images/Avatar.png" alt="User Profile" />
-            </div>
-
-            <div class="flex-1">
-              <h3 class="font-semibold md:text-lg !leading-[1.2]">أحمد العيسى</h3>
-              <p class="text-sm text-mainGreen font-normal leading-[1]">عميل جديد</p>
-              <p class="flex items-center gap-1 mt-1">
-                <img src="./src/assets/icons/clock-regular.svg" alt="clock">
-                <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+            <div class="p-2">
+              <p class="text-[#707070] font-normal">
+                مرحباً ابحث عن شركة او فندق سياحي في القاهرة من اجل الإقامة يرجى وضع التكلفة مقابل الخدمة للليلة الواحدة
               </p>
             </div>
 
-            <div class="flex items-end">
-              <span class="text=[12px] font-bold transform translate-x-[-16px]">20 يوم</span>
-              <img class="w-10 h-10" src="./src/assets/icons/post-time.svg" alt="time">
+            <div class="flex items-center gap-4 w-full border-t border-textGreen pt-2">
+
+              <div class="flex items-center gap-2 cursor-pointer" onclick="acceptOfferModal(2)">
+                <img class="h-3" src="./src/assets/icons/check.svg" alt="heart">
+                <p class="font-semibold text-xs sm:text-sm">قبول العرض</p>
+              </div>
+
+              <div class="flex items-center gap-2 cursor-pointer" onclick="messageOfferProvider(2)">
+                <img class="h-5" src="./src/assets/icons/start-chat.svg" alt="heart">
+                <p class="font-semibold text-xs sm:text-sm">مراسلة مقدم العرض</p>
+              </div>
+
+            </div>
+          </div>
+          <div id="chatOffer-2" class="hidden relative flex-1 w-full rounded-lg shadow-lg border border-textGreen mb-6">
+            <div
+              class="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 right-[170px]">
+            </div>
+            <textarea type="date" name="order-data"
+              class="block w-full h-28 border-0 bg-transparent py-2 px-4 text-[#707070] outline-none"
+              placeholder="مساحة نقاش بين العميل ومقدم الخدمة"></textarea>
+            <div class="flex items-center gap-4 absolute bottom-0 left-0">
+              <input type="file" id="fileInput" class="hidden" />
+              <button id="attachButton">
+                <img src="./src/assets/icons/link.svg" alt="link">
+              </button>
+
+              <button id="sendMessage">
+                <img class="h-8" src="./src/assets/icons/send-message.svg" alt="send">
+              </button>
             </div>
           </div>
 
-          <div class="px-2">
-            <p class="text-[#707070] font-semibold text-lg">
-              مرحباً ابحث عن شركة او فندق سياحي في القاهرة من اجل الإقامة يرجى وضع التكلفة مقابل الخدمة للليلة الواحدة
-            </p>
-          </div>
+          <!-- Offer 3 Section -->
+          <div class="mb-5 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-3">
 
-          <div class="flex items-center flex-wrap gap-6">
+            <div class="flex items-center gap-4 w-full">
+              <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
+                <img class="w-full h-full object-fill" src="./src/assets/images/hotel.png" alt="hotel" />
+              </div>
 
-            <div class="flex items-center gap-2">
-              <img class="h-8" src="./src/assets/icons/location-filled.svg" alt="location">
-              <div>
-                <h3 class="text-xl text-mainGreen font-bold">الإقامة</h3>
-                <p class="font-semibold text-sm">اسطنبول</p>
+              <div class="flex-1">
+                <h3 class="font-semibold md:text-lg !leading-[1.2]">الدوحة</h3>
+                <p class="text-sm text-mainGreen font-normal leading-[1]">فندق</p>
+                <p class="flex items-center gap-1 mt-1">
+                  <img src="./src/assets/icons/clock-regular.svg" alt="clock">
+                  <span class="text-[8px] text-[#707070]">منذ ساعة</span>
+                </p>
               </div>
             </div>
 
-            <div class="flex items-center gap-2">
-              <img class="h-8" src="./src/assets/icons/dollar-sign.svg" alt="location">
-              <div>
-                <h3 class="text-xl text-mainGreen font-bold">التكلفة اليومية</h3>
-                <p class="font-semibold text-sm">50$-100$</p>
-              </div>
-            </div>
 
-            <div class="flex items-center gap-2">
-              <img class="h-8" src="./src/assets/icons/clock-filled.svg" alt="location">
-              <div>
-                <h3 class="text-xl text-mainGreen font-bold">تاريخ الوصول</h3>
-                <p class="font-semibold text-sm">20/10/2024</p>
-              </div>
-            </div>
+            <div class="flex items-center flex-wrap gap-4">
 
-            <div class="flex items-center gap-2">
-              <img class="h-8" src="./src/assets/icons/clock-filled.svg" alt="location">
-              <div>
-                <h3 class="text-xl text-mainGreen font-bold">تاريخ المغادرة</h3>
-                <p class="font-semibold text-sm">30/10/2024</p>
+              <div class="flex items-center gap-2">
+                <img class="h-5" src="./src/assets/icons/hotel.svg" alt="hotel">
+                <p class="font-normal text-[#707070] text-sm">فندق الدوحة</p>
               </div>
-            </div>
 
-            <div class="flex items-center gap-2">
-              <img class="h-8" src="./src/assets/icons/hotel.svg" alt="location">
-              <div class="flex items-center gap-1 font-normal text-[#707070] text-lg">
-                <p>فندق الرياض</p>
-                <span>-</span>
-                <p>فندق الرشيد</p>
-                <span>-</span>
-                <p>فندق النجوم</p>
+              <div class="flex items-center gap-2">
+                <span class="w-7 h-7 bg-textGreen rounded-md shadow-md flex items-center justify-center">
+                  <img class="w-20 h-20 !max-w-none transform translate-x-[-1px]" src="./src/assets/icons/room.svg"
+                    alt="room">
+                </span>
+                <p class="font-normal text-[#707070] text-sm">3 غرف</p>
               </div>
-            </div>
 
-            <div class="flex items-center gap-2">
-              <img class="h-8" src="./src/assets/icons/dish.svg" alt="location">
-              <div>
-                <div class="flex items-center gap-1 font-normal text-[#707070] text-lg leading-[1]">
-                  <p>إفطار</p>
+              <div class="flex items-center gap-2">
+                <img class="h-5" src="./src/assets/icons/dollar-sign.svg" alt="dollar-sign">
+                <p class="text-sm text-[#707070]">500$ الليلة</p>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <img class="h-5" src="./src/assets/icons/dollar-sign.svg" alt="dollar-sign">
+                <p class="text-sm text-[#707070]">1500$ الإجمالي</p>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <img class="h-5" src="./src/assets/icons/clock-filled.svg" alt="duration">
+                <div class="flex items-center gap-1 text-sm text-[#707070]">
+                  <p>20/10/2024</p>
                   <span>-</span>
-                  <p>عشاء</p>
+                  <p>30/10/2024</p>
                 </div>
-                <span class="text-[#707070] text-sm">مطبخ إيطالي</span>
               </div>
+
             </div>
 
+            <div class="p-2">
+              <p class="text-[#707070] font-normal">
+                مرحباً ابحث عن شركة او فندق سياحي في القاهرة من اجل الإقامة يرجى وضع التكلفة مقابل الخدمة للليلة الواحدة
+              </p>
+            </div>
+
+            <div class="flex items-center gap-4 w-full border-t border-textGreen pt-2">
+
+              <div class="flex items-center gap-2 cursor-pointer" onclick="acceptOfferModal(3)">
+                <img class="h-3" src="./src/assets/icons/check.svg" alt="heart">
+                <p class="font-semibold text-xs sm:text-sm">قبول العرض</p>
+              </div>
+
+              <div class="flex items-center gap-2 cursor-pointer" onclick="messageOfferProvider(3)">
+                <img class="h-5" src="./src/assets/icons/start-chat.svg" alt="heart">
+                <p class="font-semibold text-xs sm:text-sm">مراسلة مقدم العرض</p>
+              </div>
+
+            </div>
+          </div>
+          <div id="chatOffer-3" class="hidden relative flex-1 w-full rounded-lg shadow-lg border border-textGreen mb-6">
+            <div
+              class="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 right-[170px]">
+            </div>
+            <textarea type="date" name="order-data"
+              class="block w-full h-28 border-0 bg-transparent py-2 px-4 text-[#707070] outline-none"
+              placeholder="مساحة نقاش بين العميل ومقدم الخدمة"></textarea>
+            <div class="flex items-center gap-4 absolute bottom-0 left-0">
+              <input type="file" id="fileInput" class="hidden" />
+              <button id="attachButton">
+                <img src="./src/assets/icons/link.svg" alt="link">
+              </button>
+
+              <button id="sendMessage">
+                <img class="h-8" src="./src/assets/icons/send-message.svg" alt="send">
+              </button>
+            </div>
           </div>
 
-          <div class="flex items-center justify-between gap-2 w-full">
-
-            <div class="flex items-center gap-2 cursor-pointer">
-              <img class="h-10" src="./src/assets/icons/start-chat.svg" alt="heart">
-              <div>
-                <p class="font-normal text-[#707070] hidden sm:block">بيانات الطلب</p>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-2 cursor-pointer">
-              <img class="h-7" src="./src/assets/icons/heart.svg" alt="heart">
-              <div>
-                <p class="font-normal text-[#707070] hidden sm:block">اضف الى المفضلة</p>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-2">
-              <div>
-                <p class="font-bold text-[#707070]">عدد العروض</p>
-              </div>
-              <div
-                class="w-11 h-11 rounded-full bg-textGreen text-xl font-bold text-white flex items-center justify-center">
-                25
-              </div>
-
-            </div>
-
-          </div>
         </div>
 
 
@@ -972,120 +1088,82 @@
   </footer>
 
 
-  <!-- Post Modal -->
-  <div id="post-overlay" onclick="hidePostModal()"
+  <!-- Offer Modal -->
+  <div id="offer-overlay" onclick="hideOfferModal()"
     class="hidden fixed inset-0 bg-[#707070] bg-opacity-75 transition-opacity" aria-hidden="true"></div>
 
-  <div id="post-modal" class="hidden fixed inset-0 z-10 mx-auto w-fit overflow-y-auto">
-    <div class=" flex min-h-full w-fit mx-auto items-end justify-center text-center sm:items-center sm:p-0 overflow-y-auto">
+  <div id="offer-modal" class="hidden fixed inset-0 z-10 mx-auto w-fit overflow-y-auto">
+    <div
+      class=" flex min-h-full w-fit mx-auto items-end justify-center text-center sm:items-center sm:p-0 overflow-y-auto">
       <div
         class="flex flex-col gap-4 relative transform overflow-hidden rounded-lg bg-whitetext-center shadow-xl transition-all w-full sm:max-w-[850px] bg-lightGray">
         <div class="text-center bg-textGreen py-4">
-          <h3 class="text-lg font-bold text-white" id="modal-title">قم بنشر طلبك واحصل على افضل العروض</h3>
+          <h3 class="text-lg font-bold text-white" id="modal-title">قم بإضافة عرضك</h3>
         </div>
-        <span class="text-[#707070] text-xs self-right text-right w-full px-8">الرقم التسلسلي للطلب 0001</span>
-        <div class="flex gap-4 flex-wrap p-4 sm:p-20 py-6">
+        <div class="flex gap-4 flex-wrap p-4">
 
           <select id="options" name="options" aria-placeholder=""
-            class="block flex-1 min-w-[170px] w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
-            <option class="font-semibold text-textGreen" value="" disabled selected>الفنادق المفضلة</option>
-            <option class="font-semibold text-textGreen" value="option2">فندق الرشيد</option>
-            <option class="font-semibold text-textGreen" value="option3">فندق اسطنبول</option>
-            <option class="font-semibold text-textGreen" value="option4">فندق اخر</option>
+            class="block flex-1 min-w-[170px] w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-[#707070] focus:outline-none focus:ring-textGreen focus:border-textGreen">
+            <option value="" disabled selected>اسم الفندق</option>
+            <option value="option2">فندق الرشيد</option>
+            <option value="option3">فندق اسطنبول</option>
+            <option value="option4">فندق اخر</option>
           </select>
 
-
-          <div class="flex flex-1 min-w-[170px] rounded-lg shadow-sm border border-textGreen sm:max-w-md bg-white">
-            <input type="text" name="country"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-textGreen text-lg font-medium outline-none"
-              placeholder="الدولة">
-          </div>
-
-          <div class="flex flex-1 min-w-[170px] rounded-lg shadow-sm border border-textGreen sm:max-w-md bg-white">
-            <input type="text" name="city"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-textGreen text-lg font-medium outline-none"
-              placeholder="المدينة">
-          </div>
-
-          <select id="options" name="options" aria-placeholder=""
-            class="block flex-1 min-w-[170px] w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
-            <option class="font-semibold text-textGreen" value="" disabled selected>التكلفة اليومية</option>
-            <option class="font-semibold text-textGreen" value="option2">450$</option>
-            <option class="font-semibold text-textGreen" value="option3">350$</option>
-            <option class="font-semibold text-textGreen" value="option4">250$</option>
-          </select>
-
-          <select id="options" name="options" aria-placeholder=""
-            class="block flex-1 min-w-[170px] w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
-            <option class="font-semibold text-textGreen" value="" disabled selected>تفاصيل الغرفة</option>
-            <option class="font-semibold text-textGreen" value="option4">غرفة بثلاث أسرة وحمام</option>
-            <option class="font-semibold text-textGreen" value="option2">غرفة بسريرين وحمام</option>
-            <option class="font-semibold text-textGreen" value="option3">غرفة بسرير وحمام</option>
-          </select>
-
-          <div class="flex min-w-[70px] rounded-lg shadow-sm border border-textGreen max-w-[95px] bg-white">
-            <input type="number" name="count"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-textGreen text-lg font-medium outline-none"
-              placeholder="العدد">
-          </div>
-
-          <div class="flex min-w-[70px] rounded-lg shadow-sm border border-textGreen max-w-[95px] bg-white">
-            <input type="number" name="members"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-textGreen text-lg font-medium outline-none"
-              placeholder="الأفراد">
+          <div
+            class="flex flex-1 min-w-[170px] h-12 rounded-lg shadow-sm border border-textGreen sm:max-w-md overflow-hidden bg-white">
+            <input type="text" name="order-time"
+              class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] outline-none"
+              placeholder="عدد الغرف">
+            <span class="w-1/6 bg-textGreen text-white flex items-center justify-center">
+              <img class="w-20 h-20 !max-w-none transform translate-x-[-1px]" src="./src/assets/icons/room.svg"
+                alt="room">
+            </span>
           </div>
 
           <div
             class="flex flex-1 min-w-[170px] rounded-lg shadow-sm border border-textGreen sm:max-w-md overflow-hidden bg-white">
             <input type="text" name="order-time"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-textGreen text-lg font-medium outline-none"
-              placeholder="مدة العرض">
-            <span class="w-1/6 bg-textGreen text-white flex items-center justify-center text-lg">يوم</span>
+              class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] outline-none"
+              placeholder="سعر الليلة">
+            <span class="w-1/6 bg-textGreen text-white font-bold text-2xl flex items-center justify-center">
+              $
+            </span>
           </div>
 
           <div
             class="flex flex-1 min-w-[170px] rounded-lg shadow-sm border border-textGreen sm:max-w-md overflow-hidden bg-white">
-            <input type="date" name="arriving-date" dir="ltr"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-textGreen text-lg font-medium outline-none"
-              placeholder="تاريخ الوصول">
+            <input type="text" name="order-time"
+              class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] outline-none" placeholder="الإجمالي">
           </div>
 
-          <div
-            class="flex flex-1 min-w-[170px] rounded-lg shadow-sm border border-textGreen sm:max-w-md overflow-hidden">
-            <input type="date" name="leaving-date" dir="ltr"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-textGreen text-lg font-medium outline-none placeholder-shown:text-textGreen placeholder-shown:italic color-scheme-dark"
-              placeholder="تاريخ المغادرة">
+          <div class="w-full flex items-center justify-between gap-4 flex-wrap">
+            <h3 class="text-lg text-textGreen font-semibold flex-1">التاريخ المتاح للحجز</h3>
+            <div class="flex flex-1 rounded-lg shadow-sm border border-textGreen sm:max-w-md overflow-hidden bg-white">
+              <input type="date" name="arriving-date" dir="ltr"
+                class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-textGreen text-lg font-medium outline-none"
+                placeholder="تاريخ الوصول">
+            </div>
+
+            <div class="flex flex-1 rounded-lg shadow-sm border border-textGreen sm:max-w-md overflow-hidden">
+              <input type="date" name="leaving-date" dir="ltr"
+                class="block w-full border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-textGreen text-lg font-medium outline-none placeholder-shown:text-textGreen placeholder-shown:italic color-scheme-dark"
+                placeholder="تاريخ المغادرة">
+            </div>
           </div>
 
-          <select id="options" name="options" aria-placeholder=""
-            class="block flex-1 min-w-[170px] sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
-            <option class="font-semibold text-textGreen" value="" disabled selected>اختيار الوجبة</option>
-            <option class="font-semibold text-textGreen" value="option4">فطور</option>
-            <option class="font-semibold text-textGreen" value="option4">فطور - غداء</option>
-            <option class="font-semibold text-textGreen" value="option4">فطور - عشاء</option>
-            <option class="font-semibold text-textGreen" value="option4">غداء</option>
-            <option class="font-semibold text-textGreen" value="option4">غداء - عشاء</option>
-            <option class="font-semibold text-textGreen" value="option4">عشاء</option>
-          </select>
-
-          <select id="options" name="options" aria-placeholder=""
-            class="block flex-1 min-w-[170px] sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
-            <option class="font-semibold text-textGreen" value="" disabled selected>نوع المطبخ</option>
-            <option class="font-semibold text-textGreen" value="option4">داخلي</option>
-            <option class="font-semibold text-textGreen" value="option4">خارجي</option>
-            <option class="font-semibold text-textGreen" value="option4">بدون مطبخ</option>
-          </select>
 
           <div class="w-full">
             <div class="flex flex-1 w-full rounded-lg shadow-lg border border-textGreen overflow-hidden mb-6 bg-white">
               <textarea type="date" name="order-data"
-                class="block w-full h-60 border-0 bg-transparent py-2 px-4 text-[#707070] placeholder:text-textGreen placeholder:text-base text-lg font-normal outline-none"
-                placeholder="قم بكتابة البيانات الوصفية للفندق المطلوب"></textarea>
+                class="block w-full h-60 border-0 bg-transparent py-2 px-4 text-[#707070] outline-none"
+                placeholder="تفاصيل العرض"></textarea>
             </div>
 
-            <button type="submit" onclick="hidePostModal()"
-              class="rounded-md mx-auto bg-textGreen w-[250px] h-12 text-2xl font-bold text-white shadow-sm hover:bg-mainGreen">نشر
-              الان</button>
+            <button type="submit" onclick="hideOfferModal()"
+              class="rounded-md mx-auto bg-textGreen w-[250px] h-12 text-2xl font-bold text-white shadow-sm hover:bg-mainGreen">
+              إضافة عرضك
+            </button>
           </div>
         </div>
       </div>
