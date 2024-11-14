@@ -10,6 +10,7 @@ module.exports = {
         mainGreen: '#00BE64',
         textGreen: '#69BE96',
         textGray: '#8989A2',
+        textDarkGray: '#707070',
         lightGray: '#F7F9FB',
       },
       backgroundImage: {
