@@ -7,92 +7,11 @@
   <title>BTD Travel - Settings</title>
 
   <link rel="stylesheet" href="./dist/output.css">
-
-  <script>
-    // Profile Menu Toggle
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuButton = document.querySelector("[aria-label='Global'] button");
-      const mobileMenu = document.querySelector("[role='dialog']");
-
-      menuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      const closeButton = mobileMenu.querySelector("button");
-      closeButton.addEventListener("click", () => {
-        mobileMenu.classList.add("hidden");
-      });
-    });
-
-    // User Profile Toggle Menu
-    function toggleProfileDropdown() {
-      const dropdown = document.getElementById("dropdownMenu");
-      dropdown.classList.toggle("hidden");
-    }
-
-    window.addEventListener("click", function (e) {
-      const dropdown = document.getElementById("dropdownMenu");
-      if (!e.target.closest("#dropdownMenu") && !e.target.closest("button")) {
-        dropdown.classList.add("hidden");
-      }
-    });
-
-    // Messages DropMenu
-    function toggleChatDropdown() {
-      const MessagesDropdownMenu = document.getElementById('messages-dropdown-menu');
-      MessagesDropdownMenu.classList.toggle("hidden");
-    }
-
-    window.addEventListener('click', (e) => {
-      const MessagesDropdownMenu = document.getElementById('messages-dropdown-menu');
-      if (!e.target.closest("#messages-dropdown-menu") && !e.target.closest("#email-icon")) {
-        MessagesDropdownMenu.classList.add("hidden");
-      }
-    });
-
-    // Notifications DropMenu
-    function toggleNotificationsDropdown() {
-      const notificationsDropdownMenu = document.getElementById('notifications-dropdown-menu');
-      notificationsDropdownMenu.classList.toggle("hidden");
-    }
-
-    window.addEventListener('click', (e) => {
-      const notificationsDropdownMenu = document.getElementById('notifications-dropdown-menu');
-      if (!e.target.closest("#notifications-dropdown-menu") && !e.target.closest("#notification-icon")) {
-        notificationsDropdownMenu.classList.add("hidden");
-      }
-    });
-
-    // Settings Toggle
-    function settingsToggle(btn) {
-      const basicInfo = document.getElementById("basic-info");
-      const generalSettings = document.getElementById("general-settings");
-      const employeesDashboard = document.getElementById("employeesDashboard");
-
-      const basicInfoBtn = document.querySelector(".basic-info-btn");
-      const generalSettingsBtn = document.querySelector(".general-settings-btn");
-
-      if (btn.classList.contains('basic-info-btn')) {
-        generalSettings.classList.add("hidden");
-        employeesDashboard.classList.add("hidden");
-        generalSettingsBtn.style.opacity = '0.6';
-        generalSettingsBtn.style.borderRight = '0';
-        basicInfo.classList.remove("hidden");
-        basicInfoBtn.style.opacity = '1'
-        basicInfoBtn.style.borderRight = '8px solid #69BE96';
-      } else {
-        basicInfo.classList.add("hidden");
-        basicInfoBtn.style.opacity = '0.6';
-        basicInfoBtn.style.borderRight = '0';
-        generalSettings.classList.remove("hidden");
-        employeesDashboard.classList.remove("hidden");
-        generalSettingsBtn.style.opacity = '1';
-        generalSettingsBtn.style.borderRight = '8px solid #69BE96'
-      }
-    }
+  
+  <script src="./js/header.js" defer></script>
+  <script src="./js/hotelSettings.js" defer></script>
 
 
-  </script>
 </head>
 
 <body class="bg-lightGray">
@@ -553,7 +472,7 @@
             <label for="noraml" class="block text-xl font-medium text-textDarkGray">عادي</label>
           </div>
           <div class="flex items-center gap-3">
-            <input type="radio" name="clientType" id="business"
+            <input type="radio" name="clientType" id="business" checked
               class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
             <label for="business" class="block text-xl font-medium text-textDarkGray">أعمال</label>
           </div>
@@ -564,22 +483,22 @@
 
           <div class="grid grid-cols-2 gap-4 py-4">
             <div class="flex items-center gap-3">
-              <input type="radio" name="clientType" id="hotel"
+              <input type="radio" name="clientType1" id="hotel" checked
                 class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
               <label for="hotel" class="block text-xl font-medium text-textDarkGray">فندق</label>
             </div>
             <div class="flex items-center gap-3">
-              <input type="radio" name="clientType" id="tourismCompany"
+              <input type="radio" name="clientType1" id="tourismCompany"
                 class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
               <label for="tourismCompany" class="block text-xl font-medium text-textDarkGray">شركة سياحية</label>
             </div>
             <div class="flex items-center gap-3">
-              <input type="radio" name="clientType" id="businessMan"
+              <input type="radio" name="clientType1" id="businessMan"
                 class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
               <label for="businessMan" class="block text-xl font-medium text-textDarkGray">وسيط أعمال</label>
             </div>
             <div class="flex items-center gap-3">
-              <input type="radio" name="clientType" id="govermentDepartment"
+              <input type="radio" name="clientType1" id="govermentDepartment"
                 class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
               <label for="govermentDepartment" class="block text-xl font-medium text-textDarkGray">دائرة حكومية</label>
             </div>
@@ -615,14 +534,14 @@
   <section id="employeesDashboard" class="wrapper hidden overflow-x-auto bg-white shadow-xl rounded-xl my-10">
     <!-- Table Head -->
     <div class="p-4 text-white flex justify-between items-center">
-      <button onclick="openAddEmployeeForm()" class="bg-textGreen px-4 py-1 rounded flex items-center gap-2">
+      <button onclick="openAddEmployeeForm()" class="bg-textGreen px-4 py-1 rounded flex items-center gap-2 min-w-[150px]">
         <span>إضافة موظف</span>
         <span class="text-2xl font-semibold">+</span>
       </button>
 
       <div class="flex items-center gap-6">
         <!-- Search Bar -->
-        <div class="flex pr-4 border border-gray-300 rounded-md">
+        <div class="flex pr-4 border border-gray-300 rounded-md min-w-[200px] mr-4">
           <img class="w-6 min-w-6" src="./src/assets/icons/search.svg" alt="search">
           <input id="search" type="text" cursor-pointer
             class="w-[85%] block flex-1 border-0 bg-transparent py-2 px-4 text-textGray placeholder:text-textGreen outline-none"
@@ -790,196 +709,6 @@
     </div>
   </footer>
 
-
-  <script>
-    // Sample data for table
-    const data = [
-      { id: 1, name: "أحمد", jobCode: 51, jobType: "المدير العام", gender: "ذكر", phone: "123456", email: "ahmed@example.com" },
-      { id: 2, name: "ليلى", jobCode: 52, jobType: "مسؤول قسم مبيعات", gender: "أنثى", phone: "654321", email: "layla@example.com" },
-      { id: 1, name: "أحمد", jobCode: 53, jobType: "مسؤول الحجوزات", gender: "ذكر", phone: "123456", email: "ahmed@example.com" },
-      { id: 2, name: "ليلى", jobCode: 54, jobType: "مسؤول قسم المالية", gender: "أنثى", phone: "654321", email: "layla@example.com" },
-      { id: 1, name: "أحمد", jobCode: 51, jobType: "المدير العام", gender: "ذكر", phone: "123456", email: "ahmed@example.com" },
-      { id: 2, name: "ليلى", jobCode: 52, jobType: "مسؤول قسم مبيعات", gender: "أنثى", phone: "654321", email: "layla@example.com" },
-      { id: 1, name: "أحمد", jobCode: 54, jobType: "مسؤول قسم المالية", gender: "ذكر", phone: "123456", email: "ahmed@example.com" },
-      { id: 2, name: "ليلى", jobCode: 53, jobType: "مسؤول الحجوزات", gender: "أنثى", phone: "654321", email: "layla@example.com" },
-      { id: 1, name: "أحمد", jobCode: 52, jobType: "مسؤول قسم مبيعات", gender: "ذكر", phone: "123456", email: "ahmed@example.com" },
-      { id: 2, name: "ليلى", jobCode: 52, jobType: "مسؤول قسم مبيعات", gender: "أنثى", phone: "654321", email: "layla@example.com" },
-      { id: 1, name: "أحمد", jobCode: 51, jobType: "المدير العام", gender: "ذكر", phone: "123456", email: "ahmed@example.com" },
-      { id: 2, name: "ليلى", jobCode: 54, jobType: "مسؤول قسم المالية", gender: "أنثى", phone: "654321", email: "layla@example.com" },
-      { id: 1, name: "أحمد", jobCode: 52, jobType: "مسؤول قسم مبيعات", gender: "ذكر", phone: "123456", email: "ahmed@example.com" },
-      { id: 2, name: "ليلى", jobCode: 54, jobType: "مسؤول قسم المالية", gender: "أنثى", phone: "654321", email: "layla@example.com" },
-      { id: 1, name: "أحمد", jobCode: 55, jobType: "مسؤول قسم النشر", gender: "ذكر", phone: "123456", email: "ahmed@example.com" },
-      { id: 2, name: "ليلى", jobCode: 53, jobType: "مسؤول الحجوزات", gender: "أنثى", phone: "654321", email: "layla@example.com" },
-    ];
-
-    let currentPage = 1;
-    let rowsPerPage = 5;
-
-    // Initialize the table
-    function loadTable(dataToLoad) {
-      const tableBody = document.getElementById('tableBody');
-      tableBody.innerHTML = '';
-
-      const startIndex = (currentPage - 1) * rowsPerPage;
-      const endIndex = startIndex + rowsPerPage;
-      const currentData = dataToLoad.slice(startIndex, endIndex);
-
-      currentData.forEach((item, index) => {
-        const row = document.createElement('tr');
-        row.classList.add('border-b');
-        row.classList.add('odd:bg-white');
-        row.classList.add('even:bg-[#69be961d]');
-        row.innerHTML = `
-                <td class="px-2 py-4 min-w-fit">${item.id}</td>
-                <td class="px-2 py-4 min-w-fit">${item.name}</td>
-                <td class="px-2 py-4 min-w-[170px] flex items-center justify-center">
-                  <p class="${getJobColor(item.jobCode)} p-1 px-2 rounded-full w-fit">${item.jobType}</p>  
-                </td>
-                <td class="px-2 py-4 min-w-fit">${item.gender}</td>
-                <td class="px-2 py-4 min-w-fit">${item.phone}</td>
-                <td class="px-2 py-4 min-w-fit">${item.email}</td>
-                <td class="px-2 py-4 min-w-fit flex items-center justify-center gap-4">
-                  <button onclick="editRow(${index})" class="text-blue-500">
-                    <img class="w-5" src="./src/assets/icons/edit-row.svg" alt="edit">  
-                  </button>
-                  <button onclick="deleteRow(${index})" class="text-red-500">
-                    <img class="w-5" src="./src/assets/icons/delete-row.svg" alt="edit">  
-                  </button>
-                </td>
-            `;
-        tableBody.appendChild(row);
-      });
-
-      updatePaginationButtons();
-
-    }
-
-    // Function to get background color based on job type
-    function getJobColor(jobCode) {
-      switch (jobCode) {
-        case 51: return "bg-[#d1c431a9]";
-        case 52: return "bg-[#69be9693]";
-        case 53: return "bg-[#2d36b96c]";
-        case 54: return "bg-[#b4223554]";
-        case 55: return "bg-[#00be6580]";
-        default: return "bg-gray-200";
-      }
-    }
-
-    // Pagination functions
-
-    // Generate Pagination Buttons
-    function updatePaginationButtons() {
-      const paginationButtons = document.getElementById('paginationButtons');
-      paginationButtons.innerHTML = '';
-
-      const totalPages = Math.ceil(data.length / rowsPerPage);
-      for (let i = 1; i <= totalPages; i++) {
-        const button = document.createElement('button');
-        button.classList.add('px-3', 'py-1', 'rounded', 'text-white', i === currentPage ? 'bg-textGreen' : 'bg-gray-400');
-        button.textContent = i;
-        button.onclick = () => goToPage(i);
-        paginationButtons.appendChild(button);
-      }
-    }
-
-    // Change page
-    function goToPage(page) {
-      currentPage = page;
-      loadTable(data);
-    }
-
-    function nextPage() {
-      if (currentPage * rowsPerPage < data.length) {
-        currentPage++;
-        loadTable(data);
-      }
-    }
-
-    function previousPage() {
-      if (currentPage > 1) {
-        currentPage--;
-        loadTable(data);
-      }
-    }
-
-    function changeRowsPerPage() {
-      rowsPerPage = parseInt(document.getElementById('rowsPerPage').value);
-      currentPage = 1;
-      loadTable(data);
-    }
-
-    function deleteRow(index) {
-      data.splice(index, 1);
-      loadTable(data);
-    }
-
-    function editRow(index) {
-      alert("Editing row: " + data[index].name);
-      // Add edit functionality here
-    }
-
-    // Sorting function (basic sort implementation)
-    function sortTable(column) {
-      data.sort((a, b) => {
-        const valA = Object.values(a)[column];
-        const valB = Object.values(b)[column];
-        return valA < valB ? -1 : valA > valB ? 1 : 0;
-      });
-      loadTable(data);
-    }
-
-    // Filter function (basic search)
-    function filterTable() {
-      const searchTerm = document.getElementById('search').value.toLowerCase();
-      const filteredData = data.filter(item =>
-        item.name.toLowerCase().includes(searchTerm) ||
-        item.jobType.toLowerCase().includes(searchTerm) ||
-        item.phone.toLowerCase().includes(searchTerm) ||
-        item.email.toLowerCase().includes(searchTerm)
-      );
-      currentPage = 1; // Reset to the first page after filtering
-      loadTable(filteredData);
-
-    }
-
-    // Open and Close Add Employee Form
-    function openAddEmployeeForm() {
-      document.getElementById('addEmployeeForm').classList.remove('hidden');
-    }
-
-    function closeAddEmployeeForm() {
-      document.getElementById('addEmployeeForm').classList.add('hidden');
-    }
-
-    // Add new employee to the data
-    function addEmployee() {
-      const name = document.getElementById('employeeName').value;
-      const jobType = document.getElementById('employeeJob').value;
-      const gender = document.getElementById('employeeGender').value;
-      const phone = document.getElementById('employeePhone').value;
-      const email = document.getElementById('employeeEmail').value;
-
-      if (name && jobType && gender && phone && email) {
-        const newEmployee = {
-          id: data.length + 1,
-          name,
-          jobType,
-          gender,
-          phone,
-          email
-        };
-
-        data.push(newEmployee);
-        loadTable(data);
-        closeAddEmployeeForm();
-      } else {
-        alert("يرجى ملء جميع الحقول.");
-      }
-    }
-
-    loadTable(data);
-  </script>
 </body>
 
 </html>

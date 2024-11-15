@@ -8,88 +8,9 @@
 
   <link rel="stylesheet" href="./dist/output.css">
 
-  <script>
-    // Profile Menu Toggle
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuButton = document.querySelector("[aria-label='Global'] button");
-      const mobileMenu = document.querySelector("[role='dialog']");
+  <script src="./js/header.js" defer></script>
+  <script src="./js/clientSettings.js" defer></script>
 
-      menuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      const closeButton = mobileMenu.querySelector("button");
-      closeButton.addEventListener("click", () => {
-        mobileMenu.classList.add("hidden");
-      });
-    });
-
-    // User Profile Toggle Menu
-    function toggleProfileDropdown() {
-      const dropdown = document.getElementById("dropdownMenu");
-      dropdown.classList.toggle("hidden");
-    }
-
-    window.addEventListener("click", function (e) {
-      const dropdown = document.getElementById("dropdownMenu");
-      if (!e.target.closest("#dropdownMenu") && !e.target.closest("button")) {
-        dropdown.classList.add("hidden");
-      }
-    });
-
-    // Messages DropMenu
-    function toggleChatDropdown() {
-      const MessagesDropdownMenu = document.getElementById('messages-dropdown-menu');
-      MessagesDropdownMenu.classList.toggle("hidden");
-    }
-
-    window.addEventListener('click', (e) => {
-      const MessagesDropdownMenu = document.getElementById('messages-dropdown-menu');
-      if (!e.target.closest("#messages-dropdown-menu") && !e.target.closest("#email-icon")) {
-        MessagesDropdownMenu.classList.add("hidden");
-      }
-    });
-
-    // Notifications DropMenu
-    function toggleNotificationsDropdown() {
-      const notificationsDropdownMenu = document.getElementById('notifications-dropdown-menu');
-      notificationsDropdownMenu.classList.toggle("hidden");
-    }
-
-    window.addEventListener('click', (e) => {
-      const notificationsDropdownMenu = document.getElementById('notifications-dropdown-menu');
-      if (!e.target.closest("#notifications-dropdown-menu") && !e.target.closest("#notification-icon")) {
-        notificationsDropdownMenu.classList.add("hidden");
-      }
-    });
-
-    // Settings Toggle
-    function settingsToggle(btn) {
-      const basicInfo = document.getElementById("basic-info");
-      const generalSettings = document.getElementById("general-settings");
-      
-      const basicInfoBtn = document.querySelector(".basic-info-btn");
-      const generalSettingsBtn = document.querySelector(".general-settings-btn");
-
-      if (btn.classList.contains('basic-info-btn')) {
-        generalSettings.classList.add("hidden");
-        generalSettingsBtn.style.opacity = '0.6';
-        generalSettingsBtn.style.borderRight = '0';
-        basicInfo.classList.remove("hidden");
-        basicInfoBtn.style.opacity = '1'
-        basicInfoBtn.style.borderRight = '8px solid #69BE96'
-      }else{
-        basicInfo.classList.add("hidden");
-        basicInfoBtn.style.opacity = '0.6';
-        basicInfoBtn.style.borderRight = '0';
-        generalSettings.classList.remove("hidden");
-        generalSettingsBtn.style.opacity = '1';
-        generalSettingsBtn.style.borderRight = '8px solid #69BE96'
-      }
-    }
-
-
-  </script>
 </head>
 
 <body class="bg-lightGray">
@@ -542,7 +463,7 @@
         <div class="flex items-center gap-10 border-b border-textDarkGray py-4">
           <h3 class="text-2xl font-semibold">نوع العميل</h3>
           <div class="flex items-center gap-3">
-            <input type="radio" name="clientType" id="noraml"
+            <input type="radio" name="clientType" id="noraml" checked
               class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
             <label for="noraml" class="block text-xl font-medium text-textDarkGray">عادي</label>
           </div>
@@ -555,22 +476,22 @@
 
         <div class="grid grid-cols-2 gap-4 py-4">
           <div class="flex items-center gap-3">
-            <input type="radio" name="clientType" id="single"
+            <input type="radio" name="clientType1" id="single" checked
               class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
             <label for="single" class="block text-xl font-medium text-textDarkGray">فردي</label>
           </div>
           <div class="flex items-center gap-3">
-            <input type="radio" name="clientType" id="tourismCompany"
+            <input type="radio" name="clientType1" id="tourismCompany"
               class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
             <label for="tourismCompany" class="block text-xl font-medium text-textDarkGray">وكيل شركة سياحية</label>
           </div>
           <div class="flex items-center gap-3">
-            <input type="radio" name="clientType" id="tradingComapny"
+            <input type="radio" name="clientType1" id="tradingComapny"
               class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
             <label for="tradingComapny" class="block text-xl font-medium text-textDarkGray">وكيل شركة تجارية</label>
           </div>
           <div class="flex items-center gap-3">
-            <input type="radio" name="clientType" id="govermentDepartment"
+            <input type="radio" name="clientType1" id="govermentDepartment"
               class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
             <label for="govermentDepartment" class="block text-xl font-medium text-textDarkGray">وكيل دائرة حكومية</label>
           </div>
