@@ -152,6 +152,7 @@
               </div>
 
             </div>
+
             <div class="relative">
               <img id="notification-icon" onclick="toggleNotificationsDropdown()" class="w-6 min-w-6 cursor-pointer"
                 src="./src/assets/icons/notification.svg" alt="notification">
@@ -286,7 +287,7 @@
           </div>
 
           <div class="relative">
-            <!-- Profile Picture (Button to open dropdown) -->
+            <!-- Profile Picture DropMenu -->
             <button onclick="toggleProfileDropdown()" class="flex items-center gap-1 focus:outline-none">
               <img src="./src/assets/images/Avatar.png" alt="User Profile"
                 class="w-10 h-10 rounded-full border-2 border-white" />
@@ -302,7 +303,7 @@
 
             <!-- Dropdown Menu -->
             <div id="dropdownMenu"
-              class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg overflow-hidden text-gray-800 hidden">
+              class="absolute left-0 z-50 mt-2 w-48 bg-white rounded-lg shadow-lg overflow-hidden text-gray-800 hidden">
               <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 border-b border-lightGray">
                 <svg class="w-5 h-5 ml-2 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
                   <path
@@ -363,7 +364,6 @@
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">العروض</a>
                 <a href="./walet.html"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">محفظتي</a>
-
               </div>
             </div>
           </div>
