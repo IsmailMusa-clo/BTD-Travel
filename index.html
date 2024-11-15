@@ -82,8 +82,8 @@
           </div>
 
           <div class="mt-6 flex flex-col items-center justify-center">
-            <button type="submit"
-              class="rounded-md bg-mainGreen w-[200px] h-12 text-2xl font-bold text-white shadow-sm hover:bg-textGreen">تسجيل</button>
+            <a href="./login.html"
+              class="flex items-center justify-center rounded-md bg-mainGreen w-[200px] h-12 text-2xl font-bold text-white shadow-sm hover:bg-textGreen">تسجيل</a>
           </div>
         </form>
 
@@ -139,12 +139,15 @@
                   placeholder="تأكيد كلمة المرور">
               </div>
 
-              <div class="flex relative rounded-lg shadow-sm border border-textGreen sm:max-w-md cursor-pointer overflow-hidden">
+              <div
+                class="flex relative rounded-lg shadow-sm border border-textGreen sm:max-w-md cursor-pointer overflow-hidden">
                 <input type="file" name="files" id="file-input" onchange="displayFileName()"
                   class="block opacity-0 absolute z-10 w-full h-full flex-1 border-0 bg-transparent py-2 px-4 text-gray-900 placeholder:text-textGray text-lg font-medium outline-none cursor-pointer">
                 <label for="file-input" class="flex items-center gap-2 py-2 px-4 cursor-pointer">
                   <img class="h-8 cursor-pointer" src="./src/assets/icons/cloud-icon.svg" alt="cloud">
-                  <span id="file-placeholder" class="text-textGray text-lg font-medium cursor-pointer whitespace-nowrap">ارفع الملفات من هنا</span>
+                  <span id="file-placeholder"
+                    class="text-textGray text-lg font-medium cursor-pointer whitespace-nowrap">ارفع الملفات من
+                    هنا</span>
                 </label>
               </div>
 
@@ -152,34 +155,30 @@
           </div>
 
           <div class="mt-6 flex flex-col items-center justify-center">
-            <button type="submit"
-              class="rounded-md bg-mainGreen w-[200px] h-12 text-2xl font-bold text-white shadow-sm hover:bg-textGreen">تسجيل</button>
+            <a href="./login.html"
+              class="flex items-center justify-center rounded-md bg-mainGreen w-[200px] h-12 text-2xl font-bold text-white shadow-sm hover:bg-textGreen">تسجيل</a>
           </div>
         </form>
 
         <div class="my-8">
           <p class="text-textGray text-xl text-center">أو</p>
 
-          <div class="mt-10 grid gap-x-6 gap-y-8 grid-cols-1 sm:grid-cols-2">
+          <div class="mt-10 grid gap-x-6 gap-y-8 grid-cols-1 sm:grid-cols-2 place-items-center">
 
-            <div>
-              <div class="flex rounded-lg shadow-sm border ">
-                <button type="submit"
-                  class="flex items-center justify-center gap-4 w-full rounded-md bg-white px-3 py-3 text-base sm:text-lg lg:text-lg font-boldshadow-sm">
-                  <img class="w-6 h-6" src="./src/assets/icons/google-icon.svg" alt="google">
-                  <span class="text-textGray font-bold">تسجيل الدخول باستخدام جوجل </span>
-                </button>
-              </div>
+            <div class="flex rounded-lg shadow-sm border w-full lg:max-w-[350px]">
+              <button type="submit"
+                class="flex items-center justify-center gap-2 w-full rounded-md bg-white px-2 py-3 text-sm font-medium shadow-sm">
+                <img class="w-5 h-5" src="./src/assets/icons/google-icon.svg" alt="google">
+                <span class="text-textGray font-medium">تسجيل الدخول باستخدام جوجل </span>
+              </button>
             </div>
 
-            <div>
-              <div class="flex rounded-lg shadow-sm border">
-                <button type="submit"
-                  class="flex items-center justify-center gap-4 w-full rounded-md bg-[#1877F2] px-3 py-3 text-base sm:text-lg lg:text-lg font-bold shadow-sm">
-                  <img class="w-6 h-6" src="./src/assets/icons/facebook-icon.svg" alt="facebook">
-                  <span class="text-white font-bold">تسجيل الدخول باستخدام فيسبوك </span>
-                </button>
-              </div>
+            <div class="flex rounded-lg shadow-sm border w-full lg:max-w-[350px]">
+              <button type="submit"
+                class="flex items-center justify-center gap-2 w-full rounded-md bg-[#1877F2] px-2 py-3 text-sm font-medium shadow-sm">
+                <img class="w-5 h-5" src="./src/assets/icons/facebook-icon.svg" alt="facebook">
+                <span class="text-white font-medium">تسجيل الدخول باستخدام فيسبوك </span>
+              </button>
             </div>
           </div>
         </div>
@@ -194,12 +193,12 @@
       </div>
 
       <!-- Vector Section -->
-      <div class="w-[30%] hidden lg:block">
+      <div class="w-[37%] hidden lg:block">
         <img class="w-full" src="./src/assets/images/Tablet login-amico.svg" alt="tablet">
       </div>
     </div>
   </div>
-  
+
 </body>
 
 </html>
