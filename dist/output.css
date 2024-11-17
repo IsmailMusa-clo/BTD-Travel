@@ -866,6 +866,18 @@ video {
   margin-top: 2rem;
 }
 
+.ml-14 {
+  margin-left: 3.5rem;
+}
+
+.ml-16 {
+  margin-left: 4rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
 .block {
   display: block;
 }
@@ -1135,12 +1147,12 @@ video {
   width: 250px;
 }
 
-.w-\[30\%\] {
-  width: 30%;
-}
-
 .w-\[35\%\] {
   width: 35%;
+}
+
+.w-\[37\%\] {
+  width: 37%;
 }
 
 .w-\[85\%\] {
@@ -1168,8 +1180,8 @@ video {
   width: 100vw;
 }
 
-.w-\[37\%\] {
-  width: 37%;
+.w-\[50px\] {
+  width: 50px;
 }
 
 .min-w-10 {
@@ -1227,6 +1239,10 @@ video {
 .min-w-fit {
   min-width: -moz-fit-content;
   min-width: fit-content;
+}
+
+.min-w-\[50px\] {
+  min-width: 50px;
 }
 
 .\!max-w-none {
@@ -1407,10 +1423,6 @@ video {
 
 .flex-wrap {
   flex-wrap: wrap;
-}
-
-.place-content-center {
-  place-content: center;
 }
 
 .place-items-center {
@@ -2762,6 +2774,10 @@ video {
     gap: 2rem;
   }
 
+  .sm\:gap-4 {
+    gap: 1rem;
+  }
+
   .sm\:bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -2778,11 +2794,6 @@ video {
   .sm\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
-  }
-
-  .sm\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
   }
 
   .sm\:text-sm {
@@ -2813,6 +2824,10 @@ video {
     margin-bottom: 2.5rem;
   }
 
+  .md\:ml-16 {
+    margin-left: 4rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -2831,6 +2846,10 @@ video {
 
   .md\:h-screen {
     height: 100vh;
+  }
+
+  .md\:h-10 {
+    height: 2.5rem;
   }
 
   .md\:max-h-none {
@@ -2873,12 +2892,24 @@ video {
     width: 80%;
   }
 
+  .md\:w-\[100px\] {
+    width: 100px;
+  }
+
+  .md\:w-10 {
+    width: 2.5rem;
+  }
+
   .md\:min-w-6 {
     min-width: 1.5rem;
   }
 
   .md\:max-w-\[200px\] {
     max-width: 200px;
+  }
+
+  .md\:flex-none {
+    flex: none;
   }
 
   .md\:grid-cols-2 {
@@ -2980,20 +3011,16 @@ video {
     width: 75%;
   }
 
-  .lg\:max-w-\[500px\] {
-    max-width: 500px;
-  }
-
-  .lg\:max-w-\[300px\] {
-    max-width: 300px;
-  }
-
   .lg\:max-w-\[350px\] {
     max-width: 350px;
   }
 
   .lg\:flex-1 {
     flex: 1 1 0%;
+  }
+
+  .lg\:flex-none {
+    flex: none;
   }
 
   .lg\:grid-cols-3 {
@@ -3029,11 +3056,6 @@ video {
   .lg\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
-  }
-
-  .lg\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
   }
 }
 

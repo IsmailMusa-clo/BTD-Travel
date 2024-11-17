@@ -10,10 +10,10 @@
 
   <script src="./js/header.js" defer></script>
   <script src="./js/home.js" defer></script>
-  
+
   <script>
-    
-   
+
+
   </script>
 </head>
 
@@ -24,9 +24,9 @@
     <div class="wrapper">
       <!-- Navbar Section -->
       <nav class="flex items-center justify-between py-4" aria-label="Global">
-        <div class="flex ml-10">
+        <div class="flex flex-1 lg:flex-none ml-4 md:ml-16">
           <a href="#" class="-m-1.5">
-            <img class="w-[100px] min-w-[60px] h-auto" src="./src/assets/images/logo.png" alt="Logo">
+            <img class="w-[50px] md:w-[100px] min-w-[50px] h-auto" src="./src/assets/images/logo.png" alt="Logo">
           </a>
         </div>
 
@@ -38,15 +38,16 @@
 
         <div class="hidden lg:flex lg:gap-x-2 lg:flex-1">
           <a href="./home.html" class="font-normal text-textGreen py-3 px-2 rounded-md hover:bg-lightGray">الرئيسية</a>
-          <a href="./orders.html" class="font-normal text-textGreen py-3 px-2 rounded-md hover:bg-lightGray">الطلبات</a>
+          <a href="./myOrders.html"
+            class="font-normal text-textGreen py-3 px-2 rounded-md hover:bg-lightGray">طلباتي</a>
           <a href="./offers.html" class="font-normal text-textGreen py-3 px-2 rounded-md hover:bg-lightGray">العروض</a>
           <a href="./wallet.html" class="font-normal text-textGreen py-3 px-2 rounded-md hover:bg-lightGray">محفظتي</a>
         </div>
 
-        <div class="flex flex-1 justify-between gap-1 sm:gap-6">
-          <div class="flex gap-6 items-center">
+        <div class="flex justify-between gap-1 sm:gap-4">
+          <div class="flex gap-2 items-center">
             <div class="relative">
-              <img id="email-icon" onclick="toggleChatDropdown()" class="w-7 min-w-7 cursor-pointer"
+              <img id="email-icon" onclick="toggleChatDropdown()" class="w-6 min-w-6 cursor-pointer"
                 src="./src/assets/icons/email.svg" alt="email">
 
               <!-- Chat Messages DropMenu -->
@@ -147,7 +148,8 @@
 
                   </div>
 
-                  <a href="./chat.html" class="block font-bold text-center text-white bg-textGreen text-lg py-3 cursor-pointer">
+                  <a href="./chat.html"
+                    class="block font-bold text-center text-white bg-textGreen text-lg py-3 cursor-pointer">
                     عرض جميع الرسائل
                   </a>
                 </div>
@@ -155,7 +157,7 @@
 
             </div>
             <div class="relative">
-              <img id="notification-icon" onclick="toggleNotificationsDropdown()" class="w-6 min-w-6 cursor-pointer"
+              <img id="notification-icon" onclick="toggleNotificationsDropdown()" class="w-5 min-w-5 cursor-pointer"
                 src="./src/assets/icons/notification.svg" alt="notification">
 
               <!-- Notifications DropMenu -->
@@ -271,16 +273,17 @@
 
                   </div>
 
-                  <a href="./notifications.html" class="block font-bold text-center text-white bg-textGreen text-lg py-3 cursor-pointer">
+                  <a href="./notifications.html"
+                    class="block font-bold text-center text-white bg-textGreen text-lg py-3 cursor-pointer">
                     عرض جميع الإشعارات
                   </a>
                 </div>
               </div>
             </div>
 
-            <div class="flex rounded-lg border-0 md:border border-textGreen sm:max-w-md pl-4">
+            <div class="hidden md:flex rounded-lg border-0 md:border border-textGreen sm:max-w-md pl-4">
               <input type="text" name="search"
-                class="w-[85%] hidden md:block flex-1 border-0 bg-transparent py-2 px-4 text-textGray placeholder:text-textGreen placeholder:font-semibold text-lg font-medium outline-none"
+                class="w-[85%] block flex-1 border-0 bg-transparent py-2 px-4 text-textGray placeholder:text-textGreen placeholder:font-semibold text-lg font-medium outline-none"
                 placeholder="البحث">
               <img class="w-6 min-w-6" src="./src/assets/icons/search.svg" alt="search">
             </div>
@@ -290,11 +293,11 @@
             <!-- Profile Picture (Button to open dropdown) -->
             <button onclick="toggleProfileDropdown()" class="flex items-center gap-1 focus:outline-none">
               <img src="./src/assets/images/Avatar.png" alt="User Profile"
-                class="w-10 h-10 rounded-full border-2 border-white" />
+                class="w-8 md:w-10 h-8 md:h-10 rounded-full border-2 border-white" />
 
-              <h3 class="font-semibold">محمد أحمد</h3>
+              <h3 class="font-semibold text-sm">محمد أحمد</h3>
 
-              <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd"
                   d="M5.23 7.21a1 1 0 011.41.02L10 10.61l3.36-3.38a1 1 0 011.41-.02 1 1 0 01-.02 1.41L10.7 12.39a1 1 0 01-1.4 0L5.23 8.62a1 1 0 01-.02-1.41z"
                   clip-rule="evenodd" />
@@ -304,21 +307,23 @@
             <!-- Dropdown Menu -->
             <div id="dropdownMenu"
               class="absolute left-0 z-50 mt-2 w-48 bg-white rounded-lg shadow-lg overflow-hidden text-gray-800 hidden">
-              <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 border-b border-lightGray">
+              <a href="./clientSettings.html"
+                class="flex items-center px-4 py-2 hover:bg-gray-100 border-b border-lightGray">
                 <svg class="w-5 h-5 ml-2 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M12 12c2.209 0 4-1.791 4-4s-1.791-4-4-4-4 1.791-4 4 1.791 4 4 4zm0 2c-2.672 0-8 1.337-8 4v2h16v-2c0-2.663-5.328-4-8-4z" />
                 </svg>
                 الملف الشخصي
               </a>
-              <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 border-b border-lightGray">
+              <a href="./clientSettings.html"
+                class="flex items-center px-4 py-2 hover:bg-gray-100 border-b border-lightGray">
                 <svg class="w-5 h-5 ml-2 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M19.14 12.936a7.962 7.962 0 00-.098-1.364l2.064-1.558a.452.452 0 00.11-.563l-1.952-3.377a.449.449 0 00-.544-.194l-2.432.98a7.906 7.906 0 00-1.174-.682l-.366-2.553A.448.448 0 0014.3 3h-3.9a.448.448 0 00-.444.387l-.366 2.553c-.4.16-.783.366-1.174.682l-2.432-.98a.449.449 0 00-.544.194L2.994 9.451a.452.452 0 00.11.563l2.064 1.558c-.064.442-.098.89-.098 1.364s.034.922.098 1.364l-2.064 1.558a.452.452 0 00-.11.563l1.952 3.377c.106.183.337.253.544.194l2.432-.98c.39.315.774.522 1.174.682l.366 2.553a.448.448 0 00.444.387h3.9a.448.448 0 00.444-.387l.366-2.553c.4-.16.783-.366 1.174-.682l2.432.98c.207.059.438-.011.544-.194l1.952-3.377a.452.452 0 00-.11-.563l-2.064-1.558zM12 15c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3z" />
                 </svg>
                 الإعدادات
               </a>
-              <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100 border-b border-lightGray">
+              <a href="./wallet.html" class="flex items-center px-4 py-2 hover:bg-gray-100 border-b border-lightGray">
                 <svg class="w-5 h-5 ml-2 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M21 6H7C5.9 6 5 6.9 5 8v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM7 16V8h14v8H7zm-5-6v2h2V8h1v8H4v2h14v-2H5v-2h2V8H5v4H2z" />
@@ -358,14 +363,19 @@
               <div class="space-y-2 py-6">
                 <a href="./home.html"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">الرئيسية</a>
-                <a href="./orders.html"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">الطلبات</a>
+                <a href="./myOrders.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">طلباتي</a>
                 <a href="./offers.html"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">العروض</a>
                 <a href="./walet.html"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">محفظتي</a>
-
               </div>
+            </div>
+            <div class="flex rounded-lg border border-textGreen sm:max-w-md pl-4 mt-4">
+              <input type="text" name="search"
+                class="w-[85%] block flex-1 border-0 bg-transparent py-2 px-4 text-textGray placeholder:text-textGreen placeholder:font-semibold text-lg font-medium outline-none"
+                placeholder="البحث">
+              <img class="w-6 min-w-6" src="./src/assets/icons/search.svg" alt="search">
             </div>
           </div>
         </div>
@@ -384,7 +394,8 @@
       <div id="post-input"
         class="flex items-center justify-between gap-2 rounded-full shadow-sm border-2 border-mainGreen px-4 w-full">
         <input type="text" onclick="showPostModal()" name="post"
-          class="border-0 bg-transparent py-2 text-textDarkGray text-lg outline-none w-[85%]" placeholder="قم بنشر طلبك">
+          class="border-0 bg-transparent py-2 text-textDarkGray text-lg outline-none w-[85%]"
+          placeholder="قم بنشر طلبك">
       </div>
 
     </div>
@@ -911,7 +922,8 @@
     class="hidden fixed inset-0 bg-textDarkGray bg-opacity-75 transition-opacity" aria-hidden="true"></div>
 
   <div id="post-modal" class="hidden fixed inset-0 z-10 mx-auto w-fit overflow-y-auto">
-    <div class=" flex min-h-full w-fit mx-auto items-end justify-center text-center sm:items-center sm:p-0 overflow-y-auto">
+    <div
+      class=" flex min-h-full w-fit mx-auto items-end justify-center text-center sm:items-center sm:p-0 overflow-y-auto">
       <div
         class="flex flex-col gap-4 relative transform overflow-hidden rounded-lg bg-whitetext-center shadow-xl transition-all w-full sm:max-w-[850px] bg-lightGray">
         <div class="text-center bg-textGreen py-4">
