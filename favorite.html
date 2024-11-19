@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="./dist/output.css">
 
   <script src="./js/header.js" defer></script>
+  <script src="./js/counterAnimation.js" defer></script>
+
+  <script src="./js/elementsAnimation.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body class="bg-lightGray">
@@ -388,7 +393,7 @@
           <span class="text-xl font-bold text-textDarkGray">الرئيسية</span>
           <span class="text-xl font-bold text-textGreen">قائمة المفضلة</span>
         </h3>
-        <aside
+        <aside data-aos="fade-left"
           class="sm:bg-white sm:shadow-lg rounded-xl p-6 flex flex-row sm:flex-col flex-wrap gap-8 w-full h-fit mb-6">
 
           <div
@@ -452,7 +457,7 @@
       <main class="w-full sm:w-[60%] max-w-[800px]">
 
         <!-- Post 1  -->
-        <div class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
+        <div data-aos="zoom-in" class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
 
           <div class="flex items-center gap-4 w-full">
             <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
@@ -560,7 +565,7 @@
                 <p class="font-bold text-textDarkGray hidden lg:block">عدد العروض</p>
               </div>
               <div
-                class="w-8 h-8 rounded-full bg-textGreen text-lg font-bold text-white flex items-center justify-center">
+                class="postOffersCounter w-8 h-8 rounded-full bg-textGreen text-lg font-bold text-white flex items-center justify-center">
                 25
               </div>
 
@@ -570,7 +575,7 @@
         </div>
 
         <!-- Post 2  -->
-        <div class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
+        <div data-aos="zoom-in" class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
 
           <div class="flex items-center gap-4 w-full">
             <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
@@ -678,7 +683,7 @@
                 <p class="font-bold text-textDarkGray hidden lg:block">عدد العروض</p>
               </div>
               <div
-                class="w-8 h-8 rounded-full bg-textGreen text-lg font-bold text-white flex items-center justify-center">
+                class="postOffersCounter w-8 h-8 rounded-full bg-textGreen text-lg font-bold text-white flex items-center justify-center">
                 25
               </div>
 
@@ -688,7 +693,7 @@
         </div>
 
         <!-- Post 3  -->
-        <div class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
+        <div data-aos="zoom-in" class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
 
           <div class="flex items-center gap-4 w-full">
             <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
@@ -796,7 +801,7 @@
                 <p class="font-bold text-textDarkGray hidden lg:block">عدد العروض</p>
               </div>
               <div
-                class="w-8 h-8 rounded-full bg-textGreen text-lg font-bold text-white flex items-center justify-center">
+                class="postOffersCounter w-8 h-8 rounded-full bg-textGreen text-lg font-bold text-white flex items-center justify-center">
                 25
               </div>
 

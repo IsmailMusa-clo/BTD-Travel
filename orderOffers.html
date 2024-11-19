@@ -11,6 +11,10 @@
   <script src="./js/header.js" defer></script>
   <script src="./js/orderOffers.js" defer></script>
 
+  <script src="./js/elementsAnimation.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 </head>
 
 <body class="bg-lightGray">
@@ -382,7 +386,7 @@
   <section class="wrapper mt-10">
 
     <div class="flex flex-col sm:flex-row justify-between gap-4 ">
-      <aside
+      <aside data-aos="fade-left"
         class="p-6 w-full sm:w-[30%] md:w-[22%] h-fit flex sm:flex-col items-center sm:items-start justify-start gap-8 sm:gap-2">
 
         <label for="offersFilters" class="font-semibold text-textGreen text-lg">التعليقات</label>
@@ -399,7 +403,7 @@
       <main class="w-full sm:w-[70%] md:w-[50%]">
 
         <!-- Order Section -->
-        <div class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
+        <div data-aos="zoom-in" class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
 
           <div class="flex items-center gap-4 w-full">
             <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
@@ -529,7 +533,7 @@
         <div>
 
           <!-- Offer 1 Section -->
-          <div class="mb-5 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-3">
+          <div data-aos="fade-up" class="mb-5 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-3">
 
             <div class="flex items-center gap-4 w-full">
               <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
@@ -623,7 +627,7 @@
           </div>
 
           <!-- Offer 2 Section -->
-          <div class="mb-5 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-3">
+          <div data-aos="fade-up" class="mb-5 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-3">
 
             <div class="flex items-center gap-4 w-full">
               <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
@@ -717,7 +721,7 @@
           </div>
 
           <!-- Offer 3 Section -->
-          <div class="mb-5 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-3">
+          <div data-aos="fade-up" class="mb-5 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-3">
 
             <div class="flex items-center gap-4 w-full">
               <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
@@ -815,7 +819,7 @@
 
       </main>
 
-      <div
+      <div data-aos="fade-right"
         class="bg-white shadow-lg rounded-xl px-2 pb-6 pt-10 hidden md:flex flex-col items-center gap-8 w-[22%] h-fit">
         <div class="w-[150px] h-[150px] rounded-full border-2 border-mainGreen overflow-hidden">
           <img class="h-full object-fill" src="./src/assets/images/user.png" alt="user">

@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="./dist/output.css">
 
   <script src="./js/header.js" defer></script>
+  <script src="./js/counterAnimation.js" defer></script>
+
+  <script src="./js/elementsAnimation.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body class="bg-lightGray">
@@ -385,7 +390,7 @@
       <!-- Top section -->
       <div class="flex flex-col md:flex-row items-center gap-4 mb-8">
         <!-- User Info -->
-        <div
+        <div data-aos="fade-left"
           class="flex w-full md:w-1/4 flex-col gap-4 items-center justify-between mb-4 p-4 bg-white border border-gray-300 rounded-xl shadow-xl">
           <div class="w-full flex items-center gap-2 justify-start">
             <div class="w-14 h-14 lg:w-20 lg:h-20 rounded-full overflow-hidden border-2 border-textGreen">
@@ -421,7 +426,7 @@
           </div>
         </div>
 
-        <div class="flex w-full md:w-3/4 flex-col gap-4">
+        <div data-aos="fade-right" class="flex w-full md:w-3/4 flex-col gap-4">
           <!-- Options Section -->
           <div class="flex flex-1 items-center justify-center md:justify-end gap-4">
 
@@ -449,15 +454,28 @@
             class="flex items-center justify-around gap-4 bg-white border border-gray-300 rounded-lg shadow-lg py-10 px-1 md:px-8">
             <div class="text-center">
               <p class="text-base md:text-xl font-bold text-textGreen">الرصيد الإجمالي</p>
-              <span class="block mt-2 text-lg text-textDarkGray font-bold">5$</span>
+              <!-- <p class="flex items-center justify-center gap-0 mt-2 text-lg text-textDarkGray font-bold">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p> -->
+              <p class="flex items-center justify-center gap-0 mt-2 text-lg text-textDarkGray font-bold">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
             <div class="text-center">
               <p class="text-base md:text-xl font-bold text-textGreen">الرصيد الملعق</p>
-              <span class="block mt-2 text-lg text-textDarkGray font-bold">5$</span>
+              <p class="flex items-center justify-center gap-0 mt-2 text-lg text-textDarkGray font-bold">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
             <div class="text-center">
               <p class="text-base md:text-xl font-bold text-textGreen">الرصيد القابل للسحب</p>
-              <span class="block mt-2 text-lg text-textDarkGray font-bold">5$</span>
+              <p class="flex items-center justify-center gap-0 mt-2 text-lg text-textDarkGray font-bold">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
           </div>
         </div>
@@ -468,7 +486,7 @@
       <div class="flex flex-col lg:flex-row items-center gap-4">
 
         <!-- Financial Movements -->
-        <div class="w-full lg:w-1/4 py-6 px-8 bg-white border border-gray-300 rounded-xl shadow-xl">
+        <div data-aos="fade-up" class="w-full lg:w-1/4 py-6 px-8 bg-white border border-gray-300 rounded-xl shadow-xl">
           <h2 class="text-xl lg:text-3xl text-textGreen font-bold w-fit pb-2 border-b-[3px] border-textDarkGray">الحركات
             المالية</h2>
 
@@ -522,7 +540,7 @@
         </div>
 
         <!-- Data Table -->
-        <div
+        <div data-aos="fade-up"
           class="bg-white w-full lg:w-3/4 border border-gray-300 rounded-lg shadow-lg p-4 overflow-x-auto scrollbar-hidden">
           <div class="flex w-full items-center justify-between gap-4 pb-2 border-b border-[#00BE64]">
             <h3 class="font-bold">قائمة أخر الحركات</h3>

@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="./dist/output.css">
 
   <script src="./js/header.js" defer></script>
+  <script src="./js/counterAnimation.js" defer></script>
+
+  <script src="./js/elementsAnimation.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body class="bg-lightGray">
@@ -392,7 +397,7 @@
     <section
       class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] lg:grid-cols-3 [@media(min-width:1900px)]:grid-cols-4 gap-8 mx-auto">
 
-      <div class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
+      <div data-aos="fade-up" class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
         <div class="w-full h-[250px]">
           <img class="w-full h-full object-cover" src="./src/assets/images/offer.png" alt="hotel">
         </div>
@@ -415,14 +420,18 @@
           <div class="flex items-center justify-between">
             <div class="text-textDarkGray font-semibold text-lg flex items-center gap-2">
               <p>تبدأ من</p>
-              <p>20$</p>
+              <p class="flex items-center gap-0">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
-            <a href="./offerDetails.html" class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
+            <a href="./offerDetails.html"
+              class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
+      <div data-aos="fade-up" class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
         <div class="w-full h-[250px]">
           <img class="w-full h-full object-cover" src="./src/assets/images/offer.png" alt="hotel">
         </div>
@@ -445,14 +454,18 @@
           <div class="flex items-center justify-between">
             <div class="text-textDarkGray font-semibold text-lg flex items-center gap-2">
               <p>تبدأ من</p>
-              <p>20$</p>
+              <p class="flex items-center gap-0">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
-            <a href="./offerDetails.html" class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
+            <a href="./offerDetails.html"
+              class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
+      <div data-aos="fade-up" class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
         <div class="w-full h-[250px]">
           <img class="w-full h-full object-cover" src="./src/assets/images/offer.png" alt="hotel">
         </div>
@@ -475,14 +488,18 @@
           <div class="flex items-center justify-between">
             <div class="text-textDarkGray font-semibold text-lg flex items-center gap-2">
               <p>تبدأ من</p>
-              <p>20$</p>
+              <p class="flex items-center gap-0">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
-            <a href="./offerDetails.html" class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
+            <a href="./offerDetails.html"
+              class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
+      <div data-aos="fade-up" class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
         <div class="w-full h-[250px]">
           <img class="w-full h-full object-cover" src="./src/assets/images/offer.png" alt="hotel">
         </div>
@@ -505,14 +522,18 @@
           <div class="flex items-center justify-between">
             <div class="text-textDarkGray font-semibold text-lg flex items-center gap-2">
               <p>تبدأ من</p>
-              <p>20$</p>
+              <p class="flex items-center gap-0">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
-            <a href="./offerDetails.html" class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
+            <a href="./offerDetails.html"
+              class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
+      <div data-aos="fade-up" class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
         <div class="w-full h-[250px]">
           <img class="w-full h-full object-cover" src="./src/assets/images/offer.png" alt="hotel">
         </div>
@@ -535,14 +556,18 @@
           <div class="flex items-center justify-between">
             <div class="text-textDarkGray font-semibold text-lg flex items-center gap-2">
               <p>تبدأ من</p>
-              <p>20$</p>
+              <p class="flex items-center gap-0">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
-            <a href="./offerDetails.html" class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
+            <a href="./offerDetails.html"
+              class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
+      <div data-aos="fade-up" class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
         <div class="w-full h-[250px]">
           <img class="w-full h-full object-cover" src="./src/assets/images/offer.png" alt="hotel">
         </div>
@@ -565,14 +590,18 @@
           <div class="flex items-center justify-between">
             <div class="text-textDarkGray font-semibold text-lg flex items-center gap-2">
               <p>تبدأ من</p>
-              <p>20$</p>
+              <p class="flex items-center gap-0">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
-            <a href="./offerDetails.html" class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
+            <a href="./offerDetails.html"
+              class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
+      <div data-aos="fade-up" class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
         <div class="w-full h-[250px]">
           <img class="w-full h-full object-cover" src="./src/assets/images/offer.png" alt="hotel">
         </div>
@@ -595,14 +624,18 @@
           <div class="flex items-center justify-between">
             <div class="text-textDarkGray font-semibold text-lg flex items-center gap-2">
               <p>تبدأ من</p>
-              <p>20$</p>
+              <p class="flex items-center gap-0">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
-            <a href="./offerDetails.html" class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
+            <a href="./offerDetails.html"
+              class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
+      <div data-aos="fade-up" class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
         <div class="w-full h-[250px]">
           <img class="w-full h-full object-cover" src="./src/assets/images/offer.png" alt="hotel">
         </div>
@@ -625,14 +658,18 @@
           <div class="flex items-center justify-between">
             <div class="text-textDarkGray font-semibold text-lg flex items-center gap-2">
               <p>تبدأ من</p>
-              <p>20$</p>
+              <p class="flex items-center gap-0">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
-            <a href="./offerDetails.html" class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
+            <a href="./offerDetails.html"
+              class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
+      <div data-aos="fade-up" class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
         <div class="w-full h-[250px]">
           <img class="w-full h-full object-cover" src="./src/assets/images/offer.png" alt="hotel">
         </div>
@@ -655,14 +692,18 @@
           <div class="flex items-center justify-between">
             <div class="text-textDarkGray font-semibold text-lg flex items-center gap-2">
               <p>تبدأ من</p>
-              <p>20$</p>
+              <p class="flex items-center gap-0">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
-            <a href="./offerDetails.html" class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
+            <a href="./offerDetails.html"
+              class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
+      <div data-aos="fade-up" class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
         <div class="w-full h-[250px]">
           <img class="w-full h-full object-cover" src="./src/assets/images/offer.png" alt="hotel">
         </div>
@@ -685,14 +726,18 @@
           <div class="flex items-center justify-between">
             <div class="text-textDarkGray font-semibold text-lg flex items-center gap-2">
               <p>تبدأ من</p>
-              <p>20$</p>
+              <p class="flex items-center gap-0">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
-            <a href="./offerDetails.html" class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
+            <a href="./offerDetails.html"
+              class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
+      <div data-aos="fade-up" class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
         <div class="w-full h-[250px]">
           <img class="w-full h-full object-cover" src="./src/assets/images/offer.png" alt="hotel">
         </div>
@@ -715,14 +760,18 @@
           <div class="flex items-center justify-between">
             <div class="text-textDarkGray font-semibold text-lg flex items-center gap-2">
               <p>تبدأ من</p>
-              <p>20$</p>
+              <p class="flex items-center gap-0">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
-            <a href="./offerDetails.html" class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
+            <a href="./offerDetails.html"
+              class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
+      <div data-aos="fade-up" class="flex flex-col gap-2 bg-white shadow-lg rounded-md border-2 border-textGreen overflow-hidden">
         <div class="w-full h-[250px]">
           <img class="w-full h-full object-cover" src="./src/assets/images/offer.png" alt="hotel">
         </div>
@@ -745,9 +794,13 @@
           <div class="flex items-center justify-between">
             <div class="text-textDarkGray font-semibold text-lg flex items-center gap-2">
               <p>تبدأ من</p>
-              <p>20$</p>
+              <p class="flex items-center gap-0">
+                <span>$</span>
+                <span class="postOffersCounter">20</span>
+              </p>
             </div>
-            <a href="./offerDetails.html" class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
+            <a href="./offerDetails.html"
+              class="block bg-textGreen py-2 px-5 rounded-md text-white font-semibold">تفاصيل</a>
           </div>
         </div>
       </div>

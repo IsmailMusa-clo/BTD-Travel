@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BTD Travel - Offer Details</title>
+  <title>BTD Travel - Hotel Details</title>
 
   <link rel="stylesheet" href="./dist/output.css">
 
@@ -17,7 +17,11 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
   <script src="./js/header.js" defer></script>
+  <script src="./js/counterAnimation.js" defer></script>
 
+  <script src="./js/elementsAnimation.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body class="bg-lightGray">
@@ -389,10 +393,10 @@
   <!-- Main Section -->
   <main class="my-20 flex flex-col gap-20">
 
-    <section class="wrapper">
+    <section  class="wrapper">
 
       <div class="flex flex-col-reverse gap-12 md:flex-row items-center justify-between mt-10 mb-16">
-        <div class="flex flex-col gap-8 flex-1">
+        <div data-aos="fade-left" class="flex flex-col gap-8 flex-1">
           <h3 class="text-lg font-semibold text-textGreen">نبذة عن الشركة</h3>
           <p class="text-lg text-textDarkGray">
             شركة متخصصة في تقديم خدمات الفنادق المتميزة
@@ -415,7 +419,7 @@
           </div>
         </div>
 
-        <div class="flex-1 flex items-center justify-center">
+        <div data-aos="fade-right" class="flex-1 flex items-center justify-center">
           <div
             class="relative flex flex-col justify-center items-center gap-2 border-2 border-textGreen rounded-md p-4 pt-20 w-full max-w-[300px]">
             <div
@@ -534,23 +538,26 @@
           </div>
           <div class="text-center">
             <h3 class="text-xl font-semibold">عدد العملاء</h3>
-            <p class="text-2xl text-textGreen font-bold">+30</p>
+            <p class="flex items-center justify-center gap-0 text-2xl text-textGreen font-bold">
+              <span>+</span>
+              <span class="postOffersCounter">20</span>
+            </p>
           </div>
         </div>
 
         <div class=" bg-white rounded-xl shadow-xl py-6 px-1 text-center">
           <h3 class="text-xl font-semibold">العروض المقدمة </h3>
-          <p class="text-2xl text-textGreen font-bold">22</p>
+          <p class="postOffersCounter text-2xl text-textGreen font-bold">22</p>
         </div>
 
         <div class=" bg-white rounded-xl shadow-xl py-6 px-1 text-center">
           <h3 class="text-xl font-semibold">العروض المؤكدة</h3>
-          <p class="text-2xl text-textGreen font-bold">10</p>
+          <p class="postOffersCounter text-2xl text-textGreen font-bold">10</p>
         </div>
 
         <div class=" bg-white rounded-xl shadow-xl py-6 px-1 text-center">
           <h3 class="text-xl font-semibold">العروض المرفوضة</h3>
-          <p class="text-2xl text-textGreen font-bold">6</p>
+          <p class="postOffersCounter text-2xl text-textGreen font-bold">6</p>
         </div>
       </div>
     </section>

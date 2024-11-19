@@ -10,6 +10,10 @@
 
   <script src="./js/header.js" defer></script>
   <script src="./js/walletAll.js" defer></script>
+
+  <script src="./js/elementsAnimation.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body class="bg-lightGray">
@@ -384,7 +388,7 @@
     <div class="mx-auto">
 
       <!-- Top section -->
-      <div class="flex flex-col md:flex-row items-center gap-4 mb-8">
+      <div data-aos="fade-down" class="flex flex-col md:flex-row items-center gap-4 mb-8">
         <div class="flex w-full flex-col gap-4">
           <!-- Options Section -->
           <div class="flex flex-1 items-center justify-center md:justify-end gap-4">
@@ -415,7 +419,7 @@
       <div class="flex flex-col lg:flex-row items-start gap-4">
 
         <!-- Financial Movements -->
-        <div class="w-full lg:w-1/4 py-6 px-8 bg-white border border-gray-300 rounded-xl shadow-xl">
+        <div data-aos="fade-left" class="w-full lg:w-1/4 py-6 px-8 bg-white border border-gray-300 rounded-xl shadow-xl">
           <h2 class="text-xl lg:text-3xl text-textGreen font-bold w-fit pb-2 border-b-[3px] border-textDarkGray">الحركات
             المالية</h2>
 
@@ -469,7 +473,7 @@
         </div>
 
         <!-- Data Table -->
-        <div
+        <div data-aos="fade-right"
           class="bg-white w-full lg:w-3/4 border border-gray-300 rounded-lg shadow-lg p-4 overflow-x-auto scrollbar-hidden">
           <div class="flex w-full items-center justify-between gap-4 pb-2 border-b border-[#00BE64]">
             <h3 class="font-bold">قائمة أخر الحركات</h3>

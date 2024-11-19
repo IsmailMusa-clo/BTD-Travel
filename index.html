@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="./dist/output.css">
 
   <script src="./js/signup.js" defer></script>
+
+  <script src="./js/elementsAnimation.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body
@@ -30,7 +34,7 @@
     <div class="flex items-center justify-between gap-20">
 
       <!-- Form Section -->
-      <div class="flex-1">
+      <div data-aos="fade-left" class="flex-1">
 
         <form id="client-form" method="post">
           <div class="space-y-12">
@@ -193,7 +197,7 @@
       </div>
 
       <!-- Vector Section -->
-      <div class="w-[37%] hidden lg:block">
+      <div data-aos="fade-right" class="w-[37%] hidden lg:block">
         <img class="w-full" src="./src/assets/images/Tablet login-amico.svg" alt="tablet">
       </div>
     </div>

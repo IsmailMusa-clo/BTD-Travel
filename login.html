@@ -7,6 +7,10 @@
   <title>BTD Travel - Login</title>
 
   <link rel="stylesheet" href="./dist/output.css">
+
+  <script src="./js/elementsAnimation.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body class="font-cairo w-full min-h-screen flex flex-col items-center justify-center">
@@ -14,7 +18,7 @@
   <div class="wrapper flex items-center justify-center gap-12 py-8">
 
     <!-- Login Form -->
-    <div class="flex flex-1 max-w-[500px] flex-col justify-center bg-white p-4 rounded-lg shadow-xl">
+    <div data-aos="fade-left" class="flex flex-1 max-w-[500px] flex-col justify-center bg-white p-4 rounded-lg shadow-xl">
       <div class="sm:mx-auto sm:w-full sm:max-w-sm">
         <img class="mx-auto w-[180px]" src="./src/assets/images/logo.png" alt="BTD Travel">
         <h2 class="text-center text-2xl/9 font-bold tracking-tight text-mainGreen">تسجيل الدخول</h2>
@@ -77,7 +81,7 @@
     </div>
 
     <!-- Vector Section -->
-    <div class="w-[35%] hidden lg:block">
+    <div data-aos="fade-right" class="w-[35%] hidden lg:block">
       <img class="w-full" src="./src/assets/images/Tablet login-bro.svg" alt="tablet">
     </div>
   </div>
