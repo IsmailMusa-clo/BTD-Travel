@@ -364,7 +364,7 @@
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">طلباتي</a>
                 <a href="./offers.html"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">العروض</a>
-                <a href="./walet.html"
+                <a href="./wallet.html"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">محفظتي</a>
               </div>
             </div>
@@ -475,18 +475,42 @@
         <div class="flex items-center gap-10 border-b border-textDarkGray py-4">
           <h3 class="text-2xl font-semibold">نوع العميل</h3>
           <div class="flex items-center gap-3">
-            <input type="radio" name="clientType" id="noraml"
+            <input type="radio" name="clientType" id="normalAccountBtn" onchange="toggleClientType()"
               class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
-            <label for="noraml" class="block text-xl font-medium text-textDarkGray">عادي</label>
+            <label for="normalAccountBtn" class="block text-xl font-medium text-textDarkGray">عادي</label>
           </div>
           <div class="flex items-center gap-3">
-            <input type="radio" name="clientType" id="business" checked
+            <input type="radio" name="clientType" id="businessAccountBtn" checked onchange="toggleClientType()"
               class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
-            <label for="business" class="block text-xl font-medium text-textDarkGray">أعمال</label>
+            <label for="businessAccountBtn" class="block text-xl font-medium text-textDarkGray">أعمال</label>
           </div>
         </div>
 
-        <div class="mt-4">
+        <div id="normalClientSection" class="grid grid-cols-2 gap-4 py-4 hidden">
+          <div class="flex items-center gap-3">
+            <input type="radio" name="clientType1" id="single" checked
+              class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
+            <label for="single" class="block text-xl font-medium text-textDarkGray">فردي</label>
+          </div>
+          <div class="flex items-center gap-3">
+            <input type="radio" name="clientType1" id="tourismCompany"
+              class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
+            <label for="tourismCompany" class="block text-xl font-medium text-textDarkGray">وكيل شركة سياحية</label>
+          </div>
+          <div class="flex items-center gap-3">
+            <input type="radio" name="clientType1" id="tradingComapny"
+              class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
+            <label for="tradingComapny" class="block text-xl font-medium text-textDarkGray">وكيل شركة تجارية</label>
+          </div>
+          <div class="flex items-center gap-3">
+            <input type="radio" name="clientType1" id="govermentDepartment"
+              class="block w-4 h-4 border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none accent-emerald-600 checked:text-textGreen">
+            <label for="govermentDepartment" class="block text-xl font-medium text-textDarkGray">وكيل دائرة
+              حكومية</label>
+          </div>
+        </div>
+
+        <div id="businessClientSection" class="mt-4">
           <h3 class="text-2xl font-semibold">نوع الشركة</h3>
 
           <div class="grid grid-cols-2 gap-4 py-4">
@@ -698,19 +722,19 @@
     <div class="wrapper border-t border-[#E6E6E6] py-6 px-4 flex items-center justify-between">
       <div class="flex items-center gap-4">
         <a href="#">
-          <img class="w-7" src="./src/assets/icons/facebook.svg" alt="facebook">
+          <img class="w-6" src="./src/assets/icons/facebook.svg" alt="facebook">
         </a>
         <a href="#">
-          <img class="w-7" src="./src/assets/icons/instgram.svg" alt="instgram">
+          <img class="w-6" src="./src/assets/icons/instgram.svg" alt="instgram">
         </a>
         <a href="#">
-          <img class="w-7" src="./src/assets/icons/twitter.svg" alt="twitter">
+          <img class="w-6" src="./src/assets/icons/twitter.svg" alt="twitter">
         </a>
         <a href="#">
-          <img class="w-7" src="./src/assets/icons/linkedin.svg" alt="linkedin">
+          <img class="w-6" src="./src/assets/icons/linkedin.svg" alt="linkedin">
         </a>
       </div>
-      <p class="text-center text-textDarkGray text-lg">
+      <p class="text-center text-textDarkGray">
         All rights reserved to
         <span class="font-bold">BTD</span>
         Company © 2024

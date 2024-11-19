@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="./dist/output.css">
 
   <script src="./js/header.js" defer></script>
+  <script src="./js/orderInfo.js" defer></script>
+
 </head>
 
 <body class="bg-lightGray">
@@ -361,7 +363,7 @@
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">طلباتي</a>
                 <a href="./offers.html"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">العروض</a>
-                <a href="./walet.html"
+                <a href="./wallet.html"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">محفظتي</a>
               </div>
             </div>
@@ -520,7 +522,7 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-4 my-6">
+      <div id="roomInfoInputs" class="roomInfoInputs grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-4 my-6">
 
         <div class="flex-1 lg:col-span-3">
           <label for="roomDetails" class="block font-medium text-textDarkGray">تفاصيل الغرفة</label>
@@ -566,10 +568,15 @@
 
         <div class="flex-1 lg:col-span-1">
           <label for="roomMembersCount" class="block font-medium text-textDarkGray">سعة الغرفة</label>
-          <div class="flex min-w-[70px] rounded-lg shadow-sm border border-textGreen bg-white mt-2">
-            <input type="number" name="roomMembersCount" id="roomMembersCount"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none"
-              placeholder="سعة الغرفة">
+          <div class="flex items-center gap-2 mt-2">
+            <div class="flex min-w-[70px] rounded-lg shadow-sm border border-textGreen bg-white">
+              <input type="number" name="roomMembersCount" id="roomMembersCount"
+                class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-none"
+                placeholder="سعة الغرفة">
+            </div>
+            <div id="addRoomSectionBtn" class="addRoomSectionBtn min-w-9 h-9 bg-textGreen rounded-md shadow-md flex items-center justify-center cursor-pointer">
+              <img class="w-6 h-6" src="./src/assets/icons/plus.svg" alt="plus">
+            </div>
           </div>
         </div>
 
@@ -582,9 +589,9 @@
             placeholder="قم بكتابة البيانات الوصفية للفندق المطلوب"></textarea>
         </div>
 
-        <button type="submit"
-          class="rounded-md  bg-textGreen w-[250px] h-12 text-2xl font-bold text-white shadow-sm hover:bg-mainGreen">نشر
-          الان</button>
+        <a href="./home.html"
+          class="flex items-center justify-center rounded-md  bg-textGreen w-[220px] h-12 text-2xl font-bold text-white shadow-sm hover:bg-mainGreen">نشر
+          الان</a>
       </div>
     </section>
 
@@ -650,25 +657,27 @@
     <div class="wrapper border-t border-[#E6E6E6] py-6 px-4 flex items-center justify-between">
       <div class="flex items-center gap-4">
         <a href="#">
-          <img class="w-7" src="./src/assets/icons/facebook.svg" alt="facebook">
+          <img class="w-6" src="./src/assets/icons/facebook.svg" alt="facebook">
         </a>
         <a href="#">
-          <img class="w-7" src="./src/assets/icons/instgram.svg" alt="instgram">
+          <img class="w-6" src="./src/assets/icons/instgram.svg" alt="instgram">
         </a>
         <a href="#">
-          <img class="w-7" src="./src/assets/icons/twitter.svg" alt="twitter">
+          <img class="w-6" src="./src/assets/icons/twitter.svg" alt="twitter">
         </a>
         <a href="#">
-          <img class="w-7" src="./src/assets/icons/linkedin.svg" alt="linkedin">
+          <img class="w-6" src="./src/assets/icons/linkedin.svg" alt="linkedin">
         </a>
       </div>
-      <p class="text-center text-textDarkGray text-lg">
+      <p class="text-center text-textDarkGray">
         All rights reserved to
         <span class="font-bold">BTD</span>
         Company © 2024
       </p>
     </div>
   </footer>
+
+
 </body>
 
 </html>

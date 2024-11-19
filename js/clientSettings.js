@@ -22,3 +22,18 @@ function settingsToggle(btn) {
     generalSettingsBtn.style.borderRight = '8px solid #69BE96'
   }
 }
+
+// Toggle Client Type
+function toggleClientType() {
+  const isNormal = document.getElementById('normalAccountBtn').checked
+  const normalSection = document.getElementById("normalClientSection");
+  const businessSection = document.getElementById("businessClientSection");
+
+  if (isNormal) {
+    normalSection.classList.remove('hidden')
+    businessSection.classList.add('hidden')
+  }else{
+    businessSection.classList.remove('hidden')
+    normalSection.classList.add('hidden')
+  }
+}

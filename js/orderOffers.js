@@ -116,7 +116,7 @@ function acceptOfferModal(id) {
                 </div>
 
                 <button type="submit" onclick="hideAcceptOfferModal(${id})"
-                  class="rounded-md mx-auto mb-8 bg-textGreen w-[250px] h-12 text-2xl font-bold text-white shadow-sm hover:bg-mainGreen">
+                  class="rounded-md mx-auto mb-8 bg-textGreen w-[220px] h-12 text-2xl font-bold text-white shadow-sm hover:bg-mainGreen">
                     قبول العرض
                 </button>
 

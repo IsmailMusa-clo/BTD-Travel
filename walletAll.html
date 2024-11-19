@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./dist/output.css">
 
   <script src="./js/header.js" defer></script>
+  <script src="./js/walletAll.js" defer></script>
 </head>
 
 <body class="bg-lightGray">
@@ -361,7 +362,7 @@
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">طلباتي</a>
                 <a href="./offers.html"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">العروض</a>
-                <a href="./walet.html"
+                <a href="./wallet.html"
                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">محفظتي</a>
               </div>
             </div>
@@ -389,21 +390,21 @@
           <div class="flex flex-1 items-center justify-center md:justify-end gap-4">
 
             <button
-              class="flex items-center gap-1 rounded-md border border-textGreen p-2 text-sm md:py-3 md:px-4 md:text-lg font-bold text-textGreen shadow-sm">
-              <span>تحويل داخلي</span>
+              class="flex items-center gap-1 rounded-md border border-textGreen py-2 px-4 font-semibold text-textGreen shadow-sm">
+              <span class="text-sm sm:text-base">تحويل داخلي</span>
               <img class="h-3 md:h-5" src="./src/assets/icons/money-bill.svg" alt="arrow">
             </button>
 
             <button
-              class="flex items-center gap-1 rounded-md border border-textGreen p-2 text-sm md:py-3 md:px-4 md:text-lg font-bold text-textGreen shadow-sm">
-              <span>سحب رصيد</span>
-              <img class="h-3 md:h-5" src="./src/assets/icons/arrow-top.svg" alt="arrow">
+              class="flex items-center gap-1 rounded-md border border-textGreen py-2 px-4 font-semibold text-textGreen shadow-sm">
+              <span class="text-sm sm:text-base">سحب رصيد</span>
+              <img class="h-3 md:h-4" src="./src/assets/icons/arrow-top.svg" alt="arrow">
             </button>
 
             <button
-              class="flex items-center gap-1 rounded-md bg-textGreen p-2 text-sm md:py-3 md:px-4 md:text-lg font-bold text-white shadow-sm">
-              <span>شحن رصيد</span>
-              <img class="h-3 md:h-5" src="./src/assets/icons/arrow-bottom.svg" alt="arrow">
+              class="flex items-center gap-1 rounded-md border bg-textGreen py-2 px-4 font-semibold text-white shadow-sm">
+              <span class="text-sm sm:text-base">شحن رصيد</span>
+              <img class="h-3 md:h-4" src="./src/assets/icons/arrow-bottom.svg" alt="arrow">
             </button>
           </div>
         </div>
@@ -438,30 +439,30 @@
               <div class="flex items-center gap-4">
                 <input type="checkbox" id="withdraw"
                   class="cursor-pointer w-6 h-6 accent-textGreen checked:bg-textGreen ">
-                <label for="withdraw" class="text-xl text-textDarkGray">سحب أرباح</label>
+                <label for="withdraw" class="text-textDarkGray">سحب أرباح</label>
               </div>
 
               <div class="flex items-center gap-4">
                 <input type="checkbox" id="add" class="cursor-pointer w-6 h-6 accent-textGreen checked:bg-textGreen ">
-                <label for="add" class="text-xl text-textDarkGray">إضافة</label>
+                <label for="add" class="text-textDarkGray">إضافة</label>
               </div>
 
               <div class="flex items-center gap-4">
                 <input type="checkbox" id="finishProject"
                   class="cursor-pointer w-6 h-6 accent-textGreen checked:bg-textGreen ">
-                <label for="finishProject" class="text-xl text-textDarkGray">إنهاء مشروع</label>
+                <label for="finishProject" class="text-textDarkGray">إنهاء مشروع</label>
               </div>
 
               <div class="flex items-center gap-4">
                 <input type="checkbox" id="cancelDeal"
                   class="cursor-pointer w-6 h-6 accent-textGreen checked:bg-textGreen ">
-                <label for="cancelDeal" class="text-xl text-textDarkGray">إلغاء صفقة</label>
+                <label for="cancelDeal" class="text-textDarkGray">إلغاء صفقة</label>
               </div>
 
               <div class="flex items-center gap-4">
                 <input type="checkbox" id="charge"
                   class="cursor-pointer w-6 h-6 accent-textGreen checked:bg-textGreen ">
-                <label for="charge" class="text-xl text-textDarkGray">إيداع</label>
+                <label for="charge" class="text-textDarkGray">إيداع</label>
               </div>
             </div>
           </div>
@@ -473,7 +474,7 @@
           <div class="flex w-full items-center justify-between gap-4 pb-2 border-b border-[#00BE64]">
             <h3 class="font-bold">قائمة أخر الحركات</h3>
             <div class="flex items-center gap-2">
-              <button type="submit" class="rounded-md bg-textGreen py-2 px-4 font-semibold text-white shadow-sm">
+              <button id="printBtn" type="submit" class="rounded-md bg-textGreen py-2 px-4 font-semibold text-white shadow-sm">
                 طباعة
               </button>
               <button type="submit" class="rounded-md bg-textGreen py-2 px-4 font-semibold text-white shadow-sm">
@@ -500,9 +501,9 @@
                 <td class="px-4 py-2">تحويل داخلي</td>
                 <td class="px-4 py-2">
                   <span class="text-textGreen font-semibold block">سحب أرباح إلى</span>
-                  <span class="block">الحساب البنكي</span>
+                  <span class="transferPlace block">الحساب البنكي</span>
                 </td>
-                <td class="px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
+                <td class="price px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
               </tr>
 
               <tr class="bg-gray-100 odd:bg-white even:bg-[#F8EAEA] border-b border-textGreen">
@@ -511,9 +512,9 @@
                 <td class="px-4 py-2">تحويل داخلي</td>
                 <td class="px-4 py-2">
                   <span class="text-textGreen font-semibold block">سحب أرباح إلى</span>
-                  <span class="block">الحساب البنكي</span>
+                  <span class="transferPlace block">الحساب البنكي</span>
                 </td>
-                <td class="px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
+                <td class="price px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
               </tr>
 
               <tr class="bg-gray-100 odd:bg-white even:bg-[#F8EAEA] border-b border-textGreen">
@@ -522,9 +523,9 @@
                 <td class="px-4 py-2">تحويل داخلي</td>
                 <td class="px-4 py-2">
                   <span class="text-textGreen font-semibold block">سحب أرباح إلى</span>
-                  <span class="block">الحساب البنكي</span>
+                  <span class="transferPlace block">الحساب البنكي</span>
                 </td>
-                <td class="px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
+                <td class="price px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
               </tr>
 
               <tr class="bg-gray-100 odd:bg-white even:bg-[#F8EAEA] border-b border-textGreen">
@@ -533,9 +534,9 @@
                 <td class="px-4 py-2">تحويل داخلي</td>
                 <td class="px-4 py-2">
                   <span class="text-textGreen font-semibold block">سحب أرباح إلى</span>
-                  <span class="block">الحساب البنكي</span>
+                  <span class="transferPlace block">الحساب البنكي</span>
                 </td>
-                <td class="px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
+                <td class="price px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
               </tr>
 
               <tr class="bg-gray-100 odd:bg-white even:bg-[#F8EAEA] border-b border-textGreen">
@@ -544,9 +545,9 @@
                 <td class="px-4 py-2">تحويل داخلي</td>
                 <td class="px-4 py-2">
                   <span class="text-textGreen font-semibold block">سحب أرباح إلى</span>
-                  <span class="block">الحساب البنكي</span>
+                  <span class="transferPlace block">الحساب البنكي</span>
                 </td>
-                <td class="px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
+                <td class="price px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
               </tr>
 
               <tr class="bg-gray-100 odd:bg-white even:bg-[#F8EAEA] border-b border-textGreen">
@@ -555,9 +556,9 @@
                 <td class="px-4 py-2">تحويل داخلي</td>
                 <td class="px-4 py-2">
                   <span class="text-textGreen font-semibold block">سحب أرباح إلى</span>
-                  <span class="block">الحساب البنكي</span>
+                  <span class="transferPlace block">الحساب البنكي</span>
                 </td>
-                <td class="px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
+                <td class="price px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
               </tr>
 
               <tr class="bg-gray-100 odd:bg-white even:bg-[#F8EAEA] border-b border-textGreen">
@@ -566,9 +567,9 @@
                 <td class="px-4 py-2">تحويل داخلي</td>
                 <td class="px-4 py-2">
                   <span class="text-textGreen font-semibold block">سحب أرباح إلى</span>
-                  <span class="block">الحساب البنكي</span>
+                  <span class="transferPlace block">الحساب البنكي</span>
                 </td>
-                <td class="px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
+                <td class="price px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
               </tr>
 
               <tr class="bg-gray-100 odd:bg-white even:bg-[#F8EAEA] border-b border-textGreen">
@@ -577,9 +578,9 @@
                 <td class="px-4 py-2">تحويل داخلي</td>
                 <td class="px-4 py-2">
                   <span class="text-textGreen font-semibold block">سحب أرباح إلى</span>
-                  <span class="block">الحساب البنكي</span>
+                  <span class="transferPlace block">الحساب البنكي</span>
                 </td>
-                <td class="px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
+                <td class="price px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
               </tr>
 
               <tr class="bg-gray-100 odd:bg-white even:bg-[#F8EAEA] border-b border-textGreen">
@@ -588,9 +589,9 @@
                 <td class="px-4 py-2">تحويل داخلي</td>
                 <td class="px-4 py-2">
                   <span class="text-textGreen font-semibold block">سحب أرباح إلى</span>
-                  <span class="block">الحساب البنكي</span>
+                  <span class="transferPlace block">الحساب البنكي</span>
                 </td>
-                <td class="px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
+                <td class="price px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
               </tr>
 
               <tr class="bg-gray-100 odd:bg-white even:bg-[#F8EAEA] border-b border-textGreen">
@@ -599,9 +600,9 @@
                 <td class="px-4 py-2">تحويل داخلي</td>
                 <td class="px-4 py-2">
                   <span class="text-textGreen font-semibold block">سحب أرباح إلى</span>
-                  <span class="block">الحساب البنكي</span>
+                  <span class="transferPlace block">الحساب البنكي</span>
                 </td>
-                <td class="px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
+                <td class="price px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
               </tr>
 
               <tr class="bg-gray-100 odd:bg-white even:bg-[#F8EAEA] border-b border-textGreen">
@@ -610,9 +611,9 @@
                 <td class="px-4 py-2">تحويل داخلي</td>
                 <td class="px-4 py-2">
                   <span class="text-textGreen font-semibold block">سحب أرباح إلى</span>
-                  <span class="block">الحساب البنكي</span>
+                  <span class="transferPlace block">الحساب البنكي</span>
                 </td>
-                <td class="px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
+                <td class="price px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
               </tr>
 
               <tr class="bg-gray-100 odd:bg-white even:bg-[#F8EAEA] border-b border-textGreen">
@@ -621,9 +622,9 @@
                 <td class="px-4 py-2">تحويل داخلي</td>
                 <td class="px-4 py-2">
                   <span class="text-textGreen font-semibold block">سحب أرباح إلى</span>
-                  <span class="block">الحساب البنكي</span>
+                  <span class="transferPlace block">الحساب البنكي</span>
                 </td>
-                <td class="px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
+                <td class="price px-4 py-2 text-textGreen text-lg font-bold">+30$</td>
               </tr>
 
             </tbody>
@@ -697,19 +698,19 @@
     <div class="wrapper border-t border-[#E6E6E6] py-6 px-4 flex items-center justify-between">
       <div class="flex items-center gap-4">
         <a href="#">
-          <img class="w-7" src="./src/assets/icons/facebook.svg" alt="facebook">
+          <img class="w-6" src="./src/assets/icons/facebook.svg" alt="facebook">
         </a>
         <a href="#">
-          <img class="w-7" src="./src/assets/icons/instgram.svg" alt="instgram">
+          <img class="w-6" src="./src/assets/icons/instgram.svg" alt="instgram">
         </a>
         <a href="#">
-          <img class="w-7" src="./src/assets/icons/twitter.svg" alt="twitter">
+          <img class="w-6" src="./src/assets/icons/twitter.svg" alt="twitter">
         </a>
         <a href="#">
-          <img class="w-7" src="./src/assets/icons/linkedin.svg" alt="linkedin">
+          <img class="w-6" src="./src/assets/icons/linkedin.svg" alt="linkedin">
         </a>
       </div>
-      <p class="text-center text-textDarkGray text-lg">
+      <p class="text-center text-textDarkGray">
         All rights reserved to
         <span class="font-bold">BTD</span>
         Company © 2024
