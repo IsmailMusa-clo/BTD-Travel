@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./dist/output.css">
 
   <script src="./js/header.js" defer></script>
+  <script src="./js/multiSelect.js" defer></script>
   <script src="./js/counterAnimation.js" defer></script>
 
   <script src="./js/elementsAnimation.js" defer></script>
@@ -52,13 +53,13 @@
 
               <!-- Chat Messages DropMenu -->
               <div id="messages-dropdown-menu"
-                class="hidden absolute right-0 z-10 mt-5 w-screen max-w-[200px] sm:max-w-[450px] translate-x-[42px] px-4">
+                class="hidden absolute right-0 z-10 mt-5 w-screen max-w-[230px] sm:max-w-[450px] translate-x-[42px] px-4">
                 <div
                   class="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 right-[40px]">
                 </div>
 
                 <div
-                  class="w-screen max-w-md flex-auto overflow-hidden rounded-lg bg-white border border-textGreen text-sm/6 shadow-lg ring-1 ring-gray-900/5">
+                  class="w-full flex-auto overflow-hidden rounded-lg bg-white border border-textGreen text-sm/6 shadow-lg ring-1 ring-gray-900/5">
                   <div>
 
                     <!-- Message Item -->
@@ -162,13 +163,13 @@
 
               <!-- Notifications DropMenu -->
               <div id="notifications-dropdown-menu"
-                class="hidden absolute right-0 z-10 mt-5 w-screen max-w-[450px] translate-x-[42px] px-4">
+                class="hidden absolute right-0 z-10 mt-5 w-screen max-w-[230px] sm:max-w-[450px] translate-x-[42px] px-4">
                 <div
                   class="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 right-[40px]">
                 </div>
 
                 <div
-                  class="w-screen max-w-md flex-auto overflow-hidden rounded-lg bg-white border border-textGreen text-sm/6 shadow-lg ring-1 ring-gray-900/5">
+                  class="w-full flex-auto overflow-hidden rounded-lg bg-white border border-textGreen text-sm/6 shadow-lg ring-1 ring-gray-900/5">
                   <div>
 
                     <!-- Notification Item -->
@@ -385,7 +386,8 @@
 
   <section class="wrapper mt-10">
 
-    <a data-aos="fade-down" href="./orderInfo.html" class="w-[90%] md:w-[44%] flex items-center justify-between gap-4 mx-auto mb-6 bg-white rounded-md shadow-md py-4 px-10 cursor-pointer">
+    <a data-aos="fade-down" href="./orderInfo.html"
+      class="w-[90%] md:w-[44%] flex items-center justify-between gap-4 mx-auto mb-6 bg-white rounded-md shadow-md py-4 px-10 cursor-pointer">
 
       <!-- <div class="w-16 min-w-16 h-16 rounded-full border-2 border-textGreen">
         <img class="w-full h-full object-fill" src="./src/assets/images/Avatar.png" alt="User Profile" />
@@ -438,13 +440,17 @@
           <option class="font-semibold text-textGreen" value="option4">فندق اخر</option>
         </select>
 
-        <select id="options" name="options" aria-placeholder=""
-          class="flex-1 min-w-[170px] sm:min-w-0 max-h-[42px] block sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
-          <option class="font-semibold text-textGreen" value="" disabled selected>الفئة</option>
-          <option class="font-semibold text-textGreen" value="option2">فئة 1</option>
-          <option class="font-semibold text-textGreen" value="option2">فئة 2</option>
-          <option class="font-semibold text-textGreen" value="option2">فئة 3</option>
-        </select>
+        <div class="relative mt-2">
+          <select id="multiSelect" name="options"
+            class="flex-1 min-w-[170px] sm:min-w-0 max-h-[42px] block sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
+            <option class="font-semibold text-textGreen" value="" disabled selected>الفئة</option>
+            <option class="font-semibold text-textGreen" value="category1">فئة 1</option>
+            <option class="font-semibold text-textGreen" value="category2">فئة 2</option>
+            <option class="font-semibold text-textGreen" value="category3">فئة 3</option>
+          </select>
+          <div id="selectedOptionsContainer" class="flex flex-wrap items-center gap-4 mt-4">
+          </div>
+        </div>
 
         <div class="flex-1 min-w-[170px] sm:min-w-0 sm:w-full">
           <label for="price" class="font-semibold text-textGreen self-end w-full text-lg">السعر</label>
@@ -582,7 +588,6 @@
                 <p class="font-bold text-textDarkGray hidden lg:block">عدد العروض</p>
               </div>
               <div
-              
                 class="postOffersCounter w-8 h-8 rounded-full bg-textGreen text-lg font-bold text-white flex items-center justify-center">
                 25
               </div>
@@ -592,7 +597,7 @@
           </div>
         </div>
 
-        <!-- Post 4  -->
+        <!-- Post 2  -->
         <div data-aos="zoom-in" class="mb-10 bg-white shadow-lg rounded-xl py-4 px-6 flex flex-col items-center gap-8">
 
           <div class="flex items-center gap-4 w-full">

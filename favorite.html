@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./dist/output.css">
 
   <script src="./js/header.js" defer></script>
+  <script src="./js/multiSelect.js" defer></script>
   <script src="./js/counterAnimation.js" defer></script>
 
   <script src="./js/elementsAnimation.js" defer></script>
@@ -422,13 +423,17 @@
             <option class="font-semibold text-textGreen" value="option4">فندق اخر</option>
           </select>
 
-          <select id="options" name="options" aria-placeholder=""
-            class="flex-1 min-w-[170px] sm:min-w-0 max-h-[42px] block sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
-            <option class="font-semibold text-textGreen" value="" disabled selected>الفئة</option>
-            <option class="font-semibold text-textGreen" value="option2">فئة 1</option>
-            <option class="font-semibold text-textGreen" value="option2">فئة 2</option>
-            <option class="font-semibold text-textGreen" value="option2">فئة 3</option>
-          </select>
+          <div class="relative mt-2">
+            <select id="multiSelect" name="options"
+              class="flex-1 min-w-[170px] sm:min-w-0 max-h-[42px] block sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
+              <option class="font-semibold text-textGreen" value="" disabled selected>الفئة</option>
+              <option class="font-semibold text-textGreen" value="category1">فئة 1</option>
+              <option class="font-semibold text-textGreen" value="category2">فئة 2</option>
+              <option class="font-semibold text-textGreen" value="category3">فئة 3</option>
+            </select>
+            <div id="selectedOptionsContainer" class="flex flex-wrap items-center gap-4 mt-4">
+            </div>
+          </div>
 
           <div class="flex-1 min-w-[170px] sm:min-w-0 sm:w-full">
             <label for="price" class="font-semibold text-textGreen self-end w-full text-lg">السعر</label>
