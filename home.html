@@ -47,15 +47,15 @@
 
         <div class="flex justify-between gap-1 sm:gap-4">
           <div class="flex gap-2 items-center">
-            <div class="relative">
+            <div class="sm:relative">
               <img id="email-icon" onclick="toggleChatDropdown()" class="w-6 min-w-6 cursor-pointer"
                 src="./src/assets/icons/email.svg" alt="email">
 
               <!-- Chat Messages DropMenu -->
               <div id="messages-dropdown-menu"
-                class="hidden absolute right-0 z-10 mt-5 w-screen max-w-[230px] sm:max-w-[450px] translate-x-[42px] px-4">
+                class="hidden absolute left-[50%] sm:left-0 md:right-0 z-10 mt-5 w-screen max-w-[450px] -translate-x-[50%] sm:-translate-x-[42px] md:translate-x-[42px] px-4">
                 <div
-                  class="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 right-[40px]">
+                  class="w-0 h-0 hidden sm:block border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 sm:left-[40px] md:right-[40px]">
                 </div>
 
                 <div
@@ -157,15 +157,15 @@
               </div>
 
             </div>
-            <div class="relative">
+            <div class="sm:relative lg:ml-4">
               <img id="notification-icon" onclick="toggleNotificationsDropdown()" class="w-5 min-w-5 cursor-pointer"
                 src="./src/assets/icons/notification.svg" alt="notification">
 
               <!-- Notifications DropMenu -->
               <div id="notifications-dropdown-menu"
-                class="hidden absolute right-0 z-10 mt-5 w-screen max-w-[230px] sm:max-w-[450px] translate-x-[42px] px-4">
+                class="hidden absolute left-[50%] sm:left-0 md:right-0 z-10 mt-5 w-screen max-w-[450px] -translate-x-[50%] sm:-translate-x-[40px] md:translate-x-[40px] px-4">
                 <div
-                  class="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 right-[40px]">
+                  class="w-0 h-0 hidden sm:block border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 sm:left-[35px] md:right-[36px]">
                 </div>
 
                 <div
@@ -433,16 +433,16 @@
         </select>
 
         <select id="options" name="options" aria-placeholder=""
-          class="block flex-1 min-w-[170px] sm:min-w-0 sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
+          class="block flex-1 min-w-[170px] max-h-[42px] sm:min-w-0 sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
           <option class="font-semibold text-textGreen" value="" disabled selected>الفندق</option>
           <option class="font-semibold text-textGreen" value="option2">فندق الرشيد</option>
           <option class="font-semibold text-textGreen" value="option3">فندق اسطنبول</option>
           <option class="font-semibold text-textGreen" value="option4">فندق اخر</option>
         </select>
 
-        <div class="relative mt-2">
+        <div class="flex-1">
           <select id="multiSelect" name="options"
-            class="flex-1 min-w-[170px] sm:min-w-0 max-h-[42px] block sm:w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
+            class="flex-1 min-w-[170px] sm:min-w-0 max-h-[42px] block w-full px-4 py-2 border-2 border-mainGreen bg-white rounded-lg font-semibold text-textGreen focus:outline-none focus:ring-textGreen focus:border-textGreen">
             <option class="font-semibold text-textGreen" value="" disabled selected>الفئة</option>
             <option class="font-semibold text-textGreen" value="category1">فئة 1</option>
             <option class="font-semibold text-textGreen" value="category2">فئة 2</option>

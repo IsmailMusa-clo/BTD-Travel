@@ -9,18 +9,8 @@
   <link rel="stylesheet" href="./dist/output.css">
 
   <script src="./js/header.js" defer></script>
+  <script src="./js/notifications.js" defer></script>
 
-  <script>
-
-    // Select All
-    function selectAllFunc(selectAllBtn) {
-      const checkboxes = document.querySelectorAll('.notification-checkbox');
-      checkboxes.forEach((checkbox) => {
-        checkbox.checked = selectAllBtn.checked
-      })
-    }
-
-  </script>
 </head>
 
 <body class="bg-lightGray">
@@ -52,19 +42,19 @@
 
         <div class="flex justify-between gap-1 sm:gap-4">
           <div class="flex gap-2 items-center">
-            <div class="relative">
+            <div class="sm:relative">
               <img id="email-icon" onclick="toggleChatDropdown()" class="w-6 min-w-6 cursor-pointer"
                 src="./src/assets/icons/email.svg" alt="email">
 
               <!-- Chat Messages DropMenu -->
               <div id="messages-dropdown-menu"
-                class="hidden absolute right-0 z-10 mt-5 w-screen max-w-[200px] sm:max-w-[450px] translate-x-[42px] px-4">
+                class="hidden absolute left-[50%] sm:left-0 md:right-0 z-10 mt-5 w-screen max-w-[450px] -translate-x-[50%] sm:-translate-x-[42px] md:translate-x-[42px] px-4">
                 <div
-                  class="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 right-[40px]">
+                  class="w-0 h-0 hidden sm:block border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 sm:left-[40px] md:right-[40px]">
                 </div>
 
                 <div
-                  class="w-screen max-w-md flex-auto overflow-hidden rounded-lg bg-white border border-textGreen text-sm/6 shadow-lg ring-1 ring-gray-900/5">
+                  class="w-full flex-auto overflow-hidden rounded-lg bg-white border border-textGreen text-sm/6 shadow-lg ring-1 ring-gray-900/5">
                   <div>
 
                     <!-- Message Item -->
@@ -162,19 +152,19 @@
               </div>
 
             </div>
-            <div class="relative">
+            <div class="sm:relative lg:ml-4">
               <img id="notification-icon" onclick="toggleNotificationsDropdown()" class="w-5 min-w-5 cursor-pointer"
                 src="./src/assets/icons/notification.svg" alt="notification">
 
               <!-- Notifications DropMenu -->
               <div id="notifications-dropdown-menu"
-                class="hidden absolute right-0 z-10 mt-5 w-screen max-w-[450px] translate-x-[42px] px-4">
+                class="hidden absolute left-[50%] sm:left-0 md:right-0 z-10 mt-5 w-screen max-w-[450px] -translate-x-[50%] sm:-translate-x-[40px] md:translate-x-[40px] px-4">
                 <div
-                  class="w-0 h-0 border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 right-[40px]">
+                  class="w-0 h-0 hidden sm:block border-l-[15px] border-r-[15px] border-b-[20px] border-l-transparent border-r-transparent border-b-mainGreen absolute -top-5 sm:left-[35px] md:right-[36px]">
                 </div>
 
                 <div
-                  class="w-screen max-w-md flex-auto overflow-hidden rounded-lg bg-white border border-textGreen text-sm/6 shadow-lg ring-1 ring-gray-900/5">
+                  class="w-full flex-auto overflow-hidden rounded-lg bg-white border border-textGreen text-sm/6 shadow-lg ring-1 ring-gray-900/5">
                   <div>
 
                     <!-- Notification Item -->
