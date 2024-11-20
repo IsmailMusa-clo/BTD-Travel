@@ -22,7 +22,16 @@ module.exports = {
       backgroundImage: {
         backgroundEffect: "url('../src/assets/images/background-effect.png')",
         orderBgEffect: "url('../src/assets/images/background-effect.png')"
-      }
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.3s ease-in-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateX(10px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+      },
     },
   },
   plugins: [],

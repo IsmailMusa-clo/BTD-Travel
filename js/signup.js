@@ -11,16 +11,20 @@ const userToggle = (isClient) => {
     freelancerBtn.style.color = '#707070';
     freelancerBtn.style.borderBottom = 'none';
 
-    clientForm.style.display = 'block'
-    freelancerForm.style.display = 'none'
+    freelancerForm.classList.add('hidden');
+    freelancerForm.classList.remove('fade-in');
+    clientForm.classList.remove('hidden');
+    clientForm.classList.add('fade-in');
   } else {
     freelancerBtn.style.color = '#00BE64';
     freelancerBtn.style.borderBottom = '3px solid #00BE64';
     clientBtn.style.color = '#707070';
     clientBtn.style.borderBottom = 'none';
 
-    freelancerForm.style.display = 'block'
-    clientForm.style.display = 'none'
+    clientForm.classList.add('hidden');
+    clientForm.classList.remove('fade-in');
+    freelancerForm.classList.remove('hidden');
+    freelancerForm.classList.add('fade-in');
   }
 }
 
