@@ -25,15 +25,23 @@ function settingsToggle(btn) {
 
 // Toggle Client Type
 function toggleClientType() {
+  const normalAccountBtn = document.getElementById('normalAccountBtnLabel')
+  const businessAccountBtn = document.getElementById('businessAccountBtnLabel')
   const isNormal = document.getElementById('normalAccountBtn').checked
   const normalSection = document.getElementById("normalClientSection");
   const businessSection = document.getElementById("businessClientSection");
 
+  console.log(isNormal);
+  
   if (isNormal) {
-    normalSection.classList.remove('hidden')
-    businessSection.classList.add('hidden')
+    normalSection.classList.remove('hidden');
+    businessSection.classList.add('hidden');
+    normalAccountBtn.style.color = '#69BE96';
+    businessAccountBtn.style.color = '#707070';
   }else{
-    businessSection.classList.remove('hidden')
-    normalSection.classList.add('hidden')
+    businessSection.classList.remove('hidden');
+    normalSection.classList.add('hidden');
+    businessAccountBtn.style.color = '#69BE96';
+    normalAccountBtn.style.color = '#707070';
   }
 }
