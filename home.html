@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./dist/output.css">
 
   <script src="./js/header.js" defer></script>
+  <script src="./js/home.js" defer></script>
   <script src="./js/multiSelect.js" defer></script>
   <script src="./js/counterAnimation.js" defer></script>
 
@@ -425,7 +426,7 @@
 
   <section class="wrapper mt-10">
 
-    <a data-aos="fade-down" href="./orderInfo.html"
+    <div data-aos="fade-down" onclick="showPostModal()"
       class="w-[90%] md:w-[44%] flex items-center justify-between gap-4 mx-auto mb-6 bg-white rounded-md shadow-md py-4 px-10 cursor-pointer">
 
       <div>
@@ -436,7 +437,7 @@
         <img class="w-full h-full object-fill" src="./src/assets/icons/order-info-plus.svg" alt="plus" />
       </div>
 
-    </a>
+    </div>
 
     <div class="flex flex-col sm:flex-row justify-between gap-4 ">
       <aside data-aos="fade-left"
@@ -453,9 +454,7 @@
         </div>
 
         <div class="relative flex-1 min-w-[170px] sm:min-w-0 sm:w-full">
-          <select
-            id="options"
-            name="options"
+          <select id="options" name="options"
             class="block flex-1 w-full px-4 py-2 border border-mainGreen bg-white rounded-lg font-semibold text-textGreen transition-all focus:outline-none focus:ring-textGreen focus:ring-1 appearance-none pr-8">
             <option class="font-semibold text-textGreen" value="" disabled selected>المدينة</option>
             <option class="font-semibold text-textGreen" value="option2">الرياض</option>
@@ -463,11 +462,12 @@
             <option class="font-semibold text-textGreen" value="option4">الشارقة</option>
           </select>
           <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-            <svg class="w-4 h-4 text-mainGreen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg class="w-4 h-4 text-mainGreen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </div>
-        </div>        
+        </div>
 
         <div class="relative flex-1 min-w-[170px] max-h-[42px] sm:min-w-0 sm:w-full">
           <select id="options" name="options"
@@ -550,15 +550,9 @@
             </div>
 
             <div class="flex items-end">
-              <span class="text-[12px] font-bold transform translate-x-[-16px] -translate-y-[3px]">20 يوم</span>
+              <span class="text-[12px] font-bold transform translate-x-[-16px] ">60:25</span>
               <img class="w-8 h-8" src="./src/assets/icons/post-time.svg" alt="time">
             </div>
-          </div>
-
-          <div class="px-8">
-            <p class="text-textDarkGray font-medium">
-              مرحباً ابحث عن شركة او فندق سياحي في القاهرة من اجل الإقامة يرجى وضع التكلفة مقابل الخدمة للليلة الواحدة
-            </p>
           </div>
 
           <div class="flex items-center flex-wrap gap-8 px-6">
@@ -620,6 +614,12 @@
 
           </div>
 
+          <div class="px-8">
+            <p class="text-textDarkGray font-medium">
+              مرحباً ابحث عن شركة او فندق سياحي في القاهرة من اجل الإقامة يرجى وضع التكلفة مقابل الخدمة للليلة الواحدة
+            </p>
+          </div>
+
           <div class="flex items-center justify-between gap-2 w-full border-t border-gray-200 px-4 py-1">
 
             <a href="./orderOffers.html"
@@ -671,15 +671,9 @@
             </div>
 
             <div class="flex items-end">
-              <span class="text-[12px] font-bold transform translate-x-[-16px] -translate-y-[3px]">20 يوم</span>
+              <span class="text-[12px] font-bold transform translate-x-[-16px] ">60:25</span>
               <img class="w-8 h-8" src="./src/assets/icons/post-time.svg" alt="time">
             </div>
-          </div>
-
-          <div class="px-8">
-            <p class="text-textDarkGray font-medium">
-              مرحباً ابحث عن شركة او فندق سياحي في القاهرة من اجل الإقامة يرجى وضع التكلفة مقابل الخدمة للليلة الواحدة
-            </p>
           </div>
 
           <div class="flex items-center flex-wrap gap-8 px-6">
@@ -739,6 +733,12 @@
               </div>
             </div>
 
+          </div>
+
+          <div class="px-8">
+            <p class="text-textDarkGray font-medium">
+              مرحباً ابحث عن شركة او فندق سياحي في القاهرة من اجل الإقامة يرجى وضع التكلفة مقابل الخدمة للليلة الواحدة
+            </p>
           </div>
 
           <div class="flex items-center justify-between gap-2 w-full border-t border-gray-200 px-4 py-1">
@@ -792,15 +792,9 @@
             </div>
 
             <div class="flex items-end">
-              <span class="text-[12px] font-bold transform translate-x-[-16px] -translate-y-[3px]">20 يوم</span>
+              <span class="text-[12px] font-bold transform translate-x-[-16px] ">60:25</span>
               <img class="w-8 h-8" src="./src/assets/icons/post-time.svg" alt="time">
             </div>
-          </div>
-
-          <div class="px-8">
-            <p class="text-textDarkGray font-medium">
-              مرحباً ابحث عن شركة او فندق سياحي في القاهرة من اجل الإقامة يرجى وضع التكلفة مقابل الخدمة للليلة الواحدة
-            </p>
           </div>
 
           <div class="flex items-center flex-wrap gap-8 px-6">
@@ -860,6 +854,12 @@
               </div>
             </div>
 
+          </div>
+
+          <div class="px-8">
+            <p class="text-textDarkGray font-medium">
+              مرحباً ابحث عن شركة او فندق سياحي في القاهرة من اجل الإقامة يرجى وضع التكلفة مقابل الخدمة للليلة الواحدة
+            </p>
           </div>
 
           <div class="flex items-center justify-between gap-2 w-full border-t border-gray-200 px-4 py-1">
@@ -1035,6 +1035,33 @@
     </div>
   </footer>
 
+  <!-- Create Order Modal -->
+  <div id="post-overlay" onclick="hidePostModal()"
+    class="hidden fixed inset-0 bg-textDarkGray bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+
+  <div id="post-modal" class="hidden fixed top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10 mx-auto w-fit overflow-y-auto">
+    <div
+      class=" flex min-h-full w-fit mx-auto items-end justify-center text-center sm:items-center sm:p-0 overflow-y-auto">
+      <div
+        class="flex flex-col gap-4 relative transform overflow-hidden rounded-lg bg-whitetext-center shadow-xl transition-all w-full sm:max-w-[850px] bg-lightGray">
+        <div class="flex items-center justify-between gap-4 bg-textGreen py-4 px-4">
+          <h3 class="text-lg font-bold text-white" id="modal-title">قم بنشر طلبك واحصل على أفضل العروض</h3>
+          <img onclick="hidePostModal()" class="w-4 h-4 transform rotate-45 cursor-pointer" src="./src/assets/icons/plus.svg" alt="close">
+        </div>
+        <div class="flex items-center justify-between gap-4 p-4 sm:px-20 sm:py-14 py-6">
+
+          <a href="./orderInfo.html" class="block font-bold w-32 px-4 py-8 rounded-md bg-textGreen text-white text-lg cursor-pointer">
+            طلب جديد
+          </a>
+          <a href="./orderInfo.html" class="block font-bold w-32 px-4 py-8 rounded-md bg-textGreen text-white text-lg cursor-pointer">
+            طلب سابق
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 </body>
 
 </html>

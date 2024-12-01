@@ -46,7 +46,8 @@
         <div class="flex justify-between gap-1 sm:gap-4">
           <div class="flex gap-4 items-center">
             <div class="sm:relative">
-              <svg id="email-icon" onclick="toggleChatDropdown()" class="w-[22px] min-w-[22px] cursor-pointer text-textGreen hover:text-mainGreen transition-all"
+              <svg id="email-icon" onclick="toggleChatDropdown()"
+                class="w-[22px] min-w-[22px] cursor-pointer text-textGreen hover:text-mainGreen transition-all"
                 width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M1.5 9.1691V17.75C1.5 19.4069 2.84315 20.75 4.5 20.75H19.5C21.1569 20.75 22.5 19.4069 22.5 17.75V9.1691L13.5723 14.6631C12.6081 15.2564 11.3919 15.2564 10.4277 14.6631L1.5 9.1691Z"
@@ -155,7 +156,7 @@
                   </div>
 
                   <a href="./chat.html"
-                    class="block font-bold text-center text-white bg-textGreen text-lg py-3 cursor-pointer">
+                    class="block font-bold text-center text-white bg-textGreen  py-3 cursor-pointer">
                     عرض جميع الرسائل
                   </a>
                 </div>
@@ -164,7 +165,8 @@
             </div>
             <div class="sm:relative">
               <svg id="notification-icon" onclick="toggleNotificationsDropdown()"
-              class="w-[20px] min-w-[20px] cursor-pointer text-textGreen hover:text-mainGreen transition-all" id="bell" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28"
+                class="w-[20px] min-w-[20px] cursor-pointer text-textGreen hover:text-mainGreen transition-all"
+                id="bell" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28"
                 height="33" viewBox="0 0 28 33">
                 <defs>
                   <clipPath id="clip-path">
@@ -294,7 +296,7 @@
                   </div>
 
                   <a href="./notifications.html"
-                    class="block font-bold text-center text-white bg-textGreen text-lg py-3 cursor-pointer">
+                    class="block font-bold text-center text-white bg-textGreen  py-3 cursor-pointer">
                     عرض جميع الإشعارات
                   </a>
                 </div>
@@ -304,7 +306,7 @@
             <div
               class="hidden md:flex rounded-lg border-0 md:border-2 border-textGreen focus-within:shadow-lg transition-all sm:max-w-md pl-4">
               <input type="text" name="search"
-                class="w-[85%] block flex-1 border-0 bg-transparent py-2 px-4 h-[38px] text-textGray placeholder:text-textGreen placeholder:font-semibold text-lg font-medium outline-none"
+                class="w-[85%] block flex-1 border-0 bg-transparent py-2 px-4 h-[38px] text-textGray placeholder:text-textGreen placeholder:font-semibold  font-medium outline-none"
                 placeholder="البحث">
               <img class="w-6 min-w-6" src="./src/assets/icons/search.svg" alt="search">
             </div>
@@ -406,7 +408,7 @@
             </div>
             <div class="flex rounded-lg border border-textGreen sm:max-w-md pl-4 mt-4">
               <input type="text" name="search"
-                class="w-[85%] block flex-1 border-0 bg-transparent py-2 px-4 text-textGray placeholder:text-textGreen placeholder:font-semibold text-lg font-medium outline-none"
+                class="w-[85%] block flex-1 border-0 bg-transparent py-2 px-4 text-textGray placeholder:text-textGreen placeholder:font-semibold  font-medium outline-none"
                 placeholder="البحث">
               <img class="w-6 min-w-6" src="./src/assets/icons/search.svg" alt="search">
             </div>
@@ -427,7 +429,7 @@
           <h3 class="text-xl font-semibold text-textGreen">بيانات الطلب</h3>
         </div>
         <div class="flex items-center gap-2">
-          <p class="text-lg text-textDarkGray font-semibold">استخدم بياناتي</p>
+          <p class=" text-textDarkGray font-semibold">استخدم بياناتي</p>
           <label class="relative inline-flex items-center cursor-pointer w-16 h-8">
             <input type="checkbox" class="sr-only peer">
             <span
@@ -438,97 +440,124 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-6">
 
-        <div class="flex-1">
-          <label for="name" class="block font-medium text-textDarkGray">الاسم</label>
-          <div class="mt-2">
-            <input id="name" name="name" type="text" required
-              class="block w-full  py-2 px-4 text-textDarkGray text-lg font-medium outline-textGreen rounded-lg shadow-sm border border-textGreen bg-white">
+
+        <div class="relative flex-1 min-w-[170px] sm:min-w-0 sm:w-full ">
+          <label for="kitchen" class="block font-medium text-textDarkGray">الفنادق المفضلة</label>
+
+          <!-- Toggle -->
+          <div tabindex="0" id="multiSelectToggleHotels"
+            class="relative mt-2 h-[44px] overflow-auto scrollbar-hidden block flex-1 w-full px-4 py-2 border border-mainGreen bg-white rounded-lg font-semibold text-textGreen transition-all focus:outline-none focus:ring-1 focus:ring-textGreen appearance-none pr-8">
+            <span id="multiSelectPlaceholderHotels" class="text-gray-500 text-sm"></span>
+            <div class="absolute bottom-[14px] left-4 transform flex items-center pointer-events-none">
+              <svg class="w-4 h-4 text-mainGreen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
+
+
+          <!-- Options -->
+          <div id="multiSelectOptionsHotels"
+            class="absolute left-0 z-10 w-full mt-2 bg-white border border-gray-300 rounded-lg shadow-lg max-h-64 overflow-y-auto hidden">
+            <div class="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 optionHotel"
+              data-value="فندق الرشيد">فندق الرشيد
+            </div>
+            <div class="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 optionHotel"
+              data-value="فندق اسطنبول">فندق اسطنبول</div>
+            <div class="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 optionHotel" data-value="فندق اخر">
+              فندق اخر</div>
           </div>
         </div>
 
-        <div class="flex-1">
-          <label for="email" class="block font-medium text-textDarkGray">البريد الإلكتروني</label>
-          <div class="mt-2">
-            <input id="email" name="email" type="email" required
-              class="block w-full  py-2 px-4 text-textDarkGray text-lg font-medium outline-textGreen rounded-lg shadow-sm border border-textGreen bg-white">
+        <div class="relative flex-1 min-w-[170px] sm:min-w-0 sm:w-full ">
+          <label for="kitchen" class="block font-medium text-textDarkGray">نوع الوجبة</label>
+
+          <!-- Toggle -->
+          <div tabindex="0" id="multiSelectToggleMeals"
+            class="relative mt-2 h-[44px] overflow-auto scrollbar-hidden block flex-1 w-full px-4 py-2 border border-mainGreen bg-white rounded-lg font-semibold text-textGreen transition-all focus:outline-none focus:ring-1 focus:ring-textGreen appearance-none pr-8">
+            <span id="multiSelectPlaceholderMeals" class="text-gray-500 text-sm"></span>
+            <div class="absolute bottom-[14px] left-4 transform flex items-center pointer-events-none">
+              <svg class="w-4 h-4 text-mainGreen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
+
+
+          <!-- Options -->
+          <div id="multiSelectOptionsMeals"
+            class="absolute left-0 z-10 w-full mt-2 bg-white border border-gray-300 rounded-lg shadow-lg max-h-64 overflow-y-auto hidden">
+            <div class="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 optionMeal" data-value="فطور">فطور
+            </div>
+            <div class="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 optionMeal"
+              data-value="فطور - غداء">فطور - غداء</div>
+            <div class="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 optionMeal"
+              data-value="فطور - عشاء">
+              فطور - عشاء</div>
+            <div class="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 optionMeal" data-value="غداء">
+              غداء</div>
+            <div class="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 optionMeal"
+              data-value="غداء - عشاء">
+              غداء - عشاء</div>
+            <div class="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 optionMeal" data-value="عشاء">
+              عشاء</div>
           </div>
         </div>
 
-        <div class="flex-1">
-          <label for="phone" class="block font-medium text-textDarkGray">رقم الجوال</label>
-          <div class="mt-2">
-            <input id="phone" name="phone" type="text" required
-              class="block w-full py-2 px-4 text-textDarkGray text-lg font-medium outline-textGreen rounded-lg shadow-sm border border-textGreen bg-white">
-          </div>
-        </div>
-
-        <div class="flex-1">
-          <label for="country" class="block font-medium text-textDarkGray">الدولة</label>
-          <select id="country" name="country"
-            class="h-[44px] mt-2 block flex-1 min-w-[170px] w-full px-4 py-2 border border-mainGreen bg-white rounded-lg font-semibold text-textGreen transition-all focus:outline-none focus:ring-textGreen focus:ring-1">
-            <option class="font-semibold text-textGreen" value="" disabled selected></option>
-            <option class="font-semibold text-textGreen" value="option2">فلسطين</option>
-            <option class="font-semibold text-textGreen" value="option3">لبنان</option>
-            <option class="font-semibold text-textGreen" value="option4">تركيا</option>
-          </select>
-        </div>
-
-        <div class="flex-1">
-          <label for="city" class="block font-medium text-textDarkGray">المدينة</label>
-          <select id="city" name="city"
-            class="h-[44px]  mt-2 block flex-1 min-w-[170px] w-full px-4 py-2 border border-mainGreen bg-white rounded-lg font-semibold text-textGreen transition-all focus:outline-none focus:ring-textGreen focus:ring-1">
-            <option class="font-semibold text-textGreen" value="" disabled selected></option>
-            <option class="font-semibold text-textGreen" value="option2">غزة</option>
-            <option class="font-semibold text-textGreen" value="option3">القدس</option>
-            <option class="font-semibold text-textGreen" value="option4">نابلس</option>
-          </select>
-        </div>
-
-        <div class="flex-1">
-          <label for="preferredHotels" class="block font-medium text-textDarkGray">الفنادق المفضلة</label>
-          <select id="preferredHotels" name="preferredHotels"
-            class="h-[44px]  mt-2 block flex-1 min-w-[170px] w-full px-4 py-2 border border-mainGreen bg-white rounded-lg font-semibold text-textGreen transition-all focus:outline-none focus:ring-textGreen focus:ring-1">
-            <option class="font-semibold text-textGreen" value="" disabled selected></option>
-            <option class="font-semibold text-textGreen" value="option2">فندق الرشيد</option>
-            <option class="font-semibold text-textGreen" value="option3">فندق اسطنبول</option>
-            <option class="font-semibold text-textGreen" value="option4">فندق اخر</option>
-          </select>
-        </div>
-
-        <div class="flex-1">
-          <label for="meal" class="block font-medium text-textDarkGray">نوع الوجبة</label>
-          <select id="meal" name="meal"
-            class="h-[44px] mt-2 block flex-1 min-w-[170px] w-full px-4 py-2 border border-mainGreen bg-white rounded-lg font-semibold text-textGreen transition-all focus:outline-none focus:ring-textGreen focus:ring-1">
-            <option class="font-semibold text-textGreen" value="" disabled selected></option>
-            <option class="font-semibold text-textGreen" value="option4">فطور</option>
-            <option class="font-semibold text-textGreen" value="option4">فطور - غداء</option>
-            <option class="font-semibold text-textGreen" value="option4">فطور - عشاء</option>
-            <option class="font-semibold text-textGreen" value="option4">غداء</option>
-            <option class="font-semibold text-textGreen" value="option4">غداء - عشاء</option>
-            <option class="font-semibold text-textGreen" value="option4">عشاء</option>
-          </select>
-        </div>
-
-        <div class="flex-1">
+        <div class="relative flex-1 min-w-[170px] sm:min-w-0 sm:w-full">
           <label for="kitchen" class="block font-medium text-textDarkGray">نوع المطلبخ</label>
-          <select id="kitchen" name="kitchen"
-            class="h-[44px] mt-2 block flex-1 min-w-[170px] w-full px-4 py-2 border border-mainGreen bg-white rounded-lg font-semibold text-textGreen transition-all focus:outline-none focus:ring-textGreen focus:ring-1">
+          <select id="options" name="options"
+            class="h-[44px] mt-2 block flex-1 w-full px-4 py-2 border border-mainGreen bg-white rounded-lg font-semibold text-textGreen transition-all focus:outline-none focus:ring-textGreen focus:ring-1 appearance-none pr-8">
             <option class="font-semibold text-textGreen" value="" disabled selected></option>
             <option class="font-semibold text-textGreen" value="option4">داخلي</option>
             <option class="font-semibold text-textGreen" value="option4">خارجي</option>
             <option class="font-semibold text-textGreen" value="option4">بدون مطبخ</option>
           </select>
+          <div class="absolute bottom-[14px] left-4 transform flex items-center pointer-events-none">
+            <svg class="w-4 h-4 text-mainGreen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
         </div>
 
         <div class="flex-1">
           <label for="orderDuration" class="block font-medium text-textDarkGray">مدة العرض</label>
           <div
             class="mt-2 flex flex-1 min-w-[170px] rounded-lg shadow-sm overflow-hidden bg-white outline outline-1 outline-textGreen focus-within:outline-2">
-            <input type="text" name="orderDuration" id="orderDuration"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textGreen text-lg font-medium outline-none rounded-lg">
-            <span class="w-1/6 bg-textGreen text-white flex items-center justify-center text-lg">يوم</span>
+            <input type="number" min="0" name="orderDuration" id="orderDuration"
+              class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textGreen  font-medium outline-none rounded-lg">
+            <span class="w-1/6 bg-textGreen text-white flex items-center justify-center ">ساعة</span>
+          </div>
+        </div>
+
+        <div
+          class="durationInfoInputs flex col-span-1 sm:col-span-2 lg:col-span-3 gap-4 [@media(max-width:450px)]:flex-col">
+          <div class="flex-1">
+            <label for="arriving-date" class="block font-medium text-textDarkGray">تاريخ الوصول</label>
+            <div
+              class="h-[44px] w-full mt-2 flex-1 min-w-[170px] rounded-lg shadow-sm border border-textGreen sm:max-w-md overflow-hidden bg-white">
+              <input type="date" id="arriving-date" name="arriving-date" dir="ltr"
+                class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray  font-medium outline-textGreen rounded-lg">
+            </div>
+          </div>
+
+          <div class="flex-1">
+            <label for="leaving-date" class="block font-medium text-textDarkGray">تاريخ المغادرة</label>
+            <div
+              class="h-[44px] w-full mt-2 flex-1 min-w-[170px] rounded-lg shadow-sm border border-textGreen sm:max-w-md overflow-hidden bg-white">
+              <input type="date" id="arriving-date" name="arriving-date" dir="ltr"
+                class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray  font-medium outline-textGreen rounded-lg ">
+            </div>
+          </div>
+
+          <div id="addDurationBtn"
+            class="addDurationBtn self-end min-w-12 max-w-12 h-12 bg-textGreen transition-all hover:bg-mainGreen rounded-md shadow-md flex items-center justify-center cursor-pointer">
+            <img class="w-5 h-5" src="./src/assets/icons/plus.svg" alt="plus">
           </div>
         </div>
 
@@ -539,23 +568,8 @@
 
       <div class="flex items-center justify-between flex-wrap gap-4 bg-white px-5 py-3 border-b border-textDarkGray">
         <div class="flex items-center gap-2">
-          <img class="w-6 h-6" src="./src/assets/icons/rooms-info.svg" alt="plus">
+          <img class="w-6 h-6" src="./src/assets/icons/rooms-info.svg" alt="room">
           <h3 class="text-xl font-semibold text-textGreen">بيانات الغرف</h3>
-        </div>
-        <div class="flex items-center">
-          <div
-            class="flex flex-1 min-w-[170px] rounded-lg rounded-tl-none rounded-bl-none shadow-sm border border-textGreen sm:max-w-md overflow-hidden bg-white">
-            <input type="date" name="arriving-date" dir="ltr"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray text-lg font-medium outline-textGreen rounded-lg rounded-tl-none rounded-bl-none"
-              placeholder="تاريخ الوصول">
-          </div>
-
-          <div
-            class="flex flex-1 min-w-[170px] rounded-lg rounded-tr-none rounded-br-none shadow-sm border border-textGreen sm:max-w-md overflow-hidden">
-            <input type="date" name="leaving-date" dir="ltr"
-              class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray text-lg font-medium outline-textGreen rounded-lg rounded-tr-none rounded-br-none placeholder-shown:text-textGreen placeholder-shown:italic color-scheme-dark"
-              placeholder="تاريخ المغادرة">
-          </div>
         </div>
       </div>
 
@@ -573,47 +587,37 @@
             </select>
 
             <div class="flex min-w-[70px] rounded-lg shadow-sm border border-textGreen bg-white">
-              <input type="number" name="roomsNumber"
-                class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-textGreen rounded-lg"
+              <input type="number" min="0" name="roomsNumber"
+                class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray  outline-textGreen rounded-lg"
                 placeholder="عدد الغرف">
             </div>
           </div>
         </div>
 
-        <div class="flex-1 lg:col-span-3">
+        <div class="flex-1 lg:col-span-4">
           <label class="block font-medium text-textDarkGray">عدد الأفراد</label>
           <div class="flex flex-1 items-center gap-4 mt-2">
             <div class="flex flex-1  min-w-[70px] rounded-lg shadow-sm border border-textGreen bg-white">
-              <input type="number" name="adaltsNumbers"
-                class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-textGreen rounded-lg"
+              <input type="number" min="0" name="adaltsNumbers"
+                class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray  outline-textGreen rounded-lg"
                 placeholder="البالغين">
             </div>
 
             <div class="flex flex-1 min-w-[70px] rounded-lg shadow-sm border border-textGreen bg-white">
-              <input type="number" name="tenagersNumbers"
-                class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-textGreen rounded-lg"
+              <input type="number" min="0" name="tenagersNumbers"
+                class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray  outline-textGreen rounded-lg"
                 placeholder="اليافعين">
             </div>
 
             <div class="flex flex-1 min-w-[70px] rounded-lg shadow-sm border border-textGreen bg-white">
-              <input type="number" name="childrenNumbers"
-                class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-textGreen rounded-lg"
+              <input type="number" min="0" name="childrenNumbers"
+                class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray  outline-textGreen rounded-lg"
                 placeholder="الأطفال">
             </div>
-          </div>
-        </div>
 
-        <div class="flex-1 lg:col-span-1">
-          <label for="roomMembersCount" class="block font-medium text-textDarkGray">سعة الغرفة</label>
-          <div class="flex items-center gap-2 mt-2">
-            <div class="flex min-w-[70px] rounded-lg shadow-sm border border-textGreen bg-white">
-              <input type="number" name="roomMembersCount" id="roomMembersCount"
-                class="block w-full border-0 bg-transparent py-2 px-4 text-textDarkGray placeholder:text-textDarkGray text-lg outline-textGreen rounded-lg"
-                placeholder="سعة الغرفة">
-            </div>
             <div id="addRoomSectionBtn"
-              class="addRoomSectionBtn min-w-9 h-9 bg-textGreen transition-all hover:bg-mainGreen rounded-md shadow-md flex items-center justify-center cursor-pointer">
-              <img class="w-6 h-6" src="./src/assets/icons/plus.svg" alt="plus">
+              class="addRoomSectionBtn min-w-10 max-w-10 h-10 bg-textGreen transition-all hover:bg-mainGreen rounded-md shadow-md flex items-center justify-center cursor-pointer">
+              <img class="w-5 h-5" src="./src/assets/icons/plus.svg" alt="plus">
             </div>
           </div>
         </div>
@@ -623,7 +627,7 @@
       <div class="w-full flex flex-col items-end">
         <div class="flex flex-1 w-full rounded-lg shadow-md border border-textGreen overflow-hidden mb-6 bg-white">
           <textarea type="date" name="order-data"
-            class="block w-full h-60 border-0 bg-transparent py-2 px-4 text-textDarkGray  placeholder:text-base text-lg font-normal outline-textGreen rounded-lg"
+            class="block w-full h-60 border-0 bg-transparent py-2 px-4 text-textDarkGray  placeholder:text-base  font-normal outline-textGreen rounded-lg"
             placeholder="قم بكتابة البيانات الوصفية للفندق المطلوب"></textarea>
         </div>
 
@@ -643,31 +647,31 @@
         <a href="./home.html">
           <img class="min-w-[130px] w-[130px] mb-1" src="./src/assets/images/logo.png" alt="logo">
         </a>
-        <p class="text-textDarkGray text-base md:text-lg">معاً نسعى لتحقيق راحتك</p>
+        <p class="text-textDarkGray text-base md:">معاً نسعى لتحقيق راحتك</p>
       </div>
 
-      <div class="min-w-[100px] text-textDarkGray text-lg flex flex-col gap-2 self-end">
+      <div class="min-w-[100px] text-textDarkGray  flex flex-col gap-2 self-end">
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#benefits">الرئيسية</a>
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#courses">الطلبات</a>
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#testimonials">الوظائف</a>
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#faq">العروض</a>
       </div>
 
-      <div class="min-w-[100px] text-textDarkGray text-lg flex flex-col gap-2 self-end">
+      <div class="min-w-[100px] text-textDarkGray  flex flex-col gap-2 self-end">
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#">الإعدادات</a>
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#">شروط الاستخدام</a>
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#">الدعم الفني</a>
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#">مساعدة</a>
       </div>
 
-      <div class="min-w-[100px] text-textDarkGray text-lg flex flex-col gap-2 self-end">
+      <div class="min-w-[100px] text-textDarkGray  flex flex-col gap-2 self-end">
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#benefits">الرئيسية</a>
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#courses">الطلبات</a>
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#testimonials">الوظائف</a>
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#faq">العروض</a>
       </div>
 
-      <div class="min-w-[100px] text-textDarkGray text-lg flex flex-col gap-2 self-end">
+      <div class="min-w-[100px] text-textDarkGray  flex flex-col gap-2 self-end">
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#">الإعدادات</a>
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#">شروط الاستخدام</a>
         <a class="block text-[rgba(89, 89, 90, 1)] transition-all hover:underline mb-2" href="#">الدعم الفني</a>
@@ -675,7 +679,7 @@
       </div>
 
       <div class="min-w-[200px]">
-        <p class="font-normal mb-5 text-lg text-textDarkGray">تابعنا لتعرف عن أحدث تحديثاتنا وعروضنا الحصرية </p>
+        <p class="font-normal mb-5  text-textDarkGray">تابعنا لتعرف عن أحدث تحديثاتنا وعروضنا الحصرية </p>
         <div class="flex flex-col justify-start gap-2 text-textDarkGray">
           <span class="flex  gap-2 mb-5">
             <img class="w-5 h-auto" src="./src/assets/icons/location-filled.svg" alt="location">
