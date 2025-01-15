@@ -1,0 +1,647 @@
+  <!-- Dashboard -->
+  <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTD Travel - Home</title>
+
+  <link rel="stylesheet" href="./dist/output.css">
+
+  <script src="./js/header.js" defer></script>
+  <script src="./js/home.js" defer></script>
+  <script src="./js/multiSelect.js" defer></script>
+  <script src="./js/counterAnimation.js" defer></script>
+
+  <script src="./js/elementsAnimation.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</head>
+
+<body class="bg-lightGray">
+
+  <div id="employees">
+    <!-- Table Head -->
+    <div class="p-4 text-white flex justify-between items-center">
+      <button
+        onclick="openAddEmployeeForm()"
+        class="bg-textGreen hover:bg-mainGreen transition-all px-4 py-1 rounded flex items-center gap-2 min-w-[150px]"
+      >
+        <span>إضافة موظف</span>
+        <span class="text-2xl font-semibold">+</span>
+      </button>
+
+      <div class="flex items-center gap-6">
+        <!-- Search Bar -->
+        <div
+          class="flex pr-4 border border-gray-300 rounded-md min-w-[200px] mr-4"
+        >
+          <img
+            class="w-6 min-w-6"
+            src="./src/assets/icons/search.svg"
+            alt="search"
+          />
+          <input
+            id="search"
+            type="text"
+            cursor-pointer
+            class="w-[85%] block flex-1 border-0 bg-transparent py-2 px-4 text-textGray placeholder:text-textGreen outline-none"
+            placeholder="ابحث..."
+            oninput="filterTable()"
+          />
+        </div>
+
+        <!-- Rows Per Page Selector -->
+        <div class="flex items-center gap-2">
+          <p class="text-gray-900 font-medium">أظهر</p>
+          <select
+            id="rowsPerPage"
+            class="p-1 rounded bg-textGreen shadow-md text-lg outline-none cursor-pointer"
+            onchange="changeRowsPerPage()"
+          >
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+          <p class="text-gray-900 font-medium">صفوف</p>
+        </div>
+      </div>
+    </div>
+
+    <table
+      class="table-auto w-full bg-white rounded shadow text-center"
+    >
+      <thead>
+        <tr class="text-textDarkGray">
+          <th class="p-6">
+            رقم الكود
+            <button onclick="sortTable(0)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            الاسم
+            <button onclick="sortTable(1)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            نوع الوظيفة
+            <button onclick="sortTable(2)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            الجنس
+            <button onclick="sortTable(3)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            رقم الهاتف
+            <button onclick="sortTable(1)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            الايميل
+            <button onclick="sortTable(5)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">عمليات</th>
+        </tr>
+      </thead>
+
+      <tbody id="tableBody"></tbody>
+    </table>
+
+    <div class="p-4 bg-white flex justify-center items-center gap-4">
+      <button onclick="nextPage()" class="text-textDarkGray">
+        التالي
+      </button>
+      <div id="paginationButtons" class="flex gap-2"></div>
+      <button onclick="previousPage()" class="text-textDarkGray">
+        السابق
+      </button>
+    </div>
+
+    <!-- Add Employee Form Modal -->
+    <div
+      id="addEmployeeForm"
+      class="fixed h-screen inset-0 bg-gray-800 bg-opacity-50 hidden justify-center items-center"
+    >
+      <div
+        class="bg-white p-6 rounded shadow-md w-80 h-full overflow-y-auto"
+      >
+        <h2 class="text-lg font-bold mb-4">إضافة موظف جديد</h2>
+        <input
+          type="text"
+          id="employeeName"
+          placeholder="الاسم"
+          class="border p-2 w-full mb-2"
+        />
+        <input
+          type="text"
+          id="employeeJob"
+          placeholder="نوع الوظيفة"
+          class="border p-2 w-full mb-2"
+        />
+        <select id="employeeGender" class="border p-2 w-full mb-2">
+          <option value="ذكر">ذكر</option>
+          <option value="أنثى">أنثى</option>
+        </select>
+        <input
+          type="text"
+          id="employeePhone"
+          placeholder="رقم الهاتف"
+          class="border p-2 w-full mb-2"
+        />
+        <input
+          type="email"
+          id="employeeEmail"
+          placeholder="الايميل"
+          class="border p-2 w-full mb-2"
+        />
+        <button
+          onclick="addEmployee()"
+          class="bg-textGreen text-white px-4 py-2 rounded"
+        >
+          إضافة
+        </button>
+        <button
+          onclick="closeAddEmployeeForm()"
+          class="bg-red-500 text-white px-4 py-2 rounded mt-2"
+        >
+          إلغاء
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="hidden" id="offers">
+    <!-- Table Head -->
+    <div class="p-4 text-white flex justify-between items-center">
+      <button
+        class="bg-textGreen hover:bg-mainGreen transition-all px-4 py-1 rounded flex items-center gap-2 min-w-[150px]"
+      >
+        <span>إضافة عرض</span>
+        <span class="text-2xl font-semibold">+</span>
+      </button>
+
+      <div class="flex items-center gap-6">
+        <!-- Search Bar -->
+        <div
+          class="flex pr-4 border border-gray-300 rounded-md min-w-[200px] mr-4"
+        >
+          <img
+            class="w-6 min-w-6"
+            src="./src/assets/icons/search.svg"
+            alt="search"
+          />
+          <input
+            id="search"
+            type="text"
+            cursor-pointer
+            class="w-[85%] block flex-1 border-0 bg-transparent py-2 px-4 text-textGray placeholder:text-textGreen outline-none"
+            placeholder="ابحث..."
+            oninput="filterTable()"
+          />
+        </div>
+
+        <!-- Rows Per Page Selector -->
+        <div class="flex items-center gap-2">
+          <p class="text-gray-900 font-medium">أظهر</p>
+          <select
+            id="rowsPerPage"
+            class="p-1 rounded bg-textGreen shadow-md text-lg outline-none cursor-pointer"
+            onchange="changeRowsPerPage()"
+          >
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+          <p class="text-gray-900 font-medium">صفوف</p>
+        </div>
+      </div>
+    </div>
+    <table class="table-auto w-full bg-white rounded shadow text-center">
+      <thead>
+        <tr class="text-textDarkGray">
+          <th class="p-6">
+            رقم الكود
+            <button onclick="sortTable(0)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            الاسم
+            <button onclick="sortTable(1)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            العنوان
+            <button onclick="sortTable(2)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            تاريخ الوصول
+            <button onclick="sortTable(3)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            تاريخ المغادرة
+            <button onclick="sortTable(5)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            المدة
+            <button onclick="sortTable(5)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            السعر لليلة
+            <button onclick="sortTable(5)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">عمليات</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+      </tbody>
+    </table>
+    <div class="p-4 bg-white flex justify-center items-center gap-4">
+      <button onclick="nextPage()" class="text-textDarkGray">
+        التالي
+      </button>
+      <div id="paginationButtons" class="flex gap-2"></div>
+      <button onclick="previousPage()" class="text-textDarkGray">
+        السابق
+      </button>
+    </div>
+    <!-- Add Employee Form Modal -->
+    <div
+      id="addEmployeeForm"
+      class="fixed h-screen inset-0 bg-gray-800 bg-opacity-50 hidden justify-center items-center"
+    >
+      <div
+        class="bg-white p-6 rounded shadow-md w-80 h-full overflow-y-auto"
+      >
+        <h2 class="text-lg font-bold mb-4">إضافة موظف جديد</h2>
+        <input
+          type="text"
+          id="employeeName"
+          placeholder="الاسم"
+          class="border p-2 w-full mb-2"
+        />
+        <input
+          type="text"
+          id="employeeJob"
+          placeholder="نوع الوظيفة"
+          class="border p-2 w-full mb-2"
+        />
+        <select id="employeeGender" class="border p-2 w-full mb-2">
+          <option value="ذكر">ذكر</option>
+          <option value="أنثى">أنثى</option>
+        </select>
+        <input
+          type="text"
+          id="employeePhone"
+          placeholder="رقم الهاتف"
+          class="border p-2 w-full mb-2"
+        />
+        <input
+          type="email"
+          id="employeeEmail"
+          placeholder="الايميل"
+          class="border p-2 w-full mb-2"
+        />
+        <button
+          onclick="addEmployee()"
+          class="bg-textGreen text-white px-4 py-2 rounded"
+        >
+          إضافة
+        </button>
+        <button
+          onclick="closeAddEmployeeForm()"
+          class="bg-red-500 text-white px-4 py-2 rounded mt-2"
+        >
+          إلغاء
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <div class="hidden" id="offerRequests">
+    <!-- Table Head -->
+    <div class="p-4 text-white flex justify-end items-center">
+       
+
+      <div class="flex items-center gap-6">
+        <!-- Search Bar -->
+        <div
+          class="flex pr-4 border border-gray-300 rounded-md min-w-[200px] mr-4"
+        >
+          <img
+            class="w-6 min-w-6"
+            src="./src/assets/icons/search.svg"
+            alt="search"
+          />
+          <input
+            id="search"
+            type="text"
+            cursor-pointer
+            class="w-[85%] block flex-1 border-0 bg-transparent py-2 px-4 text-textGray placeholder:text-textGreen outline-none"
+            placeholder="ابحث..."
+            oninput="filterTable()"
+          />
+        </div>
+
+        <!-- Rows Per Page Selector -->
+        <div class="flex items-center gap-2">
+          <p class="text-gray-900 font-medium">أظهر</p>
+          <select
+            id="rowsPerPage"
+            class="p-1 rounded bg-textGreen shadow-md text-lg outline-none cursor-pointer"
+            onchange="changeRowsPerPage()"
+          >
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+          <p class="text-gray-900 font-medium">صفوف</p>
+        </div>
+      </div>
+    </div>
+    <table class="table-auto w-full bg-white rounded shadow text-center">
+      <thead>
+        <tr class="text-textDarkGray">
+          <th class="p-6">
+            رقم الكود
+            <button onclick="sortTable(0)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            الاسم
+            <button onclick="sortTable(1)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            العرض
+            <button onclick="sortTable(2)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            التقييم
+            <button onclick="sortTable(3)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+           <th class="p-6">
+            تاريخ الحجز
+            <button onclick="sortTable(5)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            الحالة
+            <button onclick="sortTable(5)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">عمليات</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+      </tbody>
+    </table>
+    <div class="p-4 bg-white flex justify-center items-center gap-4">
+      <button onclick="nextPage()" class="text-textDarkGray">
+        التالي
+      </button>
+      <div id="paginationButtons" class="flex gap-2"></div>
+      <button onclick="previousPage()" class="text-textDarkGray">
+        السابق
+      </button>
+    </div>
+  </div>
+  <div class="hidden" id="submittedOffers">
+    <!-- Table Head -->
+    <div class="p-4 text-white flex justify-end items-center">
+      <div class="flex items-center gap-6">
+        <!-- Search Bar -->
+        <div
+          class="flex pr-4 border border-gray-300 rounded-md min-w-[200px] mr-4"
+        >
+          <img
+            class="w-6 min-w-6"
+            src="./src/assets/icons/search.svg"
+            alt="search"
+          />
+          <input
+            id="search"
+            type="text"
+            cursor-pointer
+            class="w-[85%] block flex-1 border-0 bg-transparent py-2 px-4 text-textGray placeholder:text-textGreen outline-none"
+            placeholder="ابحث..."
+            oninput="filterTable()"
+          />
+        </div>
+
+        <!-- Rows Per Page Selector -->
+        <div class="flex items-center gap-2">
+          <p class="text-gray-900 font-medium">أظهر</p>
+          <select
+            id="rowsPerPage"
+            class="p-1 rounded bg-textGreen shadow-md text-lg outline-none cursor-pointer"
+            onchange="changeRowsPerPage()"
+          >
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+          <p class="text-gray-900 font-medium">صفوف</p>
+        </div>
+      </div>
+    </div>
+    <table class="table-auto w-full bg-white rounded shadow text-center">
+      <thead>
+        <tr class="text-textDarkGray">
+          <th class="p-6">
+            رقم الكود
+            <button onclick="sortTable(0)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            الاسم
+            <button onclick="sortTable(1)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            الطلب
+            <button onclick="sortTable(2)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            عدد الغرف
+            <button onclick="sortTable(3)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+           <th class="p-6">
+            اجمالي السعر
+            <button onclick="sortTable(5)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            وقت الانتهاء
+            <button onclick="sortTable(5)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            الحالة
+            <button onclick="sortTable(5)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">عمليات</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+      </tbody>
+    </table>
+    <div class="p-4 bg-white flex justify-center items-center gap-4">
+      <button onclick="nextPage()" class="text-textDarkGray">
+        التالي
+      </button>
+      <div id="paginationButtons" class="flex gap-2"></div>
+      <button onclick="previousPage()" class="text-textDarkGray">
+        السابق
+      </button>
+    </div>
+  </div>
+  <div class="hidden" id="finance">
+    <!-- Table Head -->
+    <div class="p-4 text-white flex justify-between items-center">
+      <button
+        onclick=""
+        class="bg-textGreen hover:bg-mainGreen transition-all px-4 py-1 rounded flex items-center gap-2 min-w-[150px]"
+      >
+        <span>تنزيل الفاتورة</span>
+      </button>
+      <div class="flex items-center gap-6">
+        <!-- Search Bar -->
+        <div
+          class="flex pr-4 border border-gray-300 rounded-md min-w-[200px] mr-4"
+        >
+          <img
+            class="w-6 min-w-6"
+            src="./src/assets/icons/search.svg"
+            alt="search"
+          />
+          <input
+            id="search"
+            type="text"
+            cursor-pointer
+            class="w-[85%] block flex-1 border-0 bg-transparent py-2 px-4 text-textGray placeholder:text-textGreen outline-none"
+            placeholder="ابحث..."
+            oninput="filterTable()"
+          />
+        </div>
+
+        <!-- Rows Per Page Selector -->
+        <div class="flex items-center gap-2">
+          <p class="text-gray-900 font-medium">أظهر</p>
+          <select
+            id="rowsPerPage"
+            class="p-1 rounded bg-textGreen shadow-md text-lg outline-none cursor-pointer"
+            onchange="changeRowsPerPage()"
+          >
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+          <p class="text-gray-900 font-medium">صفوف</p>
+        </div>
+      </div>
+    </div>
+    <table class="table-auto w-full bg-white rounded shadow text-center">
+      <thead>
+        <tr class="text-textDarkGray">
+          <th class="p-6">
+            رقم الكود
+            <button onclick="sortTable(0)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            نوع العملية
+            <button onclick="sortTable(1)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            جهة العملية
+            <button onclick="sortTable(2)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            طريقة الدفع
+            <button onclick="sortTable(3)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+           <th class="p-6">
+            التاريخ والوقت
+            <button onclick="sortTable(5)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">
+            الحالة
+            <button onclick="sortTable(5)" class="text-sm mr-2">
+              <img src="./src/assets/icons/sort.svg" alt="sort" />
+            </button>
+          </th>
+          <th class="p-6">عمليات</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+      </tbody>
+    </table>
+    <div class="p-4 bg-white flex justify-center items-center gap-4">
+      <button onclick="nextPage()" class="text-textDarkGray">
+        التالي
+      </button>
+      <div id="paginationButtons" class="flex gap-2"></div>
+      <button onclick="previousPage()" class="text-textDarkGray">
+        السابق
+      </button>
+    </div>
+  </div>
+</body>
+</html>

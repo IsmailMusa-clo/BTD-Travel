@@ -12,6 +12,7 @@ module.exports = {
         textGray: '#8989A2',
         textDarkGray: '#707070',
         lightGray: '#F7F9FB',
+        textGrayBan: '#EEE3DF',
       },
       backgroundImage: {
         backgroundEffect: "url('../src/assets/images/background-effect.png')",
